@@ -70,7 +70,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lb_CongNo = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_XuatFile = new DevExpress.XtraEditors.SimpleButton();
             this.btn_In = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_KhachHang)).BeginInit();
@@ -83,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_DiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenKH.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl_KhachHang
@@ -473,16 +471,6 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "Công nợ";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.user_customer;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(318, 272);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 66;
-            this.pictureBox1.TabStop = false;
-            // 
             // btn_XuatFile
             // 
             this.btn_XuatFile.Location = new System.Drawing.Point(962, 239);
@@ -506,11 +494,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1144, 491);
+            this.ClientSize = new System.Drawing.Size(1227, 491);
             this.Controls.Add(this.btn_XuatFile);
             this.Controls.Add(this.btn_In);
             this.Controls.Add(this.btn_Them);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_ResetThongTin);
             this.Controls.Add(this.btn_CapNhat);
@@ -532,7 +519,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenKH.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,7 +563,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
         private DevExpress.XtraGrid.Columns.GridColumn colCongNo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lb_CongNo;
         private System.Windows.Forms.Label label10;
         private DevExpress.XtraEditors.SimpleButton btn_XuatFile;

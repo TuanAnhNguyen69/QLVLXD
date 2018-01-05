@@ -21,8 +21,12 @@ namespace QLVLXD.GUI
         BLL.BLL_HoaDonBanHang _BLL_HoaDonBanHang = new BLL.BLL_HoaDonBanHang();
         BLL.BLL_KhachHang _BLL_KhachHang = new BLL.BLL_KhachHang();
         BLL.BLL_LoaiKhachHang _LoaiKhachHang = new BLL.BLL_LoaiKhachHang();
+        BLL.BLL_QuanLyTienTe _QuanLyTienTe = new BLL.BLL_QuanLyTienTe();
         BLL.BLL_NhaCungCap _NhaCungCap = new BLL.BLL_NhaCungCap();
+        BLL.BLL_KhuyenMai _KhuyenMai = new BLL.BLL_KhuyenMai();
         BLL.BLL_DonViTinhVatLieu _DonViTinhVatLieu = new BLL.BLL_DonViTinhVatLieu();
+        BLL.BLL_QuanLyDonViTinh _QuanLyDonViTinh = new BLL.BLL_QuanLyDonViTinh();
+        BLL.BLL_TinhTrangVatLieu _TinhTrangVatLieu = new BLL.BLL_TinhTrangVatLieu();
        
         //// Biến lưu dữ liệu load
         List<DLL.CTHoaDonBanHang> _ListVatLieuHoaDon = new List<DLL.CTHoaDonBanHang>();
@@ -55,8 +59,7 @@ namespace QLVLXD.GUI
 
         decimal TienVatLieu(DLL.CTHoaDonBanHang CTHDBH)
         {
-
-            return TienVatLieu((long)CTHDBH.SoLuong, (decimal)CTHDBH.Gi, (decimal)CTHDBH.GiaSi, (long)CTHDBH.SoLuongDeBanSi);
+            return TienVatLieu((long)CTHDBH.SoLuongMua, (decimal)CTHDBH.GiaLe, (decimal)CTHDBH.GiaSi, (long)CTHDBH.SoLuongDeBanSi);
         }
 
         void LoadGridView(List<DLL.CTHoaDonBanHang> ListCTHDBH)
@@ -129,7 +132,6 @@ namespace QLVLXD.GUI
             cb_TenVatLieu.Text = "";
             lb_TenNCC.Text = "(Tên NCC)";
             cb_DonViTinh.Text = "";
-            lb_TinhTrangVatLieu.Text = "(Tình trạng)";
             tb_GhiChuVatLieu.Text = "<Không có ghi chú>";
             lb_GiaBanLe.Text = "(Số liệu)";
             lb_GiaBanSi.Text = "(Số liệu)";
@@ -148,18 +150,13 @@ namespace QLVLXD.GUI
         void ResetThongKe()
         {
             lb_TongTien.Text = "(Số liệu)";
-            lb_SoVatLieu.Text = "(Số liệu)";
             lb_TongTienVatLieu.Text = "(Số liệu)";
             lb_TongTienKhuyenMai.Text = "(Số liệu)";
-            lb_TongTienKMKH.Text = "(Số liệu)";
         }
 
         void ResetThemVatLieu()
         {
-            lb_SoLuongKhuyenMai.Text = "(Số liệu)";
             lb_TongSoLuong.Text = "(Số liệu)";
-            lb_TienVatLieu.Text = "(Số liệu)";
-            lb_TienKhuyenMai.Text = "(Số liệu)";
             lb_TongTienAddVatLieu.Text = "(Số liệu)";
             nud_SoLuongMua.Value = 0;
         }
@@ -344,7 +341,6 @@ namespace QLVLXD.GUI
                 _ListVatLieuHoaDon.Clear();
                 LoadGridView(_ListVatLieuHoaDon);
                  try {mainform.frm_thongkebanhang.IsReset = true; } catch {}
-                 try {mainform.frm_vatlieu.IsReset = true; } catch {}
             }
         }
 
@@ -689,8 +685,6 @@ namespace QLVLXD.GUI
             {
                 _CTHDBHEditting.SoLuongKM = 0;
                 _CTHDBHEditting.TienKM = 0;
-                lb_SoLuongKhuyenMai.Text = "(Không Khuyến mãi)";
-                lb_TienKhuyenMai.Text = "(Không Khuyến mãi)";
             }
             else // Có KM
             {
@@ -711,15 +705,11 @@ namespace QLVLXD.GUI
                 {
                     _CTHDBHEditting.TienKM = (SoLuongDVTGoc(vl) / slkmtoithieu) * (long)km.TienKM;
                     _CTHDBHEditting.SoLuongKM = 0;
-                    lb_TienKhuyenMai.Text = (decimal)_CTHDBHEditting.TienKM > 0 ? ((decimal)_CTHDBHEditting.TienKM).ToString() : "(Không Khuyến mãi)";
-                    lb_SoLuongKhuyenMai.Text = "(Không Khuyến mãi)";
                 }
                 else // KM sp
                 {
                     _CTHDBHEditting.SoLuongKM = (SoLuongDVTGoc(vl) / slkmtoithieu) * slkmdvtgoc;
                     _CTHDBHEditting.TienKM = 0;
-                    lb_SoLuongKhuyenMai.Text = (long)_CTHDBHEditting.SoLuongKM > 0 ? ((long)_CTHDBHEditting.SoLuongKM).ToString() + " " + vl.DVT_Goc.Trim() : "(Không Khuyến mãi)";
-                    lb_TienKhuyenMai.Text = "(Không Khuyến mãi)";
                 }
             }
             // Còn lại           
@@ -728,7 +718,6 @@ namespace QLVLXD.GUI
             _CTHDBHEditting.DonViTinh = cb_DonViTinh.Text.Trim();
             _CTHDBHEditting.TenVL = cb_TenVatLieu.Text.Trim();
             _CTHDBHEditting.TenNCC = lb_TenNCC.Text.Trim();
-            _CTHDBHEditting.TinhTrangVL = lb_TinhTrangVatLieu.Text.Trim();
             _CTHDBHEditting.GiaLe = vl.GiaBanLe;
             _CTHDBHEditting.GiaSi = vl.GiaBanSi;
             _CTHDBHEditting.SoLuongDeBanSi = vl.SoLuongBanSi;
@@ -741,7 +730,6 @@ namespace QLVLXD.GUI
             else
                 tile = (decimal)gettile.TiLe;
             lb_TongSoLuong.Text = (_CTHDBHEditting.TongSL / tile).ToString() + " " + cb_DonViTinh.Text;
-            lb_TienVatLieu.Text = ((long)_CTHDBHEditting.TienKMKH).ToString("# ### ###").Trim();
             lb_TongTienAddVatLieu.Text = ((decimal)_CTHDBHEditting.TongTien).ToString("# ### ###").Trim();
         }
 
@@ -765,7 +753,6 @@ namespace QLVLXD.GUI
                 lb_GiaBanSi.Text = ((long)vl.GiaBanSi).ToString("# ### ###").Trim() + "/" + ((long)vl.SoLuongBanSi).ToString() + " " + vl.DVT_Goc.Trim();
             }
             // Load Hình thức KM
-            lb_HinhThucKMVL.Text = _KhuyenMai.MakeTenKM(vl.MaKM);
             // Load NCC
             var ncc = _NhaCungCap.GetObjectFromID(vl.MaNCC.Trim());
             if (ncc == null)
@@ -797,7 +784,6 @@ namespace QLVLXD.GUI
                 _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(12000142));
                 return;
             }
-            lb_TinhTrangVatLieu.Text = tt.Trim();
 
             // Tính toán
             SetFormVatLieuHoaDon();
@@ -834,7 +820,6 @@ namespace QLVLXD.GUI
 
         void SetFormHoaDon()
         {
-            lb_SoVatLieu.Text = _ListVatLieuHoaDon.Count.ToString();
             if (_ListVatLieuHoaDon.Count == 0)
             {
                 ResetThongKe();
@@ -862,7 +847,6 @@ namespace QLVLXD.GUI
                 _IsKMSoLanMua = true;
                 TienKMKH *= -1;
             }
-            lb_TongTienKMKH.Text = TienKMKH == 0 ? "(Không khuyến mãi)" : TienKMKH.ToString("# ### ###").Trim();
             TongTien -= TienKMKH;
             lb_TongTien.Text = TongTien.ToString("# ### ###").Trim();
             iTongTien = TongTien;

@@ -323,7 +323,6 @@ namespace QLVLXD.GUI
 
             ResetForNewInsert();
             MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            try { mainform.frm_vatlieu.IsReset = true; } catch { }
             try { mainform.frm_thongkemuahang.IsReset = true; } catch { }
             try { mainform.frm_banhang.IsReset = true; } catch { }
         }
@@ -559,7 +558,6 @@ namespace QLVLXD.GUI
             ResetSearch();
 
             MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            try { mainform.frm_vatlieu.IsReset = true; } catch { }
         }
 
         // Khung tìm kiếm vật liệu của cửa hàng:

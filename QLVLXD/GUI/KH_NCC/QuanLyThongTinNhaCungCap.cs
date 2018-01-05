@@ -82,7 +82,6 @@ namespace QLVLXD
             {
                 Refresh_Grid();
                 ResetThongTin();
-                try { mainform.frm_vatlieu.IsReset = true; } catch { }
                 try { mainform.frm_thongkemuahang.IsReset = true; } catch { }
             }
         }
@@ -93,7 +92,6 @@ namespace QLVLXD
             {
                 Refresh_Grid();
                 ResetThongTin();
-                try { mainform.frm_vatlieu.IsReset = true; } catch { }
                 try { mainform.frm_thongkemuahang.IsReset = true; } catch { }
             }
         }
@@ -106,7 +104,6 @@ namespace QLVLXD
             {
                 Refresh_Grid();
                 ResetThongTin();
-                try { mainform.frm_vatlieu.IsReset = true; } catch { }
                 try { mainform.frm_thongkemuahang.IsReset = true; } catch { }
             }
         }

@@ -55,7 +55,6 @@
             this.cb_TenNhanVien = new System.Windows.Forms.ComboBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.userTableAdapter = new QLVLXD.QLVLXDDataSet22TableAdapters.UserTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenDangNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanlyUser)).BeginInit();
@@ -63,23 +62,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbb_PhanQuyen
             // 
             this.cbb_PhanQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_PhanQuyen.FormattingEnabled = true;
-            this.cbb_PhanQuyen.Location = new System.Drawing.Point(380, 132);
+            this.cbb_PhanQuyen.Location = new System.Drawing.Point(443, 162);
+            this.cbb_PhanQuyen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbb_PhanQuyen.Name = "cbb_PhanQuyen";
-            this.cbb_PhanQuyen.Size = new System.Drawing.Size(157, 21);
+            this.cbb_PhanQuyen.Size = new System.Drawing.Size(182, 24);
             this.cbb_PhanQuyen.TabIndex = 29;
             // 
             // btn_ResetThongTin
             // 
-            this.btn_ResetThongTin.Location = new System.Drawing.Point(345, 216);
+            this.btn_ResetThongTin.Location = new System.Drawing.Point(402, 266);
+            this.btn_ResetThongTin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ResetThongTin.Name = "btn_ResetThongTin";
-            this.btn_ResetThongTin.Size = new System.Drawing.Size(92, 23);
+            this.btn_ResetThongTin.Size = new System.Drawing.Size(107, 28);
             this.btn_ResetThongTin.TabIndex = 28;
             this.btn_ResetThongTin.Text = "Reset";
             this.btn_ResetThongTin.Click += new System.EventHandler(this.btn_ResetThongTin_Click);
@@ -88,9 +88,10 @@
             // 
             this.btn_XemChiTiet.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XemChiTiet.Appearance.Options.UseFont = true;
-            this.btn_XemChiTiet.Location = new System.Drawing.Point(923, 120);
+            this.btn_XemChiTiet.Location = new System.Drawing.Point(1077, 148);
+            this.btn_XemChiTiet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_XemChiTiet.Name = "btn_XemChiTiet";
-            this.btn_XemChiTiet.Size = new System.Drawing.Size(177, 44);
+            this.btn_XemChiTiet.Size = new System.Drawing.Size(206, 54);
             this.btn_XemChiTiet.TabIndex = 27;
             this.btn_XemChiTiet.Text = "Xem chi tiết nhân viên";
             this.btn_XemChiTiet.Click += new System.EventHandler(this.btn_XemChiTiet_Click);
@@ -101,9 +102,10 @@
             this.btn_Xoa.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_Xoa.Appearance.Options.UseFont = true;
             this.btn_Xoa.Appearance.Options.UseForeColor = true;
-            this.btn_Xoa.Location = new System.Drawing.Point(923, 44);
+            this.btn_Xoa.Location = new System.Drawing.Point(1077, 54);
+            this.btn_Xoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(177, 69);
+            this.btn_Xoa.Size = new System.Drawing.Size(206, 85);
             this.btn_Xoa.TabIndex = 26;
             this.btn_Xoa.Text = "Xóa tài khoản";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
@@ -114,9 +116,10 @@
             this.btn_Them.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_Them.Appearance.Options.UseFont = true;
             this.btn_Them.Appearance.Options.UseForeColor = true;
-            this.btn_Them.Location = new System.Drawing.Point(923, 44);
+            this.btn_Them.Location = new System.Drawing.Point(1077, 54);
+            this.btn_Them.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(177, 120);
+            this.btn_Them.Size = new System.Drawing.Size(206, 148);
             this.btn_Them.TabIndex = 24;
             this.btn_Them.Text = "Thêm User";
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
@@ -124,64 +127,72 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Location = new System.Drawing.Point(303, 135);
+            this.labelControl4.Location = new System.Drawing.Point(353, 166);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(66, 13);
+            this.labelControl4.Size = new System.Drawing.Size(82, 17);
             this.labelControl4.TabIndex = 22;
             this.labelControl4.Text = "Phân quyền";
             // 
             // txt_TenDangNhap
             // 
-            this.txt_TenDangNhap.Location = new System.Drawing.Point(102, 132);
+            this.txt_TenDangNhap.Location = new System.Drawing.Point(119, 162);
+            this.txt_TenDangNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_TenDangNhap.Name = "txt_TenDangNhap";
-            this.txt_TenDangNhap.Size = new System.Drawing.Size(157, 20);
+            this.txt_TenDangNhap.Size = new System.Drawing.Size(183, 22);
             this.txt_TenDangNhap.TabIndex = 21;
             // 
             // txt_TenUser
             // 
-            this.txt_TenUser.Location = new System.Drawing.Point(102, 94);
+            this.txt_TenUser.Location = new System.Drawing.Point(119, 116);
+            this.txt_TenUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_TenUser.Name = "txt_TenUser";
             this.txt_TenUser.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenUser.Properties.Appearance.ForeColor = System.Drawing.Color.Purple;
             this.txt_TenUser.Properties.Appearance.Options.UseFont = true;
             this.txt_TenUser.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_TenUser.Size = new System.Drawing.Size(157, 20);
+            this.txt_TenUser.Size = new System.Drawing.Size(183, 24);
             this.txt_TenUser.TabIndex = 20;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(17, 135);
+            this.labelControl3.Location = new System.Drawing.Point(20, 166);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(83, 13);
+            this.labelControl3.Size = new System.Drawing.Size(104, 17);
             this.labelControl3.TabIndex = 19;
             this.labelControl3.Text = "Tên đăng nhập";
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(303, 97);
+            this.labelControl2.Location = new System.Drawing.Point(353, 119);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(54, 13);
+            this.labelControl2.Size = new System.Drawing.Size(67, 17);
             this.labelControl2.TabIndex = 18;
             this.labelControl2.Text = "Password";
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(17, 97);
+            this.labelControl1.Location = new System.Drawing.Point(20, 119);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(50, 13);
+            this.labelControl1.Size = new System.Drawing.Size(61, 17);
             this.labelControl1.TabIndex = 17;
             this.labelControl1.Text = "Tên User";
             // 
             // gridControl_QuanlyUser
             // 
             this.gridControl_QuanlyUser.DataSource = this.userBindingSource;
-            this.gridControl_QuanlyUser.Location = new System.Drawing.Point(84, 279);
+            this.gridControl_QuanlyUser.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControl_QuanlyUser.Location = new System.Drawing.Point(98, 343);
             this.gridControl_QuanlyUser.MainView = this.gridView1;
+            this.gridControl_QuanlyUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl_QuanlyUser.Name = "gridControl_QuanlyUser";
-            this.gridControl_QuanlyUser.Size = new System.Drawing.Size(978, 200);
+            this.gridControl_QuanlyUser.Size = new System.Drawing.Size(1141, 246);
             this.gridControl_QuanlyUser.TabIndex = 30;
             this.gridControl_QuanlyUser.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -208,6 +219,7 @@
             this.colLive});
             this.gridView1.GridControl = this.gridControl_QuanlyUser;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colTenDangNhap
@@ -264,36 +276,41 @@
             this.groupBox1.Controls.Add(this.labelControl3);
             this.groupBox1.Controls.Add(this.labelControl2);
             this.groupBox1.Controls.Add(this.labelControl1);
-            this.groupBox1.Location = new System.Drawing.Point(345, 22);
+            this.groupBox1.Location = new System.Drawing.Point(402, 27);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(560, 188);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(653, 231);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User";
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(380, 94);
+            this.txt_Password.Location = new System.Drawing.Point(443, 116);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(157, 21);
+            this.txt_Password.Size = new System.Drawing.Size(182, 23);
             this.txt_Password.TabIndex = 30;
             // 
             // cb_TenNhanVien
             // 
             this.cb_TenNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_TenNhanVien.FormattingEnabled = true;
-            this.cb_TenNhanVien.Location = new System.Drawing.Point(102, 56);
+            this.cb_TenNhanVien.Location = new System.Drawing.Point(119, 69);
+            this.cb_TenNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_TenNhanVien.Name = "cb_TenNhanVien";
-            this.cb_TenNhanVien.Size = new System.Drawing.Size(157, 21);
+            this.cb_TenNhanVien.Size = new System.Drawing.Size(182, 24);
             this.cb_TenNhanVien.TabIndex = 29;
             this.cb_TenNhanVien.SelectedIndexChanged += new System.EventHandler(this.cb_TenNhanVien_SelectedIndexChanged);
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Location = new System.Drawing.Point(17, 59);
+            this.labelControl5.Location = new System.Drawing.Point(20, 73);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(55, 13);
+            this.labelControl5.Size = new System.Drawing.Size(71, 17);
             this.labelControl5.TabIndex = 22;
             this.labelControl5.Text = "Nhân Viên";
             // 
@@ -301,24 +318,13 @@
             // 
             this.userTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(308, 250);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
-            // 
             // QuanLyUser
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 491);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1335, 604);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControl_QuanlyUser);
             this.Controls.Add(this.btn_ResetThongTin);
@@ -326,6 +332,7 @@
             this.Controls.Add(this.btn_XemChiTiet);
             this.Controls.Add(this.btn_Xoa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QuanLyUser";
             this.Text = "QuanLyUser";
             this.Load += new System.EventHandler(this.QuanLyUser_Load);
@@ -337,7 +344,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,7 +375,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPhanQuyen;
         private DevExpress.XtraGrid.Columns.GridColumn colTenUser;
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_Password;
     }
 }
