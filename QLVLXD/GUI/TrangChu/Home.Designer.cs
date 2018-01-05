@@ -44,10 +44,10 @@
             // 
             // TMUAHANG
             // 
-            this.TMUAHANG.Location = new System.Drawing.Point(620, 349);
-            this.TMUAHANG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TMUAHANG.Image = global::QLVLXD.Properties.Resources.pie_chart_5122;
+            this.TMUAHANG.Location = new System.Drawing.Point(612, 310);
             this.TMUAHANG.Name = "TMUAHANG";
-            this.TMUAHANG.Size = new System.Drawing.Size(192, 191);
+            this.TMUAHANG.Size = new System.Drawing.Size(165, 155);
             this.TMUAHANG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TMUAHANG.TabIndex = 0;
             this.TMUAHANG.TabStop = false;
@@ -55,10 +55,10 @@
             // 
             // TBANHANG
             // 
-            this.TBANHANG.Location = new System.Drawing.Point(46, 349);
-            this.TBANHANG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TBANHANG.Image = global::QLVLXD.Properties.Resources.piechart;
+            this.TBANHANG.Location = new System.Drawing.Point(120, 310);
             this.TBANHANG.Name = "TBANHANG";
-            this.TBANHANG.Size = new System.Drawing.Size(192, 191);
+            this.TBANHANG.Size = new System.Drawing.Size(165, 155);
             this.TBANHANG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TBANHANG.TabIndex = 0;
             this.TBANHANG.TabStop = false;
@@ -66,10 +66,10 @@
             // 
             // MUAHANG
             // 
-            this.MUAHANG.Location = new System.Drawing.Point(620, 38);
-            this.MUAHANG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MUAHANG.Image = global::QLVLXD.Properties.Resources.mua;
+            this.MUAHANG.Location = new System.Drawing.Point(612, 58);
             this.MUAHANG.Name = "MUAHANG";
-            this.MUAHANG.Size = new System.Drawing.Size(192, 191);
+            this.MUAHANG.Size = new System.Drawing.Size(165, 155);
             this.MUAHANG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MUAHANG.TabIndex = 0;
             this.MUAHANG.TabStop = false;
@@ -77,10 +77,10 @@
             // 
             // BANHANG
             // 
-            this.BANHANG.Location = new System.Drawing.Point(46, 38);
-            this.BANHANG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BANHANG.Image = global::QLVLXD.Properties.Resources.banhang;
+            this.BANHANG.Location = new System.Drawing.Point(120, 58);
             this.BANHANG.Name = "BANHANG";
-            this.BANHANG.Size = new System.Drawing.Size(192, 191);
+            this.BANHANG.Size = new System.Drawing.Size(165, 155);
             this.BANHANG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BANHANG.TabIndex = 0;
             this.BANHANG.TabStop = false;
@@ -91,9 +91,9 @@
             this.LB_BANHANG.AutoSize = true;
             this.LB_BANHANG.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_BANHANG.ForeColor = System.Drawing.Color.Gray;
-            this.LB_BANHANG.Location = new System.Drawing.Point(264, 111);
+            this.LB_BANHANG.Location = new System.Drawing.Point(307, 117);
             this.LB_BANHANG.Name = "LB_BANHANG";
-            this.LB_BANHANG.Size = new System.Drawing.Size(178, 36);
+            this.LB_BANHANG.Size = new System.Drawing.Size(142, 29);
             this.LB_BANHANG.TabIndex = 1;
             this.LB_BANHANG.Text = "BÁN HÀNG";
             this.LB_BANHANG.Click += new System.EventHandler(this.LB_BANHANG_Click);
@@ -103,9 +103,9 @@
             this.LB_TBANHANG.AutoSize = true;
             this.LB_TBANHANG.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_TBANHANG.ForeColor = System.Drawing.Color.Gray;
-            this.LB_TBANHANG.Location = new System.Drawing.Point(264, 427);
+            this.LB_TBANHANG.Location = new System.Drawing.Point(307, 374);
             this.LB_TBANHANG.Name = "LB_TBANHANG";
-            this.LB_TBANHANG.Size = new System.Drawing.Size(344, 36);
+            this.LB_TBANHANG.Size = new System.Drawing.Size(276, 29);
             this.LB_TBANHANG.TabIndex = 1;
             this.LB_TBANHANG.Text = "THỐNG KÊ BÁN HÀNG";
             this.LB_TBANHANG.Click += new System.EventHandler(this.LB_TBANHANG_Click);
@@ -115,9 +115,9 @@
             this.LB_TMUAHANG.AutoSize = true;
             this.LB_TMUAHANG.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_TMUAHANG.ForeColor = System.Drawing.Color.Gray;
-            this.LB_TMUAHANG.Location = new System.Drawing.Point(836, 427);
+            this.LB_TMUAHANG.Location = new System.Drawing.Point(797, 374);
             this.LB_TMUAHANG.Name = "LB_TMUAHANG";
-            this.LB_TMUAHANG.Size = new System.Drawing.Size(349, 36);
+            this.LB_TMUAHANG.Size = new System.Drawing.Size(280, 29);
             this.LB_TMUAHANG.TabIndex = 1;
             this.LB_TMUAHANG.Text = "THỐNG KÊ MUA HÀNG";
             this.LB_TMUAHANG.Click += new System.EventHandler(this.LB_TMUAHANG_Click);
@@ -127,9 +127,9 @@
             this.LB_MUAHANG.AutoSize = true;
             this.LB_MUAHANG.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_MUAHANG.ForeColor = System.Drawing.Color.Gray;
-            this.LB_MUAHANG.Location = new System.Drawing.Point(836, 111);
+            this.LB_MUAHANG.Location = new System.Drawing.Point(797, 117);
             this.LB_MUAHANG.Name = "LB_MUAHANG";
-            this.LB_MUAHANG.Size = new System.Drawing.Size(183, 36);
+            this.LB_MUAHANG.Size = new System.Drawing.Size(146, 29);
             this.LB_MUAHANG.TabIndex = 1;
             this.LB_MUAHANG.Text = "MUA HÀNG";
             this.LB_MUAHANG.Click += new System.EventHandler(this.LB_MUAHANG_Click);
@@ -138,9 +138,9 @@
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 574);
+            this.ClientSize = new System.Drawing.Size(1160, 530);
             this.Controls.Add(this.LB_MUAHANG);
             this.Controls.Add(this.LB_TMUAHANG);
             this.Controls.Add(this.LB_TBANHANG);
@@ -150,7 +150,6 @@
             this.Controls.Add(this.MUAHANG);
             this.Controls.Add(this.BANHANG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Home";
             this.Text = "V";
             ((System.ComponentModel.ISupportInitialize)(this.TMUAHANG)).EndInit();

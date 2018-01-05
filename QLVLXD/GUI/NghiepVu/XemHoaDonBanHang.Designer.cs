@@ -353,7 +353,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(740, 41);
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.icon;
+            this.pictureBox1.Location = new System.Drawing.Point(744, 38);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 256);
@@ -666,6 +667,7 @@
             this.btn_XoaHoaDon.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_XoaHoaDon.Appearance.Options.UseFont = true;
             this.btn_XoaHoaDon.Appearance.Options.UseForeColor = true;
+            this.btn_XoaHoaDon.Image = global::QLVLXD.Properties.Resources.Delete_icon___Copy;
             this.btn_XoaHoaDon.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_XoaHoaDon.Location = new System.Drawing.Point(28, 150);
             this.btn_XoaHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

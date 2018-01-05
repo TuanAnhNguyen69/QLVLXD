@@ -107,6 +107,7 @@
             this.colLive2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cTHoaDonMuaHangTableAdapter1 = new QLVLXD.QLVLXDDataSet10TableAdapters.CTHoaDonMuaHangTableAdapter();
             this.vatLieuTableAdapter1 = new QLVLXD.QLVLXDDataSet12TableAdapters.VatLieuTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lb_TenNhanVien = new DevExpress.XtraEditors.LabelControl();
             this.lb_TenNCC = new DevExpress.XtraEditors.LabelControl();
             this.grid_DanhSachVatLieuCuaHang = new DevExpress.XtraGrid.GridControl();
@@ -128,7 +129,6 @@
             this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vatLieuTableAdapter2 = new QLVLXD.QLVLXDDataSet23TableAdapters.VatLieuTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.te_TimKiemHDMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_TimKiemVatLieuTrongHoaDon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_TimKiemVatLieu.Properties)).BeginInit();
@@ -156,11 +156,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonMuaHangBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DanhSachVatLieuCuaHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_XoaTimKiemHDMH
@@ -200,10 +200,10 @@
             // 
             // te_TimKiemVatLieuTrongHoaDon
             // 
-            this.te_TimKiemVatLieuTrongHoaDon.Location = new System.Drawing.Point(923, 271);
+            this.te_TimKiemVatLieuTrongHoaDon.Location = new System.Drawing.Point(904, 271);
             this.te_TimKiemVatLieuTrongHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.te_TimKiemVatLieuTrongHoaDon.Name = "te_TimKiemVatLieuTrongHoaDon";
-            this.te_TimKiemVatLieuTrongHoaDon.Size = new System.Drawing.Size(372, 22);
+            this.te_TimKiemVatLieuTrongHoaDon.Size = new System.Drawing.Size(391, 22);
             this.te_TimKiemVatLieuTrongHoaDon.TabIndex = 157;
             this.te_TimKiemVatLieuTrongHoaDon.EditValueChanged += new System.EventHandler(this.te_TimKiemVatLieuTrongHoaDon_EditValueChanged);
             // 
@@ -802,6 +802,17 @@
             // 
             this.vatLieuTableAdapter1.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.palet03;
+            this.pictureBox1.Location = new System.Drawing.Point(481, 114);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 164;
+            this.pictureBox1.TabStop = false;
+            // 
             // lb_TenNhanVien
             // 
             this.lb_TenNhanVien.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -953,14 +964,6 @@
             // 
             this.vatLieuTableAdapter2.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(461, 108);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 152);
-            this.pictureBox1.TabIndex = 166;
-            this.pictureBox1.TabStop = false;
-            // 
             // HoaDonMuaHang
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -968,7 +971,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 652);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grid_DanhSachVatLieuCuaHang);
             this.Controls.Add(this.grid_DanhSachVatLieuHoaDon);
             this.Controls.Add(this.grid_DanhSachHoaDonMuaHang);
@@ -1002,6 +1004,7 @@
             this.Controls.Add(this.btn_AddVatLieu);
             this.Controls.Add(this.btn_DeleteVatLieu);
             this.Controls.Add(this.btn_Them);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Xoa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1037,11 +1040,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonMuaHangBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DanhSachVatLieuCuaHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1126,6 +1129,7 @@
         private QLVLXDDataSet12 qLVLXDDataSet12;
         private System.Windows.Forms.BindingSource vatLieuBindingSource1;
         private QLVLXDDataSet12TableAdapters.VatLieuTableAdapter vatLieuTableAdapter1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.LabelControl lb_TenNhanVien;
         private DevExpress.XtraEditors.LabelControl lb_TenNCC;
         private DevExpress.XtraGrid.GridControl grid_DanhSachVatLieuCuaHang;
@@ -1147,6 +1151,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSoLuongToiThieu;
         private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

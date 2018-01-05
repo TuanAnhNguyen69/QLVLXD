@@ -112,6 +112,7 @@
             this.btn_XoaHoaDon.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_XoaHoaDon.Appearance.Options.UseFont = true;
             this.btn_XoaHoaDon.Appearance.Options.UseForeColor = true;
+            this.btn_XoaHoaDon.Image = global::QLVLXD.Properties.Resources.Delete_icon___Copy;
             this.btn_XoaHoaDon.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_XoaHoaDon.Location = new System.Drawing.Point(28, 150);
             this.btn_XoaHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -305,7 +306,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(755, 35);
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.MediaBuying_graphic;
+            this.pictureBox1.Location = new System.Drawing.Point(746, 25);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 256);
@@ -422,7 +424,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1357, 652);
+            this.ClientSize = new System.Drawing.Size(1353, 652);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);

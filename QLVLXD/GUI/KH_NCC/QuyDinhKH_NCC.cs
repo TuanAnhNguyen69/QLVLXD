@@ -134,10 +134,5 @@ namespace QLVLXD.GUI.KH_NCC
                 MessageBox.Show("Vui lòng chọn loại khách hàng để xóa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void grid_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
