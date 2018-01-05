@@ -129,6 +129,7 @@ namespace QLVLXD
             {
                 frm_vatlieu = new VatLieu();
                 this.addTabPage(frm_vatlieu, TitleTab[(int)E_FORM.VATLIEU]);
+                frm_vatlieu.mainform = this;    
             }
         }
 
@@ -269,6 +270,7 @@ namespace QLVLXD
             else
             {
                 frm_tiente = new GUI.NghiepVu.TienTeDonViTinhLoaiVatLieu();
+                frm_tiente.mainform = this;
                 this.addTabPage(frm_tiente, TitleTab[(int)E_FORM.TIENTE]);                
             }
         }

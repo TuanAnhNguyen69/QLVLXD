@@ -128,6 +128,7 @@
             this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vatLieuTableAdapter2 = new QLVLXD.QLVLXDDataSet23TableAdapters.VatLieuTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.te_TimKiemHDMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_TimKiemVatLieuTrongHoaDon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_TimKiemVatLieu.Properties)).BeginInit();
@@ -159,6 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_XoaTimKiemHDMH
@@ -198,10 +200,10 @@
             // 
             // te_TimKiemVatLieuTrongHoaDon
             // 
-            this.te_TimKiemVatLieuTrongHoaDon.Location = new System.Drawing.Point(904, 271);
+            this.te_TimKiemVatLieuTrongHoaDon.Location = new System.Drawing.Point(923, 271);
             this.te_TimKiemVatLieuTrongHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.te_TimKiemVatLieuTrongHoaDon.Name = "te_TimKiemVatLieuTrongHoaDon";
-            this.te_TimKiemVatLieuTrongHoaDon.Size = new System.Drawing.Size(391, 22);
+            this.te_TimKiemVatLieuTrongHoaDon.Size = new System.Drawing.Size(372, 22);
             this.te_TimKiemVatLieuTrongHoaDon.TabIndex = 157;
             this.te_TimKiemVatLieuTrongHoaDon.EditValueChanged += new System.EventHandler(this.te_TimKiemVatLieuTrongHoaDon_EditValueChanged);
             // 
@@ -951,6 +953,14 @@
             // 
             this.vatLieuTableAdapter2.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(461, 108);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(148, 152);
+            this.pictureBox1.TabIndex = 166;
+            this.pictureBox1.TabStop = false;
+            // 
             // HoaDonMuaHang
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -958,6 +968,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 652);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grid_DanhSachVatLieuCuaHang);
             this.Controls.Add(this.grid_DanhSachVatLieuHoaDon);
             this.Controls.Add(this.grid_DanhSachHoaDonMuaHang);
@@ -1030,6 +1041,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1135,5 +1147,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSoLuongToiThieu;
         private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

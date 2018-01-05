@@ -68,12 +68,13 @@
             this.btn_XoaDVT.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_XoaDVT.Appearance.Options.UseFont = true;
             this.btn_XoaDVT.Appearance.Options.UseForeColor = true;
-            this.btn_XoaDVT.Location = new System.Drawing.Point(545, 480);
+            this.btn_XoaDVT.Location = new System.Drawing.Point(803, 519);
             this.btn_XoaDVT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_XoaDVT.Name = "btn_XoaDVT";
             this.btn_XoaDVT.Size = new System.Drawing.Size(37, 28);
             this.btn_XoaDVT.TabIndex = 88;
             this.btn_XoaDVT.Text = "-";
+            this.btn_XoaDVT.Click += new System.EventHandler(this.btn_XoaDVT_Click);
             // 
             // btn_ThemDVT
             // 
@@ -81,22 +82,23 @@
             this.btn_ThemDVT.Appearance.ForeColor = System.Drawing.Color.Green;
             this.btn_ThemDVT.Appearance.Options.UseFont = true;
             this.btn_ThemDVT.Appearance.Options.UseForeColor = true;
-            this.btn_ThemDVT.Location = new System.Drawing.Point(501, 480);
+            this.btn_ThemDVT.Location = new System.Drawing.Point(759, 519);
             this.btn_ThemDVT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ThemDVT.Name = "btn_ThemDVT";
             this.btn_ThemDVT.Size = new System.Drawing.Size(37, 28);
             this.btn_ThemDVT.TabIndex = 86;
             this.btn_ThemDVT.Text = "+";
+            this.btn_ThemDVT.Click += new System.EventHandler(this.btn_ThemDVT_Click);
             // 
             // grid_DVT
             // 
             this.grid_DVT.DataSource = this.quanLyDonViTinhBindingSource;
             this.grid_DVT.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grid_DVT.Location = new System.Drawing.Point(7, 107);
+            this.grid_DVT.Location = new System.Drawing.Point(268, 25);
             this.grid_DVT.MainView = this.gridView3;
             this.grid_DVT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grid_DVT.Name = "grid_DVT";
-            this.grid_DVT.Size = new System.Drawing.Size(1298, 340);
+            this.grid_DVT.Size = new System.Drawing.Size(854, 479);
             this.grid_DVT.TabIndex = 82;
             this.grid_DVT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -145,7 +147,7 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(10, 487);
+            this.labelControl18.Location = new System.Drawing.Point(268, 526);
             this.labelControl18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(97, 17);
@@ -154,7 +156,7 @@
             // 
             // tb_DonViTinh
             // 
-            this.tb_DonViTinh.Location = new System.Drawing.Point(118, 484);
+            this.tb_DonViTinh.Location = new System.Drawing.Point(376, 523);
             this.tb_DonViTinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_DonViTinh.Name = "tb_DonViTinh";
             this.tb_DonViTinh.Size = new System.Drawing.Size(377, 22);
@@ -183,18 +185,17 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1311, 553);
+            this.groupBox2.Size = new System.Drawing.Size(1129, 553);
             this.groupBox2.TabIndex = 100;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản Lý Đơn Vị Tính";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::QLVLXD.Properties.Resources.unnamed;
-            this.pictureBox2.Location = new System.Drawing.Point(155, 16);
+            this.pictureBox2.Location = new System.Drawing.Point(6, 117);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(131, 92);
+            this.pictureBox2.Size = new System.Drawing.Size(256, 256);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 89;
             this.pictureBox2.TabStop = false;
@@ -227,12 +228,13 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1335, 604);
+            this.ClientSize = new System.Drawing.Size(1141, 575);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TienTeDonViTinhLoaiVatLieu";
             this.Text = "TienTeDonViTinhLoaiVatLieu";
+            this.Load += new System.EventHandler(this.TienTeDonViTinhLoaiVatLieu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_DVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDonViTinhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet14)).EndInit();

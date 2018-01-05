@@ -94,20 +94,20 @@
             this.btn_Loc.Appearance.ForeColor = System.Drawing.Color.Orange;
             this.btn_Loc.Appearance.Options.UseFont = true;
             this.btn_Loc.Appearance.Options.UseForeColor = true;
-            this.btn_Loc.Location = new System.Drawing.Point(974, 41);
+            this.btn_Loc.Location = new System.Drawing.Point(753, 12);
             this.btn_Loc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Loc.Name = "btn_Loc";
-            this.btn_Loc.Size = new System.Drawing.Size(114, 60);
+            this.btn_Loc.Size = new System.Drawing.Size(97, 60);
             this.btn_Loc.TabIndex = 103;
             this.btn_Loc.Text = "Lọc";
             this.btn_Loc.Click += new System.EventHandler(this.btn_Loc_Click);
             // 
             // btn_Reset
             // 
-            this.btn_Reset.Location = new System.Drawing.Point(1095, 41);
+            this.btn_Reset.Location = new System.Drawing.Point(857, 12);
             this.btn_Reset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Reset.Name = "btn_Reset";
-            this.btn_Reset.Size = new System.Drawing.Size(73, 64);
+            this.btn_Reset.Size = new System.Drawing.Size(91, 60);
             this.btn_Reset.TabIndex = 102;
             this.btn_Reset.Text = "Reset";
             this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
@@ -120,7 +120,7 @@
             this.groupBox10.Controls.Add(this.rb_TongTien);
             this.groupBox10.Controls.Add(this.rl_TongTien);
             this.groupBox10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(756, 108);
+            this.groupBox10.Location = new System.Drawing.Point(535, 79);
             this.groupBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -195,7 +195,7 @@
             // 
             this.groupBox4.Controls.Add(this.cb_TenNCC);
             this.groupBox4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(756, 41);
+            this.groupBox4.Location = new System.Drawing.Point(535, 12);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -218,7 +218,7 @@
             // 
             this.groupBox5.Controls.Add(this.cb_TenNhanVien);
             this.groupBox5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(533, 41);
+            this.groupBox5.Location = new System.Drawing.Point(312, 12);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -245,7 +245,7 @@
             this.groupBox1.Controls.Add(this.rb_NgayLap);
             this.groupBox1.Controls.Add(this.rl_NgayLap);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(533, 108);
+            this.groupBox1.Location = new System.Drawing.Point(312, 79);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -316,7 +316,7 @@
             // 
             this.btn_XemChiTietHoaDon.Appearance.ForeColor = System.Drawing.Color.Green;
             this.btn_XemChiTietHoaDon.Appearance.Options.UseForeColor = true;
-            this.btn_XemChiTietHoaDon.Location = new System.Drawing.Point(533, 251);
+            this.btn_XemChiTietHoaDon.Location = new System.Drawing.Point(312, 255);
             this.btn_XemChiTietHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_XemChiTietHoaDon.Name = "btn_XemChiTietHoaDon";
             this.btn_XemChiTietHoaDon.Size = new System.Drawing.Size(139, 32);
@@ -328,7 +328,7 @@
             // 
             this.btn_XoaHoaDon.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.btn_XoaHoaDon.Appearance.Options.UseForeColor = true;
-            this.btn_XoaHoaDon.Location = new System.Drawing.Point(679, 251);
+            this.btn_XoaHoaDon.Location = new System.Drawing.Point(458, 255);
             this.btn_XoaHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_XoaHoaDon.Name = "btn_XoaHoaDon";
             this.btn_XoaHoaDon.Size = new System.Drawing.Size(92, 32);
@@ -338,7 +338,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(89, 267);
+            this.labelControl3.Location = new System.Drawing.Point(10, 273);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(79, 17);
@@ -347,7 +347,7 @@
             // 
             // lb_SoHoaDon
             // 
-            this.lb_SoHoaDon.Location = new System.Drawing.Point(167, 267);
+            this.lb_SoHoaDon.Location = new System.Drawing.Point(90, 273);
             this.lb_SoHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_SoHoaDon.Name = "lb_SoHoaDon";
             this.lb_SoHoaDon.Size = new System.Drawing.Size(81, 17);
@@ -358,11 +358,11 @@
             // 
             this.grid.DataSource = this.hoaDonMuaHangBindingSource;
             this.grid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grid.Location = new System.Drawing.Point(89, 290);
+            this.grid.Location = new System.Drawing.Point(9, 295);
             this.grid.MainView = this.gridView1;
             this.grid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(1080, 321);
+            this.grid.Size = new System.Drawing.Size(939, 369);
             this.grid.TabIndex = 110;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -468,7 +468,7 @@
             this.groupBox2.Controls.Add(this.rb_SoVatLieu);
             this.groupBox2.Controls.Add(this.rl_SoVatLieu);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(974, 108);
+            this.groupBox2.Location = new System.Drawing.Point(753, 79);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -541,7 +541,7 @@
             // 
             // btn_In
             // 
-            this.btn_In.Location = new System.Drawing.Point(1114, 251);
+            this.btn_In.Location = new System.Drawing.Point(888, 251);
             this.btn_In.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_In.Name = "btn_In";
             this.btn_In.Size = new System.Drawing.Size(57, 37);
@@ -551,7 +551,7 @@
             // 
             // btn_XuatFile
             // 
-            this.btn_XuatFile.Location = new System.Drawing.Point(1035, 251);
+            this.btn_XuatFile.Location = new System.Drawing.Point(810, 252);
             this.btn_XuatFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_XuatFile.Name = "btn_XuatFile";
             this.btn_XuatFile.Size = new System.Drawing.Size(72, 37);
@@ -561,7 +561,7 @@
             // 
             // tb_TenThongKe
             // 
-            this.tb_TenThongKe.Location = new System.Drawing.Point(860, 258);
+            this.tb_TenThongKe.Location = new System.Drawing.Point(623, 263);
             this.tb_TenThongKe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_TenThongKe.Name = "tb_TenThongKe";
             this.tb_TenThongKe.Size = new System.Drawing.Size(167, 23);
@@ -569,7 +569,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(860, 235);
+            this.labelControl2.Location = new System.Drawing.Point(623, 238);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(86, 17);
@@ -582,7 +582,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 652);
+            this.ClientSize = new System.Drawing.Size(953, 669);
             this.Controls.Add(this.tb_TenThongKe);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.grid);

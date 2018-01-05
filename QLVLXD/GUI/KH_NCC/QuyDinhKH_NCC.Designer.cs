@@ -52,6 +52,7 @@
             this.colPhanTramGiam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grid = new DevExpress.XtraGrid.GridControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tb_TenLoaiKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_TriGiaHoaDonToiThieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_PhanTramGiam)).BeginInit();
@@ -60,6 +61,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Xoa
@@ -68,9 +70,9 @@
             this.btn_Xoa.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_Xoa.Appearance.Options.UseFont = true;
             this.btn_Xoa.Appearance.Options.UseForeColor = true;
-            this.btn_Xoa.Location = new System.Drawing.Point(1045, 328);
+            this.btn_Xoa.Location = new System.Drawing.Point(972, 324);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(82, 79);
+            this.btn_Xoa.Size = new System.Drawing.Size(89, 79);
             this.btn_Xoa.TabIndex = 87;
             this.btn_Xoa.Text = "-";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
@@ -81,7 +83,7 @@
             this.btn_Them.Appearance.ForeColor = System.Drawing.Color.Green;
             this.btn_Them.Appearance.Options.UseFont = true;
             this.btn_Them.Appearance.Options.UseForeColor = true;
-            this.btn_Them.Location = new System.Drawing.Point(947, 328);
+            this.btn_Them.Location = new System.Drawing.Point(874, 324);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(92, 79);
             this.btn_Them.TabIndex = 85;
@@ -98,13 +100,13 @@
             // 
             // tb_TenLoaiKH
             // 
-            this.tb_TenLoaiKH.Location = new System.Drawing.Point(190, 36);
+            this.tb_TenLoaiKH.Location = new System.Drawing.Point(160, 35);
             this.tb_TenLoaiKH.Name = "tb_TenLoaiKH";
             this.tb_TenLoaiKH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_TenLoaiKH.Properties.Appearance.ForeColor = System.Drawing.Color.Purple;
             this.tb_TenLoaiKH.Properties.Appearance.Options.UseFont = true;
             this.tb_TenLoaiKH.Properties.Appearance.Options.UseForeColor = true;
-            this.tb_TenLoaiKH.Size = new System.Drawing.Size(456, 24);
+            this.tb_TenLoaiKH.Size = new System.Drawing.Size(422, 24);
             this.tb_TenLoaiKH.TabIndex = 75;
             // 
             // labelControl2
@@ -125,36 +127,36 @@
             // 
             // btn_Reset
             // 
-            this.btn_Reset.Location = new System.Drawing.Point(947, 417);
+            this.btn_Reset.Location = new System.Drawing.Point(873, 430);
             this.btn_Reset.Name = "btn_Reset";
-            this.btn_Reset.Size = new System.Drawing.Size(180, 46);
+            this.btn_Reset.Size = new System.Drawing.Size(187, 65);
             this.btn_Reset.TabIndex = 99;
             this.btn_Reset.Text = "Reset";
             // 
             // num_TriGiaHoaDonToiThieu
             // 
-            this.num_TriGiaHoaDonToiThieu.Location = new System.Drawing.Point(190, 131);
+            this.num_TriGiaHoaDonToiThieu.Location = new System.Drawing.Point(160, 131);
             this.num_TriGiaHoaDonToiThieu.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.num_TriGiaHoaDonToiThieu.Name = "num_TriGiaHoaDonToiThieu";
-            this.num_TriGiaHoaDonToiThieu.Size = new System.Drawing.Size(454, 24);
+            this.num_TriGiaHoaDonToiThieu.Size = new System.Drawing.Size(422, 24);
             this.num_TriGiaHoaDonToiThieu.TabIndex = 98;
             this.num_TriGiaHoaDonToiThieu.ThousandsSeparator = true;
             // 
             // num_PhanTramGiam
             // 
             this.num_PhanTramGiam.DecimalPlaces = 1;
-            this.num_PhanTramGiam.Location = new System.Drawing.Point(190, 166);
+            this.num_PhanTramGiam.Location = new System.Drawing.Point(160, 166);
             this.num_PhanTramGiam.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.num_PhanTramGiam.Name = "num_PhanTramGiam";
-            this.num_PhanTramGiam.Size = new System.Drawing.Size(454, 24);
+            this.num_PhanTramGiam.Size = new System.Drawing.Size(422, 24);
             this.num_PhanTramGiam.TabIndex = 98;
             // 
             // loaiKhachHangBindingSource
@@ -180,9 +182,9 @@
             this.groupBox1.Controls.Add(this.tb_TenLoaiKH);
             this.groupBox1.Controls.Add(this.labelControl15);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(262, 289);
+            this.groupBox1.Location = new System.Drawing.Point(265, 305);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(657, 196);
+            this.groupBox1.Size = new System.Drawing.Size(588, 196);
             this.groupBox1.TabIndex = 102;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại khách hàng";
@@ -266,14 +268,22 @@
             // 
             this.grid.DataSource = this.loaiKhachHangBindingSource;
             this.grid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
-            this.grid.Location = new System.Drawing.Point(262, 12);
+            this.grid.Location = new System.Drawing.Point(12, 12);
             this.grid.MainView = this.gridView1;
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(1054, 265);
+            this.grid.Size = new System.Drawing.Size(1054, 251);
             this.grid.TabIndex = 101;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.grid.Click += new System.EventHandler(this.grid_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 269);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox1.TabIndex = 103;
+            this.pictureBox1.TabStop = false;
             // 
             // QuyDinhKH_NCC
             // 
@@ -282,7 +292,8 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 530);
+            this.ClientSize = new System.Drawing.Size(1072, 530);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.btn_Xoa);
@@ -302,6 +313,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,5 +342,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPhanTramGiam;
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
         private DevExpress.XtraGrid.GridControl grid;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

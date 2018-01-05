@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(402, 324);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 29);
@@ -57,7 +57,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(400, 381);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(213, 29);
@@ -68,7 +68,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(398, 432);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(260, 29);
@@ -79,7 +79,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(399, 485);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(194, 29);
@@ -141,7 +141,7 @@
             // 
             this.lb_CapNhat.AutoSize = true;
             this.lb_CapNhat.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_CapNhat.ForeColor = System.Drawing.Color.White;
+            this.lb_CapNhat.ForeColor = System.Drawing.Color.SeaShell;
             this.lb_CapNhat.Location = new System.Drawing.Point(651, 540);
             this.lb_CapNhat.Name = "lb_CapNhat";
             this.lb_CapNhat.Size = new System.Drawing.Size(136, 29);
@@ -153,7 +153,7 @@
             // 
             this.lb_Thoat.AutoSize = true;
             this.lb_Thoat.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Thoat.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_Thoat.ForeColor = System.Drawing.Color.MistyRose;
             this.lb_Thoat.Location = new System.Drawing.Point(811, 540);
             this.lb_Thoat.Name = "lb_Thoat";
             this.lb_Thoat.Size = new System.Drawing.Size(95, 29);
@@ -163,11 +163,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.update_icon_66436;
             this.pictureBox1.Location = new System.Drawing.Point(574, 36);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 190);
+            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
