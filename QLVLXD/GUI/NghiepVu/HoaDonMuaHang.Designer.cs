@@ -118,8 +118,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonMuaHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_NgayMua.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_NgayMua.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_NgayMua.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonMuaHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonBanHangBindingSource)).BeginInit();
@@ -375,13 +375,18 @@
             // 
             // dt_NgayMua
             // 
-            this.dt_NgayMua.EditValue = null;
             this.dt_NgayMua.Location = new System.Drawing.Point(128, 34);
             this.dt_NgayMua.Name = "dt_NgayMua";
+            // 
+            // 
+            // 
             this.dt_NgayMua.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dt_NgayMua.Properties.Appearance.Options.UseFont = true;
             this.dt_NgayMua.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            // 
+            // 
+            // 
             this.dt_NgayMua.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dt_NgayMua.Size = new System.Drawing.Size(151, 20);
@@ -702,6 +707,7 @@
             this.grid_DanhSachVatLieuCuaHang.TabIndex = 165;
             this.grid_DanhSachVatLieuCuaHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.grid_DanhSachVatLieuCuaHang.Click += new System.EventHandler(this.grid_DanhSachVatLieuCuaHang_Click);
             this.grid_DanhSachVatLieuCuaHang.MouseCaptureChanged += new System.EventHandler(this.grid_DanhSachVatLieuCuaHang_MouseCaptureChanged);
             // 
             // vatLieuBindingSource2

@@ -556,14 +556,14 @@ namespace QLVLXD.GUI
             {
                 lb_MaKH.Text = data.MaKH.Trim();
                 SetFormHoaDon();
-                var loai = _LoaiKhachHang.GetObjectFromID(data.MaKH.Trim());
+                var loai = _LoaiKhachHang.GetObjectFromID(data.MaLoaiKH.Trim());
                 if (loai == null)
                 {
                     _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(12000777));
                     return;
                 }
                 lb_LoaiKH.Text = loai.TenLoaiKH.Trim();
-                lb_HinhThucKM.Text = _LoaiKhachHang.GetKhuyenMai(data.MaLoaiKH).ToString();
+                //lb_HinhThucKM.Text = _LoaiKhachHang.GetKhuyenMai(data.MaLoaiKH).ToString();
                 {// Set tình trạng theo tên KH
                     if (cb_TenKhachHang.Text == "[Không Tên]")
                     {
@@ -867,6 +867,11 @@ namespace QLVLXD.GUI
                     mainform.ResetTab(mainform.IndexTabFormTenTab(E_FORM.BANHANG));
                     IsReset = false;
                 }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void labelControl15_Click(object sender, EventArgs e)

@@ -161,6 +161,9 @@
             // 
             this.tb_TenVatLieu.Location = new System.Drawing.Point(302, 19);
             this.tb_TenVatLieu.Name = "tb_TenVatLieu";
+            // 
+            // 
+            // 
             this.tb_TenVatLieu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_TenVatLieu.Properties.Appearance.Options.UseFont = true;
             this.tb_TenVatLieu.Size = new System.Drawing.Size(133, 20);
@@ -226,7 +229,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(12, 260);
+            this.labelControl9.Location = new System.Drawing.Point(935, 7);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(160, 13);
             this.labelControl9.TabIndex = 116;
@@ -270,6 +273,9 @@
             // 
             this.tb_GhiChu.Location = new System.Drawing.Point(302, 206);
             this.tb_GhiChu.Name = "tb_GhiChu";
+            // 
+            // 
+            // 
             this.tb_GhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_GhiChu.Properties.Appearance.Options.UseFont = true;
             this.tb_GhiChu.Size = new System.Drawing.Size(365, 20);
