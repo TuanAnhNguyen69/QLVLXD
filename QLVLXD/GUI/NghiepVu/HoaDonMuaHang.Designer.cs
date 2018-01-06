@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             this.btn_XoaTimKiemHDMH = new DevExpress.XtraEditors.SimpleButton();
             this.te_TimKiemHDMH = new DevExpress.XtraEditors.TextEdit();
             this.btn_XoaTimKiemVatLieuTrongHoaDon = new DevExpress.XtraEditors.SimpleButton();
@@ -54,6 +51,8 @@
             this.nud_SoLuong = new System.Windows.Forms.NumericUpDown();
             this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.hoaDonMuaHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hoaDonBanHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Them = new DevExpress.XtraEditors.SimpleButton();
             this.dt_NgayMua = new DevExpress.XtraEditors.DateEdit();
             this.lb_MaNV = new DevExpress.XtraEditors.LabelControl();
@@ -61,11 +60,15 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.vatLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lb_NgayMua = new DevExpress.XtraEditors.LabelControl();
             this.btn_AddVatLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btn_DeleteVatLieu = new DevExpress.XtraEditors.SimpleButton();
+            this.cTHoaDonMuaHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cTHoaDonBanHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grid_DanhSachHoaDonMuaHang = new DevExpress.XtraGrid.GridControl();
+            this.hoaDonMuaHangBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaHDMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayMua = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,7 +79,9 @@
             this.colSDTNCC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTongTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLive1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.vatLieuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.grid_DanhSachVatLieuHoaDon = new DevExpress.XtraGrid.GridControl();
+            this.cTHoaDonMuaHangBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaCTHDMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaHDMH1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,11 +91,11 @@
             this.colDonViTinh1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTongTien1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLive2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lb_TenNhanVien = new DevExpress.XtraEditors.LabelControl();
             this.lb_TenNCC = new DevExpress.XtraEditors.LabelControl();
             this.grid_DanhSachVatLieuCuaHang = new DevExpress.XtraGrid.GridControl();
-            this.hoaDonBanHangVatLieuDatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hoaDonBanHang_VatLieu_Dataset = new QLVLXD.HoaDonBanHang_VatLieu_Dataset();
+            this.vatLieuBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaVL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenVL = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -111,15 +116,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.te_TimKiemVatLieu.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonMuaHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_NgayMua.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_NgayMua.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonMuaHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonBanHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DanhSachHoaDonMuaHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonMuaHangBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DanhSachVatLieuHoaDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonMuaHangBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DanhSachVatLieuCuaHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHangVatLieuDatasetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHang_VatLieu_Dataset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -339,6 +352,14 @@
             this.labelControl5.TabIndex = 144;
             this.labelControl5.Text = "Danh sách vật liệu của cửa hàng:";
             // 
+            // hoaDonMuaHangBindingSource
+            // 
+            this.hoaDonMuaHangBindingSource.DataMember = "HoaDonMuaHang";
+            // 
+            // hoaDonBanHangBindingSource
+            // 
+            this.hoaDonBanHangBindingSource.DataMember = "HoaDonBanHang";
+            // 
             // btn_Them
             // 
             this.btn_Them.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -410,6 +431,10 @@
             this.labelControl2.TabIndex = 128;
             this.labelControl2.Text = "Ngày mua";
             // 
+            // vatLieuBindingSource
+            // 
+            this.vatLieuBindingSource.DataMember = "VatLieu";
+            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(9, 12);
@@ -446,8 +471,17 @@
             this.btn_DeleteVatLieu.Text = "<<";
             this.btn_DeleteVatLieu.Click += new System.EventHandler(this.btn_DeleteVatLieu_Click);
             // 
+            // cTHoaDonMuaHangBindingSource
+            // 
+            this.cTHoaDonMuaHangBindingSource.DataMember = "CTHoaDonMuaHang";
+            // 
+            // cTHoaDonBanHangBindingSource
+            // 
+            this.cTHoaDonBanHangBindingSource.DataMember = "CTHoaDonBanHang";
+            // 
             // grid_DanhSachHoaDonMuaHang
             // 
+            this.grid_DanhSachHoaDonMuaHang.DataSource = this.hoaDonMuaHangBindingSource1;
             this.grid_DanhSachHoaDonMuaHang.Location = new System.Drawing.Point(606, 28);
             this.grid_DanhSachHoaDonMuaHang.MainView = this.gridView3;
             this.grid_DanhSachHoaDonMuaHang.Name = "grid_DanhSachHoaDonMuaHang";
@@ -456,6 +490,10 @@
             this.grid_DanhSachHoaDonMuaHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             this.grid_DanhSachHoaDonMuaHang.MouseCaptureChanged += new System.EventHandler(this.grid_DanhSachHoaDonMuaHang_MouseCaptureChanged);
+            // 
+            // hoaDonMuaHangBindingSource1
+            // 
+            this.hoaDonMuaHangBindingSource1.DataMember = "HoaDonMuaHang";
             // 
             // gridView3
             // 
@@ -534,8 +572,13 @@
             this.colLive1.FieldName = "Live";
             this.colLive1.Name = "colLive1";
             // 
+            // vatLieuBindingSource1
+            // 
+            this.vatLieuBindingSource1.DataMember = "VatLieu";
+            // 
             // grid_DanhSachVatLieuHoaDon
             // 
+            this.grid_DanhSachVatLieuHoaDon.DataSource = this.cTHoaDonMuaHangBindingSource1;
             this.grid_DanhSachVatLieuHoaDon.Location = new System.Drawing.Point(606, 242);
             this.grid_DanhSachVatLieuHoaDon.MainView = this.gridView2;
             this.grid_DanhSachVatLieuHoaDon.Name = "grid_DanhSachVatLieuHoaDon";
@@ -543,6 +586,10 @@
             this.grid_DanhSachVatLieuHoaDon.TabIndex = 163;
             this.grid_DanhSachVatLieuHoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            // 
+            // cTHoaDonMuaHangBindingSource1
+            // 
+            this.cTHoaDonMuaHangBindingSource1.DataMember = "CTHoaDonMuaHang";
             // 
             // gridView2
             // 
@@ -615,6 +662,16 @@
             this.colLive2.FieldName = "Live";
             this.colLive2.Name = "colLive2";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.palet03;
+            this.pictureBox1.Location = new System.Drawing.Point(412, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(110, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 164;
+            this.pictureBox1.TabStop = false;
+            // 
             // lb_TenNhanVien
             // 
             this.lb_TenNhanVien.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -637,15 +694,7 @@
             // 
             // grid_DanhSachVatLieuCuaHang
             // 
-            this.grid_DanhSachVatLieuCuaHang.DataSource = this.hoaDonBanHangVatLieuDatasetBindingSource;
-            gridLevelNode2.RelationName = "FK_VatLieu_DonViTinhVatLieu";
-            gridLevelNode1.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
-            gridLevelNode1.RelationName = "DonViTinhVatLieu";
-            gridLevelNode3.RelationName = "VatLieu";
-            this.grid_DanhSachVatLieuCuaHang.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode3});
+            this.grid_DanhSachVatLieuCuaHang.DataSource = this.vatLieuBindingSource2;
             this.grid_DanhSachVatLieuCuaHang.Location = new System.Drawing.Point(10, 242);
             this.grid_DanhSachVatLieuCuaHang.MainView = this.gridView1;
             this.grid_DanhSachVatLieuCuaHang.Name = "grid_DanhSachVatLieuCuaHang";
@@ -655,15 +704,9 @@
             this.gridView1});
             this.grid_DanhSachVatLieuCuaHang.MouseCaptureChanged += new System.EventHandler(this.grid_DanhSachVatLieuCuaHang_MouseCaptureChanged);
             // 
-            // hoaDonBanHangVatLieuDatasetBindingSource
+            // vatLieuBindingSource2
             // 
-            this.hoaDonBanHangVatLieuDatasetBindingSource.DataSource = this.hoaDonBanHang_VatLieu_Dataset;
-            this.hoaDonBanHangVatLieuDatasetBindingSource.Position = 0;
-            // 
-            // hoaDonBanHang_VatLieu_Dataset
-            // 
-            this.hoaDonBanHang_VatLieu_Dataset.DataSetName = "HoaDonBanHang_VatLieu_Dataset";
-            this.hoaDonBanHang_VatLieu_Dataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.vatLieuBindingSource2.DataMember = "VatLieu";
             // 
             // gridView1
             // 
@@ -807,6 +850,7 @@
             this.Controls.Add(this.btn_AddVatLieu);
             this.Controls.Add(this.btn_DeleteVatLieu);
             this.Controls.Add(this.btn_Them);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Xoa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HoaDonMuaHang";
@@ -819,15 +863,23 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonMuaHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_NgayMua.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_NgayMua.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonMuaHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonBanHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DanhSachHoaDonMuaHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonMuaHangBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DanhSachVatLieuHoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonMuaHangBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DanhSachVatLieuCuaHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHangVatLieuDatasetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHang_VatLieu_Dataset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -857,6 +909,7 @@
         private System.Windows.Forms.NumericUpDown nud_SoLuong;
         private DevExpress.XtraEditors.SimpleButton btn_Xoa;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private System.Windows.Forms.BindingSource hoaDonBanHangBindingSource;
         private DevExpress.XtraEditors.SimpleButton btn_Them;
         private DevExpress.XtraEditors.DateEdit dt_NgayMua;
         private DevExpress.XtraEditors.LabelControl lb_MaNV;
@@ -864,12 +917,17 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private System.Windows.Forms.BindingSource vatLieuBindingSource;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl lb_NgayMua;
         private DevExpress.XtraEditors.SimpleButton btn_AddVatLieu;
         private DevExpress.XtraEditors.SimpleButton btn_DeleteVatLieu;
+        private System.Windows.Forms.BindingSource cTHoaDonBanHangBindingSource;
+        private System.Windows.Forms.BindingSource hoaDonMuaHangBindingSource;
+        private System.Windows.Forms.BindingSource cTHoaDonMuaHangBindingSource;
         private DevExpress.XtraGrid.GridControl grid_DanhSachHoaDonMuaHang;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private System.Windows.Forms.BindingSource hoaDonMuaHangBindingSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaHDMH;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayMua;
         private DevExpress.XtraGrid.Columns.GridColumn colMaNV;
@@ -881,6 +939,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLive1;
         private DevExpress.XtraGrid.GridControl grid_DanhSachVatLieuHoaDon;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.BindingSource cTHoaDonMuaHangBindingSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaCTHDMH;
         private DevExpress.XtraGrid.Columns.GridColumn colMaHDMH1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaVL1;
@@ -889,10 +948,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDonViTinh1;
         private DevExpress.XtraGrid.Columns.GridColumn colTongTien1;
         private DevExpress.XtraGrid.Columns.GridColumn colLive2;
+        private System.Windows.Forms.BindingSource vatLieuBindingSource1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.LabelControl lb_TenNhanVien;
         private DevExpress.XtraEditors.LabelControl lb_TenNCC;
         private DevExpress.XtraGrid.GridControl grid_DanhSachVatLieuCuaHang;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource vatLieuBindingSource2;
         private DevExpress.XtraGrid.Columns.GridColumn colMaVL;
         private DevExpress.XtraGrid.Columns.GridColumn colTenVL;
         private DevExpress.XtraGrid.Columns.GridColumn colMaNCC;
@@ -907,7 +969,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSoLuongToiThieu;
         private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
-        private System.Windows.Forms.BindingSource hoaDonBanHangVatLieuDatasetBindingSource;
-        private HoaDonBanHang_VatLieu_Dataset hoaDonBanHang_VatLieu_Dataset;
     }
 }

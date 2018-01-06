@@ -95,7 +95,7 @@ namespace QLVLXD.GUI.TrangChu
                     mainform.frm_login = this;                    
                     var nv = (new BLL_NhanVien()).GetObjectFromID(_Login.ReadNV());
                     var user = (new BLL_User()).GetObjectFromMaNV(nv.MaNV.Trim());
-                    string ten = user == null ? nv.TenNV.Trim() : user.TenUser.Trim();
+                    string ten = user == null ? nv.TenNV.Trim() : user.TenDangNhap.Trim();
                     mainform.Text = mainform.Text + " (" + ten + " - " + ((new BLL_User()).IsUser(nv.MaNV.Trim()) ? "User)" : "Admin)");
                     mainform._NhanVienLogining = nv;
                     mainform.Show();

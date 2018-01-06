@@ -16,7 +16,7 @@ namespace QLVLXD.BLL
 {
     class BLL_VatLieu : BLL
     {
-        public BLLResult CheckData(bool IsInsert, string MaVL, string TenVL, string MaNCC, decimal SoLuong, string DonviTinh, decimal GiaMua, decimal GiaLe, decimal GiaSi, decimal SoLuongBanSi, string MaTinhTrang, string MaKM, decimal SoLuongToiThieu, string GhiChu)
+        public BLLResult CheckData(bool IsInsert, string MaVL, string TenVL, string MaNCC, decimal SoLuong, string DonviTinh, decimal GiaMua, decimal GiaBan, string GhiChu)
         {
             // Mã VL
             if (IsInsert && GetObjectFromID(MaVL) != null)
@@ -37,7 +37,7 @@ namespace QLVLXD.BLL
             return new BLLResult((int)BLLResultType.SUCCESS);
         }
 
-        public BLLResult Insert(string MaVL, string TenVL, string MaNCC, decimal SoLuong, string DonviTinh, decimal GiaMua, decimal GiaLe, decimal GiaSi, decimal SoLuongBanSi, decimal SoLuongToiThieu, string GhiChu)
+        public BLLResult Insert(string MaVL, string TenVL, string MaNCC, decimal SoLuong, string DonviTinh, decimal GiaMua, decimal GiaBan, string GhiChu)
         {
             try
             {
@@ -48,10 +48,7 @@ namespace QLVLXD.BLL
                 vl.SoLuong = SoLuong;
                 vl.MaDVT = DonviTinh;
                 vl.GiaMua = GiaMua;
-                vl.GiaBanLe = GiaLe;
-                vl.GiaBanSi = GiaSi;
-                vl.SoLuongBanSi = SoLuongBanSi;
-                vl.SoLuongToiThieu = SoLuongToiThieu;
+                vl.GiaBan = GiaBan;
                 vl.GhiChu = GhiChu;
                 DB.VatLieus.InsertOnSubmit(vl);
                 DB.SubmitChanges();
@@ -87,9 +84,7 @@ namespace QLVLXD.BLL
             {
                 string name = "";
                 var list = GetList();
-                foreach (DLL.VatLieu vari in list)
-                    if (vari.SoLuongToiThieu > vari.SoLuong)
-                        name = name + vari.TenVL.Trim() + ", ";
+                
                 if (name == "")
                     return null;
                 else
@@ -104,11 +99,11 @@ namespace QLVLXD.BLL
             }
         }
 
-        public BLLResult UpdateSoLuongSub(string TenVL, decimal SoLuongSub)
+        public BLLResult UpdateSoLuongSub(string MaVL, decimal SoLuongSub)
         {
             try
             {
-                var vl = GetObjectFromTenVL(TenVL.Trim());
+                var vl = GetObjectFromID(MaVL.Trim());
                 if (vl == null)
                     throw new Exception();
 
@@ -208,24 +203,11 @@ namespace QLVLXD.BLL
                     old_data.GiaMua = GiaMua;
                     //DB.SubmitChanges();
                 }
-                if (old_data.GiaBanLe != GiaLe)
+                if (old_data.GiaBan != GiaLe)
                 {
-                    old_data.GiaBanLe = GiaLe;
+                    old_data.GiaBan = GiaLe;
                 }
-                if (old_data.GiaBanSi != GiaSi)
-                {
-                    old_data.GiaBanSi = GiaSi;
-                }
-                if (old_data.SoLuongBanSi != SoLuongBanSi)
-                {
-                    old_data.SoLuongBanSi = SoLuongBanSi;
-                    //DB.SubmitChanges();
-                }
-                if (old_data.SoLuongToiThieu != SoLuongToiThieu)
-                {
-                    old_data.SoLuongToiThieu = SoLuongToiThieu;
-                    //DB.SubmitChanges();
-                }
+      
 
                 if (old_data.SoLuong != SoLuong)
                 {

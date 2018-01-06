@@ -31,7 +31,7 @@ namespace QLVLXD.BLL
             return new BLLResult((int)BLLResultType.SUCCESS);
         }
 
-        public BLLResult Insert(string MaHDBH, DateTime NgayGiao, string MaNV, string MaKH, DateTime NgayLap, decimal KhuyenMai, string TrangThai)
+        public BLLResult Insert(string MaHDBH, DateTime NgayGiao, string MaNV, string MaKH, DateTime NgayLap, decimal TongTien, decimal KhuyenMai, string TrangThai)
         {
             try
             {
@@ -43,6 +43,7 @@ namespace QLVLXD.BLL
                 hdbh.NgayLap = NgayLap;
                 hdbh.TrangThai = TrangThai;
                 hdbh.TienKM = KhuyenMai;
+                hdbh.TongTien = TongTien;
                 DB.HoaDonBanHangs.InsertOnSubmit(hdbh);
                 DB.SubmitChanges();
                 return new BLLResult((int)BLLResultType.S_ADD);

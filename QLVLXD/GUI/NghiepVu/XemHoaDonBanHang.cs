@@ -43,12 +43,11 @@ namespace QLVLXD.GUI.NghiepVu
             lb_TenKH.Text = thongke.TenKH;
             { // Loại KH
                 var kh = (new BLL_KhachHang()).GetObjectFromID(thongke.MaKH);
-                var loaikh = (new BLL_LoaiKhachHang()).GetObjectFromID(kh.KHTT.Trim()).TenLoaiKH.Trim();
+                var loaikh = (new BLL_LoaiKhachHang()).GetObjectFromID(kh.MaLoaiKH.Trim()).TenLoaiKH.Trim();
                 if (loaikh == null)
                     lb_LoaiKH.Text = "Khách hàng mới";
                 else
                     lb_LoaiKH.Text = loaikh;
-                lb_HinhThucKM.Text = (new BLL_LoaiKhachHang()).GetTenKhuyenMai(lb_LoaiKH.Text);
                 /* Màu */
                 if (lb_LoaiKH.Text == "Vàng")
                     lb_LoaiKH.ForeColor = Color.Gold;

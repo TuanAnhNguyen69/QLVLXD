@@ -132,7 +132,7 @@ namespace QLVLXD
             if (kh == null)
                 return;
 
-            if (khachhang.Insert(lb_MaKH.Text, txt_TenKH.Text, dtP_NgaySinh.Value, cbb_GioiTinh.Text, txt_DiaChi.Text, decimal.Parse(txt_SDT.Text), decimal.Parse(txt_CMND.Text), txt_Email.Text, kh.MaLoaiKH.Trim()))
+            if (khachhang.Insert(lb_MaKH.Text, txt_TenKH.Text, dtP_NgaySinh.Value, cbb_GioiTinh.Text, txt_DiaChi.Text, txt_SDT.Text, decimal.Parse(txt_CMND.Text), txt_Email.Text, kh.MaLoaiKH.Trim()))
             {
                 Refresh_Grid();
                 ResetThongTin();
@@ -175,7 +175,7 @@ namespace QLVLXD
             if (kh == null)
                 return;
 
-            if (khachhang.Update(lb_MaKH.Text, txt_TenKH.Text, dtP_NgaySinh.Value, cbb_GioiTinh.Text, txt_DiaChi.Text, decimal.Parse(txt_SDT.Text), decimal.Parse(txt_CMND.Text), txt_Email.Text, kh.MaLoaiKH.Trim()))
+            if (khachhang.Update(lb_MaKH.Text, txt_TenKH.Text, dtP_NgaySinh.Value, cbb_GioiTinh.Text, txt_DiaChi.Text, txt_SDT.Text, decimal.Parse(txt_CMND.Text), txt_Email.Text, kh.MaLoaiKH.Trim()))
             {
                 Refresh_Grid();
                 ResetThongTin();

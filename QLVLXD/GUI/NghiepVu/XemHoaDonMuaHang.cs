@@ -16,6 +16,7 @@ namespace QLVLXD.GUI.NghiepVu
     public partial class XemHoaDonMuaHang : DevExpress.XtraEditors.XtraForm
     {
         DLL.HoaDonMuaHang _HDMH = new DLL.HoaDonMuaHang();
+       
         List<DLL.CTHoaDonMuaHang> _ListCT = new List<CTHoaDonMuaHang>();
         public ThongKeMuaHang main;
 
@@ -28,12 +29,13 @@ namespace QLVLXD.GUI.NghiepVu
 
         private void XemHoaDonMuaHang_Load(object sender, EventArgs e)
         {
+            var NhanVien = (new BLL_NhanVien()).GetObjectFromID(_HDMH.MaNV);
             lb_MaHDBH.Text = _HDMH.MaHDMH.Trim();
             Text = Text + " (" + lb_MaHDBH.Text + ")";
             lb_MaNV.Text = _HDMH.MaNV.Trim();
-            lb_NgayMua.Text = _HDMH.NgayMua.ToShortDateString();
+            lb_NgayMua.Text = _HDMH.NgayLap.ToShortDateString();
             lb_TongTien.Text = ((long)_HDMH.TongTien).ToString("# ### ### ###").Trim() + " VNĐ";
-            lb_TenNV.Text = _HDMH.TenNV.Trim();
+            lb_TenNV.Text = NhanVien.MaNV.Trim();
             lb_SoVatLieu.Text = _ListCT.Count.ToString() + " Vật liệu";
 
             grid.DataSource = null;

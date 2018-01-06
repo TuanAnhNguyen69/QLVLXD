@@ -83,7 +83,8 @@ namespace QLVLXD.GUI.NghiepVu
             _Filter.Clear();
             foreach (DLL.HoaDonMuaHang orgi in _Orginal)
             {
-                if (cb_TenNhanVien.Text != "" && orgi.TenNV.Trim() != cb_TenNhanVien.Text)
+                var NhanVien = (new BLL_NhanVien()).GetObjectFromID(orgi.MaNV);
+                if (cb_TenNhanVien.Text != "" && NhanVien.TenNV.Trim() != cb_TenNhanVien.Text)
                     continue;
                 if (cb_TenNCC.SelectedIndex != 0 || !rx_SoVatLieu.Checked)// NCC, Số vật liệu
                 { 
@@ -124,9 +125,9 @@ namespace QLVLXD.GUI.NghiepVu
                 }
                 if (!rx_NgayLap.Checked)
                 {
-                    if ((rl_NgayLap.Checked && !(DateTime.Parse(orgi.NgayMua.ToShortDateString()) > DateTime.Parse(dtp_NgayLap.Value.ToShortDateString())))
-                        || (rn_NgayLap.Checked && !(DateTime.Parse(orgi.NgayMua.ToShortDateString()) < DateTime.Parse(dtp_NgayLap.Value.ToShortDateString())))
-                        || (rb_NgayLap.Checked && !(DateTime.Parse(orgi.NgayMua.ToShortDateString()) == DateTime.Parse(dtp_NgayLap.Value.ToShortDateString()))))
+                    if ((rl_NgayLap.Checked && !(DateTime.Parse(orgi.NgayLap.ToShortDateString()) > DateTime.Parse(dtp_NgayLap.Value.ToShortDateString())))
+                        || (rn_NgayLap.Checked && !(DateTime.Parse(orgi.NgayLap.ToShortDateString()) < DateTime.Parse(dtp_NgayLap.Value.ToShortDateString())))
+                        || (rb_NgayLap.Checked && !(DateTime.Parse(orgi.NgayLap.ToShortDateString()) == DateTime.Parse(dtp_NgayLap.Value.ToShortDateString()))))
                         continue;
                 }
                 _Filter.Add(orgi);

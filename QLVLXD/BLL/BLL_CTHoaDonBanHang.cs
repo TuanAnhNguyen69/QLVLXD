@@ -253,7 +253,7 @@ namespace QLVLXD.BLL
                 foreach (DLL.CTHoaDonBanHang var in ds)
                 {
                     var vatlieu = (new BLL_VatLieu()).GetObjectFromID(var.MaVL);
-                    TongTien += (int)(var.SoLuong * vatlieu.GiaBanLe.Value);
+                    TongTien += (int)(var.SoLuong * vatlieu.GiaBan.Value);
                 }
                 return TongTien;
             }

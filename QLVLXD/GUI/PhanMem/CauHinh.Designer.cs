@@ -44,9 +44,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(236, 216);
+            this.label1.Location = new System.Drawing.Point(247, 349);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(320, 23);
+            this.label1.Size = new System.Drawing.Size(400, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "SỐ LƯỢNG VẬT LIỆU TỐI THIỂU";
             // 
@@ -54,9 +54,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(187, 260);
+            this.label2.Location = new System.Drawing.Point(190, 403);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(369, 23);
+            this.label2.Size = new System.Drawing.Size(462, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "THỜI GIAN KIỂM TRA CSDL ĐỊNH KỲ";
             // 
@@ -64,7 +64,8 @@
             // 
             this.num_SoLuongToiThieu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.num_SoLuongToiThieu.ForeColor = System.Drawing.Color.Purple;
-            this.num_SoLuongToiThieu.Location = new System.Drawing.Point(581, 215);
+            this.num_SoLuongToiThieu.Location = new System.Drawing.Point(650, 348);
+            this.num_SoLuongToiThieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.num_SoLuongToiThieu.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -76,7 +77,7 @@
             0,
             0});
             this.num_SoLuongToiThieu.Name = "num_SoLuongToiThieu";
-            this.num_SoLuongToiThieu.Size = new System.Drawing.Size(95, 27);
+            this.num_SoLuongToiThieu.Size = new System.Drawing.Size(111, 32);
             this.num_SoLuongToiThieu.TabIndex = 1;
             this.num_SoLuongToiThieu.ThousandsSeparator = true;
             this.num_SoLuongToiThieu.Value = new decimal(new int[] {
@@ -89,7 +90,8 @@
             // 
             this.num_ThoiGianKiemTra.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.num_ThoiGianKiemTra.ForeColor = System.Drawing.Color.Purple;
-            this.num_ThoiGianKiemTra.Location = new System.Drawing.Point(581, 256);
+            this.num_ThoiGianKiemTra.Location = new System.Drawing.Point(650, 398);
+            this.num_ThoiGianKiemTra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.num_ThoiGianKiemTra.Maximum = new decimal(new int[] {
             60,
             0,
@@ -101,7 +103,7 @@
             0,
             0});
             this.num_ThoiGianKiemTra.Name = "num_ThoiGianKiemTra";
-            this.num_ThoiGianKiemTra.Size = new System.Drawing.Size(95, 27);
+            this.num_ThoiGianKiemTra.Size = new System.Drawing.Size(111, 32);
             this.num_ThoiGianKiemTra.TabIndex = 1;
             this.num_ThoiGianKiemTra.Value = new decimal(new int[] {
             1,
@@ -113,9 +115,10 @@
             // 
             this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Luu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Luu.Location = new System.Drawing.Point(438, 377);
+            this.btn_Luu.Location = new System.Drawing.Point(411, 453);
+            this.btn_Luu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(107, 31);
+            this.btn_Luu.Size = new System.Drawing.Size(166, 83);
             this.btn_Luu.TabIndex = 2;
             this.btn_Luu.Text = "LƯU";
             this.btn_Luu.UseVisualStyleBackColor = true;
@@ -124,9 +127,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QLVLXD.Properties.Resources._1366377136497284388setup_svg_med;
-            this.pictureBox1.Location = new System.Drawing.Point(802, 133);
+            this.pictureBox1.Location = new System.Drawing.Point(358, 46);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 220);
+            this.pictureBox1.Size = new System.Drawing.Size(275, 271);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -135,9 +139,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(690, 260);
+            this.label3.Location = new System.Drawing.Point(777, 403);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 23);
+            this.label3.Size = new System.Drawing.Size(80, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "PHÚT";
             // 
@@ -145,9 +149,9 @@
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1160, 530);
+            this.ClientSize = new System.Drawing.Size(995, 559);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.num_ThoiGianKiemTra);
@@ -156,6 +160,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CauHinh";
             this.Text = "V";
             this.Load += new System.EventHandler(this.CauHinh_Load);

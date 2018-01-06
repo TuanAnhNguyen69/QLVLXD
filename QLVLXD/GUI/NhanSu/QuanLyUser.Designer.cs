@@ -53,12 +53,14 @@
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.cb_TenNhanVien = new System.Windows.Forms.ComboBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenDangNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanlyUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbb_PhanQuyen
@@ -73,7 +75,7 @@
             // 
             // btn_ResetThongTin
             // 
-            this.btn_ResetThongTin.Location = new System.Drawing.Point(402, 266);
+            this.btn_ResetThongTin.Location = new System.Drawing.Point(274, 233);
             this.btn_ResetThongTin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ResetThongTin.Name = "btn_ResetThongTin";
             this.btn_ResetThongTin.Size = new System.Drawing.Size(107, 28);
@@ -85,10 +87,10 @@
             // 
             this.btn_XemChiTiet.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XemChiTiet.Appearance.Options.UseFont = true;
-            this.btn_XemChiTiet.Location = new System.Drawing.Point(1077, 148);
+            this.btn_XemChiTiet.Location = new System.Drawing.Point(943, 102);
             this.btn_XemChiTiet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_XemChiTiet.Name = "btn_XemChiTiet";
-            this.btn_XemChiTiet.Size = new System.Drawing.Size(206, 54);
+            this.btn_XemChiTiet.Size = new System.Drawing.Size(206, 73);
             this.btn_XemChiTiet.TabIndex = 27;
             this.btn_XemChiTiet.Text = "Xem chi tiết nhân viên";
             this.btn_XemChiTiet.Click += new System.EventHandler(this.btn_XemChiTiet_Click);
@@ -99,10 +101,10 @@
             this.btn_Xoa.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_Xoa.Appearance.Options.UseFont = true;
             this.btn_Xoa.Appearance.Options.UseForeColor = true;
-            this.btn_Xoa.Location = new System.Drawing.Point(1077, 54);
+            this.btn_Xoa.Location = new System.Drawing.Point(943, 24);
             this.btn_Xoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(206, 85);
+            this.btn_Xoa.Size = new System.Drawing.Size(206, 70);
             this.btn_Xoa.TabIndex = 26;
             this.btn_Xoa.Text = "Xóa tài khoản";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
@@ -113,10 +115,10 @@
             this.btn_Them.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_Them.Appearance.Options.UseFont = true;
             this.btn_Them.Appearance.Options.UseForeColor = true;
-            this.btn_Them.Location = new System.Drawing.Point(1077, 54);
+            this.btn_Them.Location = new System.Drawing.Point(943, 184);
             this.btn_Them.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(206, 148);
+            this.btn_Them.Size = new System.Drawing.Size(206, 71);
             this.btn_Them.TabIndex = 24;
             this.btn_Them.Text = "Thêm User";
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
@@ -133,7 +135,7 @@
             // 
             // txt_TenDangNhap
             // 
-            this.txt_TenDangNhap.Location = new System.Drawing.Point(119, 162);
+            this.txt_TenDangNhap.Location = new System.Drawing.Point(130, 163);
             this.txt_TenDangNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_TenDangNhap.Name = "txt_TenDangNhap";
             this.txt_TenDangNhap.Size = new System.Drawing.Size(183, 22);
@@ -141,7 +143,7 @@
             // 
             // txt_TenUser
             // 
-            this.txt_TenUser.Location = new System.Drawing.Point(119, 116);
+            this.txt_TenUser.Location = new System.Drawing.Point(130, 116);
             this.txt_TenUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_TenUser.Name = "txt_TenUser";
             this.txt_TenUser.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,11 +187,11 @@
             // 
             this.gridControl_QuanlyUser.DataSource = this.userBindingSource;
             this.gridControl_QuanlyUser.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl_QuanlyUser.Location = new System.Drawing.Point(98, 343);
+            this.gridControl_QuanlyUser.Location = new System.Drawing.Point(12, 277);
             this.gridControl_QuanlyUser.MainView = this.gridView1;
             this.gridControl_QuanlyUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl_QuanlyUser.Name = "gridControl_QuanlyUser";
-            this.gridControl_QuanlyUser.Size = new System.Drawing.Size(1141, 246);
+            this.gridControl_QuanlyUser.Size = new System.Drawing.Size(1141, 314);
             this.gridControl_QuanlyUser.TabIndex = 30;
             this.gridControl_QuanlyUser.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -198,8 +200,7 @@
             // userBindingSource
             // 
             this.userBindingSource.DataMember = "User";
-            
-            // 
+
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -268,11 +269,11 @@
             this.groupBox1.Controls.Add(this.labelControl3);
             this.groupBox1.Controls.Add(this.labelControl2);
             this.groupBox1.Controls.Add(this.labelControl1);
-            this.groupBox1.Location = new System.Drawing.Point(402, 27);
+            this.groupBox1.Location = new System.Drawing.Point(274, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(653, 231);
+            this.groupBox1.Size = new System.Drawing.Size(653, 212);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User";
@@ -289,7 +290,7 @@
             // 
             this.cb_TenNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_TenNhanVien.FormattingEnabled = true;
-            this.cb_TenNhanVien.Location = new System.Drawing.Point(119, 69);
+            this.cb_TenNhanVien.Location = new System.Drawing.Point(130, 66);
             this.cb_TenNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_TenNhanVien.Name = "cb_TenNhanVien";
             this.cb_TenNhanVien.Size = new System.Drawing.Size(182, 24);
@@ -309,13 +310,23 @@
             // userTableAdapter
             // 
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.customers_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // QuanLyUser
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1335, 604);
+            this.ClientSize = new System.Drawing.Size(1161, 604);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControl_QuanlyUser);
             this.Controls.Add(this.btn_ResetThongTin);
@@ -334,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,5 +376,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenUser;
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
         private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

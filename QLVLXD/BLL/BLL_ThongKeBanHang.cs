@@ -75,7 +75,7 @@ namespace QLVLXD.BLL
                         foreach (CTHoaDonBanHang var in listcthd)
                         {
                             var vatlieu = _VatLieu.GetObjectFromID(var.MaVL.Trim());
-                            record.TienVatLieu += (int) (var.SoLuong * vatlieu.GiaBanLe.Value);
+                            record.TienVatLieu += (int) (var.SoLuong * vatlieu.GiaBan.Value);
                             if (vatlieu == null)
                                 return GetNullRecord();
                             record.Von += (int)(vatlieu.GiaMua) * (int)(var.SoLuong);
