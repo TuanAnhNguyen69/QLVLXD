@@ -29,10 +29,7 @@
       <Column Name="SoLuong" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="MaDVT" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
       <Column Name="GiaMua" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
-      <Column Name="GiaBanLe" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
-      <Column Name="GiaBanSi" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
-      <Column Name="SoLuongBanSi" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="SoLuongToiThieu" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GiaBan" Type="System.Decimal" DbType="Decimal(18,1)" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NChar(1000)" CanBeNull="true" />
       <Association Name="VatLieu_CTHoaDonMuaHang" Member="CTHoaDonMuaHangs" ThisKey="MaVL" OtherKey="MaVL" Type="CTHoaDonMuaHang" />
       <Association Name="DonViTinhVatLieu_VatLieu" Member="DonViTinhVatLieu" ThisKey="MaDVT" OtherKey="MaDVT" Type="DonViTinhVatLieu" IsForeignKey="true" />

@@ -33,7 +33,6 @@
             this.btn_ThemDVT = new DevExpress.XtraEditors.SimpleButton();
             this.grid_DVT = new DevExpress.XtraGrid.GridControl();
             this.quanLyDonViTinhBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet14 = new QLVLXD.QLVLXDDataSet14();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenDVT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,25 +40,17 @@
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.tb_DonViTinh = new DevExpress.XtraEditors.TextEdit();
             this.quanLyTienTeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet13 = new QLVLXD.QLVLXDDataSet13();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tinhTrangVatLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet15 = new QLVLXD.QLVLXDDataSet15();
-            this.quanLyTienTeTableAdapter = new QLVLXD.QLVLXDDataSet13TableAdapters.QuanLyTienTeTableAdapter();
-            this.quanLyDonViTinhTableAdapter = new QLVLXD.QLVLXDDataSet14TableAdapters.QuanLyDonViTinhTableAdapter();
-            this.tinhTrangVatLieuTableAdapter = new QLVLXD.QLVLXDDataSet15TableAdapters.TinhTrangVatLieuTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grid_DVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDonViTinhBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_DonViTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyTienTeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet13)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhTrangVatLieuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet15)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_XoaDVT
@@ -104,13 +95,7 @@
             // quanLyDonViTinhBindingSource
             // 
             this.quanLyDonViTinhBindingSource.DataMember = "QuanLyDonViTinh";
-            this.quanLyDonViTinhBindingSource.DataSource = this.qLVLXDDataSet14;
-            // 
-            // qLVLXDDataSet14
-            // 
-            this.qLVLXDDataSet14.DataSetName = "QLVLXDDataSet14";
-            this.qLVLXDDataSet14.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
+
             // gridView3
             // 
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -163,13 +148,7 @@
             // quanLyTienTeBindingSource
             // 
             this.quanLyTienTeBindingSource.DataMember = "QuanLyTienTe";
-            this.quanLyTienTeBindingSource.DataSource = this.qLVLXDDataSet13;
-            // 
-            // qLVLXDDataSet13
-            // 
-            this.qLVLXDDataSet13.DataSetName = "QLVLXDDataSet13";
-            this.qLVLXDDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
+   
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pictureBox2);
@@ -202,24 +181,7 @@
             // tinhTrangVatLieuBindingSource
             // 
             this.tinhTrangVatLieuBindingSource.DataMember = "TinhTrangVatLieu";
-            this.tinhTrangVatLieuBindingSource.DataSource = this.qLVLXDDataSet15;
-            // 
-            // qLVLXDDataSet15
-            // 
-            this.qLVLXDDataSet15.DataSetName = "QLVLXDDataSet15";
-            this.qLVLXDDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // quanLyTienTeTableAdapter
-            // 
-            this.quanLyTienTeTableAdapter.ClearBeforeFill = true;
-            // 
-            // quanLyDonViTinhTableAdapter
-            // 
-            this.quanLyDonViTinhTableAdapter.ClearBeforeFill = true;
-            // 
-            // tinhTrangVatLieuTableAdapter
-            // 
-            this.tinhTrangVatLieuTableAdapter.ClearBeforeFill = true;
+        
             // 
             // TienTeDonViTinhLoaiVatLieu
             // 
@@ -235,16 +197,13 @@
             this.Text = "TienTeDonViTinhLoaiVatLieu";
             ((System.ComponentModel.ISupportInitialize)(this.grid_DVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDonViTinhBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_DonViTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyTienTeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet13)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhTrangVatLieuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet15)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,18 +216,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.TextEdit tb_DonViTinh;
         private System.Windows.Forms.GroupBox groupBox2;
-        private QLVLXDDataSet13 qLVLXDDataSet13;
         private System.Windows.Forms.BindingSource quanLyTienTeBindingSource;
-        private QLVLXDDataSet13TableAdapters.QuanLyTienTeTableAdapter quanLyTienTeTableAdapter;
-        private QLVLXDDataSet14 qLVLXDDataSet14;
         private System.Windows.Forms.BindingSource quanLyDonViTinhBindingSource;
-        private QLVLXDDataSet14TableAdapters.QuanLyDonViTinhTableAdapter quanLyDonViTinhTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colMaDVT;
         private DevExpress.XtraGrid.Columns.GridColumn colTenDVT;
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
-        private QLVLXDDataSet15 qLVLXDDataSet15;
         private System.Windows.Forms.BindingSource tinhTrangVatLieuBindingSource;
-        private QLVLXDDataSet15TableAdapters.TinhTrangVatLieuTableAdapter tinhTrangVatLieuTableAdapter;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

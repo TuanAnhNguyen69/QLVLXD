@@ -21,12 +21,8 @@ namespace QLVLXD.GUI
         BLL.BLL_HoaDonBanHang _BLL_HoaDonBanHang = new BLL.BLL_HoaDonBanHang();
         BLL.BLL_KhachHang _BLL_KhachHang = new BLL.BLL_KhachHang();
         BLL.BLL_LoaiKhachHang _LoaiKhachHang = new BLL.BLL_LoaiKhachHang();
-        BLL.BLL_QuanLyTienTe _QuanLyTienTe = new BLL.BLL_QuanLyTienTe();
         BLL.BLL_NhaCungCap _NhaCungCap = new BLL.BLL_NhaCungCap();
-        BLL.BLL_KhuyenMai _KhuyenMai = new BLL.BLL_KhuyenMai();
         BLL.BLL_DonViTinhVatLieu _DonViTinhVatLieu = new BLL.BLL_DonViTinhVatLieu();
-        BLL.BLL_QuanLyDonViTinh _QuanLyDonViTinh = new BLL.BLL_QuanLyDonViTinh();
-        BLL.BLL_TinhTrangVatLieu _TinhTrangVatLieu = new BLL.BLL_TinhTrangVatLieu();
        
         //// Biến lưu dữ liệu load
         List<DLL.CTHoaDonBanHang> _ListVatLieuHoaDon = new List<DLL.CTHoaDonBanHang>();
@@ -46,20 +42,15 @@ namespace QLVLXD.GUI
             ResetForNewInsert();
         }
         
-        decimal TienVatLieu(long SoLuongMua, decimal GiaLe, decimal GiaSi, long SoLuongSi)
+        decimal TienVatLieu(long SoLuongMua, decimal GiaLe)
         {
-            long sosi;
-            if (SoLuongSi == 0)
-                sosi = 0;
-            else
-                sosi = SoLuongMua / SoLuongSi;
-            long sole = SoLuongMua - sosi * SoLuongSi;
-            return sosi * GiaSi + sole * GiaLe;
+
+            return SoLuongMua * GiaLe;
         }
 
         decimal TienVatLieu(DLL.CTHoaDonBanHang CTHDBH)
         {
-            return TienVatLieu((long)CTHDBH.SoLuongMua, (decimal)CTHDBH.GiaLe, (decimal)CTHDBH.GiaSi, (long)CTHDBH.SoLuongDeBanSi);
+            return TienVatLieu((long)CTHDBH.SoLuong, (decimal)CTHDBH.Gia);
         }
 
         void LoadGridView(List<DLL.CTHoaDonBanHang> ListCTHDBH)
@@ -112,7 +103,6 @@ namespace QLVLXD.GUI
             _NhaCungCap.MakeComboBoxNoAuto(cb_TrangThai, liststt);
 
             // Tiền tệ
-            _BLL_VatLieu.MakeComboBoxNoAuto(cb_DonViTienTe, _QuanLyTienTe.GetDanhSachTienTe());
         }
 
         void ResetForNewInsert()

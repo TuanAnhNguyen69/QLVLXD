@@ -39,17 +39,13 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cTHoaDonBanHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet2 = new QLVLXD.QLVLXDDataSet2();
             this.hoaDonBanHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet1 = new QLVLXD.QLVLXDDataSet1();
             this.btn_Them = new DevExpress.XtraEditors.SimpleButton();
             this.nud_SoLuongMua = new System.Windows.Forms.NumericUpDown();
             this.btn_Reset = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.hoaDonBanHangTableAdapter = new QLVLXD.QLVLXDDataSet1TableAdapters.HoaDonBanHangTableAdapter();
-            this.cTHoaDonBanHangTableAdapter = new QLVLXD.QLVLXDDataSet2TableAdapters.CTHoaDonBanHangTableAdapter();
             this.lb_MaKH = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -91,8 +87,6 @@
             this.labelControl42 = new DevExpress.XtraEditors.LabelControl();
             this.cb_TrangThai = new System.Windows.Forms.ComboBox();
             this.vatLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet = new QLVLXD.QLVLXDDataSet();
-            this.vatLieuTableAdapter = new QLVLXD.QLVLXDDataSetTableAdapters.VatLieuTableAdapter();
             this.btn_XemChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
             this.MaCTHDBH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,9 +102,7 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonBanHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuongMua)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_VatLieu)).BeginInit();
@@ -118,7 +110,6 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_GhiChuVatLieu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_TongTien
@@ -211,22 +202,11 @@
             // cTHoaDonBanHangBindingSource
             // 
             this.cTHoaDonBanHangBindingSource.DataMember = "CTHoaDonBanHang";
-            this.cTHoaDonBanHangBindingSource.DataSource = this.qLVLXDDataSet2;
-            // 
-            // qLVLXDDataSet2
-            // 
-            this.qLVLXDDataSet2.DataSetName = "QLVLXDDataSet2";
-            this.qLVLXDDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // hoaDonBanHangBindingSource
             // 
             this.hoaDonBanHangBindingSource.DataMember = "HoaDonBanHang";
-            this.hoaDonBanHangBindingSource.DataSource = this.qLVLXDDataSet1;
-            // 
-            // qLVLXDDataSet1
-            // 
-            this.qLVLXDDataSet1.DataSetName = "QLVLXDDataSet1";
-            this.qLVLXDDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // btn_Them
             // 
@@ -301,12 +281,7 @@
             this.labelControl9.Text = "Danh sách các vật liệu trong hóa đơn:";
             // 
             // hoaDonBanHangTableAdapter
-            // 
-            this.hoaDonBanHangTableAdapter.ClearBeforeFill = true;
-            // 
-            // cTHoaDonBanHangTableAdapter
-            // 
-            this.cTHoaDonBanHangTableAdapter.ClearBeforeFill = true;
+           
             // 
             // lb_MaKH
             // 
@@ -780,17 +755,7 @@
             // vatLieuBindingSource
             // 
             this.vatLieuBindingSource.DataMember = "VatLieu";
-            this.vatLieuBindingSource.DataSource = this.qLVLXDDataSet;
-            // 
-            // qLVLXDDataSet
-            // 
-            this.qLVLXDDataSet.DataSetName = "QLVLXDDataSet";
-            this.qLVLXDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vatLieuTableAdapter
-            // 
-            this.vatLieuTableAdapter.ClearBeforeFill = true;
-            // 
+         
             // btn_XemChiTietHoaDon
             // 
             this.btn_XemChiTietHoaDon.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -901,9 +866,7 @@
             this.Load += new System.EventHandler(this.HoaDonBanHang_Load);
             this.VisibleChanged += new System.EventHandler(this.HoaDonBanHang_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonBanHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuongMua)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -914,7 +877,6 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_GhiChuVatLieu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -937,15 +899,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private QLVLXDDataSet qLVLXDDataSet;
         private System.Windows.Forms.BindingSource vatLieuBindingSource;
-        private QLVLXDDataSetTableAdapters.VatLieuTableAdapter vatLieuTableAdapter;
-        private QLVLXDDataSet1 qLVLXDDataSet1;
         private System.Windows.Forms.BindingSource hoaDonBanHangBindingSource;
-        private QLVLXDDataSet1TableAdapters.HoaDonBanHangTableAdapter hoaDonBanHangTableAdapter;
-        private QLVLXDDataSet2 qLVLXDDataSet2;
         private System.Windows.Forms.BindingSource cTHoaDonBanHangBindingSource;
-        private QLVLXDDataSet2TableAdapters.CTHoaDonBanHangTableAdapter cTHoaDonBanHangTableAdapter;
         private DevExpress.XtraEditors.LabelControl lb_MaKH;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl13;

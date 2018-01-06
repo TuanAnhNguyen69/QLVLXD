@@ -43,8 +43,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.nhaCungCapBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet17 = new QLVLXD.QLVLXDDataSet17();
-            this.nhaCungCapTableAdapter = new QLVLXD.QLVLXDDataSet17TableAdapters.NhaCungCapTableAdapter();
             this.gridControl_NCC = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaNCC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,7 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_DiaChiNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhaCungCapBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_NCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -196,16 +193,7 @@
             // nhaCungCapBindingSource1
             // 
             this.nhaCungCapBindingSource1.DataMember = "NhaCungCap";
-            this.nhaCungCapBindingSource1.DataSource = this.qLVLXDDataSet17;
-            // 
-            // qLVLXDDataSet17
-            // 
-            this.qLVLXDDataSet17.DataSetName = "QLVLXDDataSet17";
-            this.qLVLXDDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nhaCungCapTableAdapter
-            // 
-            this.nhaCungCapTableAdapter.ClearBeforeFill = true;
+         
             // 
             // gridControl_NCC
             // 
@@ -335,7 +323,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_DiaChiNCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhaCungCapBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_NCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -359,9 +346,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private QLVLXDDataSet17 qLVLXDDataSet17;
         private System.Windows.Forms.BindingSource nhaCungCapBindingSource1;
-        private QLVLXDDataSet17TableAdapters.NhaCungCapTableAdapter nhaCungCapTableAdapter;
         private DevExpress.XtraGrid.GridControl gridControl_NCC;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaNCC;

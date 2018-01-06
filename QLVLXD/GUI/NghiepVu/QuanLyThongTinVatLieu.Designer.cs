@@ -49,9 +49,7 @@
             this.btn_CapNhat = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Them = new DevExpress.XtraEditors.SimpleButton();
-            this.qLVLXDDataSet4 = new QLVLXD.QLVLXDDataSet4();
             this.vatLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vatLieuTableAdapter = new QLVLXD.QLVLXDDataSet4TableAdapters.VatLieuTableAdapter();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.lb_SoVatLieu = new DevExpress.XtraEditors.LabelControl();
             this.cb_TenNhaCungCap = new System.Windows.Forms.ComboBox();
@@ -81,8 +79,6 @@
             this.num_TiLe3 = new System.Windows.Forms.NumericUpDown();
             this.num_TiLe2 = new System.Windows.Forms.NumericUpDown();
             this.vatLieuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet11 = new QLVLXD.QLVLXDDataSet11();
-            this.vatLieuTableAdapter1 = new QLVLXD.QLVLXDDataSet11TableAdapters.VatLieuTableAdapter();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grid_VatLieu = new System.Windows.Forms.DataGridView();
             this.num_GiaBanLe = new System.Windows.Forms.NumericUpDown();
@@ -103,7 +99,6 @@
             this.colKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tb_TenVatLieu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chk_CoBanSi.Properties)).BeginInit();
@@ -116,7 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_TiLe3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_TiLe2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_VatLieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_GiaBanLe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_GiaMua)).BeginInit();
@@ -271,17 +265,13 @@
             // 
             // qLVLXDDataSet4
             // 
-            this.qLVLXDDataSet4.DataSetName = "QLVLXDDataSet4";
-            this.qLVLXDDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // vatLieuBindingSource
             // 
             this.vatLieuBindingSource.DataMember = "VatLieu";
-            this.vatLieuBindingSource.DataSource = this.qLVLXDDataSet4;
             // 
             // vatLieuTableAdapter
             // 
-            this.vatLieuTableAdapter.ClearBeforeFill = true;
             // 
             // labelControl9
             // 
@@ -618,16 +608,12 @@
             // vatLieuBindingSource1
             // 
             this.vatLieuBindingSource1.DataMember = "VatLieu";
-            this.vatLieuBindingSource1.DataSource = this.qLVLXDDataSet11;
             // 
             // qLVLXDDataSet11
             // 
-            this.qLVLXDDataSet11.DataSetName = "QLVLXDDataSet11";
-            this.qLVLXDDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // vatLieuTableAdapter1
             // 
-            this.vatLieuTableAdapter1.ClearBeforeFill = true;
             // 
             // gridColumn3
             // 
@@ -844,7 +830,6 @@
             this.Text = "Quản lý Thông Tin Vật Liệu";
 
             ((System.ComponentModel.ISupportInitialize)(this.tb_TenVatLieu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -859,7 +844,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_TiLe3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_TiLe2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_VatLieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_GiaBanLe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_GiaMua)).EndInit();
@@ -884,9 +868,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_CapNhat;
         private DevExpress.XtraEditors.SimpleButton btn_Xoa;
         private DevExpress.XtraEditors.SimpleButton btn_Them;
-        private QLVLXDDataSet4 qLVLXDDataSet4;
         private System.Windows.Forms.BindingSource vatLieuBindingSource;
-        private QLVLXDDataSet4TableAdapters.VatLieuTableAdapter vatLieuTableAdapter;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl lb_SoVatLieu;
         private System.Windows.Forms.ComboBox cb_TenNhaCungCap;
@@ -911,9 +893,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private System.Windows.Forms.GroupBox groupBox3;
-        private QLVLXDDataSet11 qLVLXDDataSet11;
         private System.Windows.Forms.BindingSource vatLieuBindingSource1;
-        private QLVLXDDataSet11TableAdapters.VatLieuTableAdapter vatLieuTableAdapter1;
         private System.Windows.Forms.NumericUpDown num_GiaBanSi;
         private System.Windows.Forms.NumericUpDown num_SoLuongDeBanSi;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;

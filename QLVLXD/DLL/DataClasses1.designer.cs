@@ -641,13 +641,7 @@ namespace QLVLXD.DLL
 		
 		private System.Nullable<decimal> _GiaMua;
 		
-		private System.Nullable<decimal> _GiaBanLe;
-		
-		private System.Nullable<decimal> _GiaBanSi;
-		
-		private System.Nullable<decimal> _SoLuongBanSi;
-		
-		private System.Nullable<decimal> _SoLuongToiThieu;
+		private System.Nullable<decimal> _GiaBan;
 		
 		private string _GhiChu;
 		
@@ -671,14 +665,8 @@ namespace QLVLXD.DLL
     partial void OnMaDVTChanged();
     partial void OnGiaMuaChanging(System.Nullable<decimal> value);
     partial void OnGiaMuaChanged();
-    partial void OnGiaBanLeChanging(System.Nullable<decimal> value);
-    partial void OnGiaBanLeChanged();
-    partial void OnGiaBanSiChanging(System.Nullable<decimal> value);
-    partial void OnGiaBanSiChanged();
-    partial void OnSoLuongBanSiChanging(System.Nullable<decimal> value);
-    partial void OnSoLuongBanSiChanged();
-    partial void OnSoLuongToiThieuChanging(System.Nullable<decimal> value);
-    partial void OnSoLuongToiThieuChanged();
+    partial void OnGiaBanChanging(System.Nullable<decimal> value);
+    partial void OnGiaBanChanged();
     partial void OnGhiChuChanging(string value);
     partial void OnGhiChuChanged();
     #endregion
@@ -814,82 +802,22 @@ namespace QLVLXD.DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBanLe", DbType="Decimal(18,1)")]
-		public System.Nullable<decimal> GiaBanLe
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBan", DbType="Decimal(18,1)")]
+		public System.Nullable<decimal> GiaBan
 		{
 			get
 			{
-				return this._GiaBanLe;
+				return this._GiaBan;
 			}
 			set
 			{
-				if ((this._GiaBanLe != value))
+				if ((this._GiaBan != value))
 				{
-					this.OnGiaBanLeChanging(value);
+					this.OnGiaBanChanging(value);
 					this.SendPropertyChanging();
-					this._GiaBanLe = value;
-					this.SendPropertyChanged("GiaBanLe");
-					this.OnGiaBanLeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBanSi", DbType="Decimal(18,1)")]
-		public System.Nullable<decimal> GiaBanSi
-		{
-			get
-			{
-				return this._GiaBanSi;
-			}
-			set
-			{
-				if ((this._GiaBanSi != value))
-				{
-					this.OnGiaBanSiChanging(value);
-					this.SendPropertyChanging();
-					this._GiaBanSi = value;
-					this.SendPropertyChanged("GiaBanSi");
-					this.OnGiaBanSiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuongBanSi", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> SoLuongBanSi
-		{
-			get
-			{
-				return this._SoLuongBanSi;
-			}
-			set
-			{
-				if ((this._SoLuongBanSi != value))
-				{
-					this.OnSoLuongBanSiChanging(value);
-					this.SendPropertyChanging();
-					this._SoLuongBanSi = value;
-					this.SendPropertyChanged("SoLuongBanSi");
-					this.OnSoLuongBanSiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuongToiThieu", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> SoLuongToiThieu
-		{
-			get
-			{
-				return this._SoLuongToiThieu;
-			}
-			set
-			{
-				if ((this._SoLuongToiThieu != value))
-				{
-					this.OnSoLuongToiThieuChanging(value);
-					this.SendPropertyChanging();
-					this._SoLuongToiThieu = value;
-					this.SendPropertyChanged("SoLuongToiThieu");
-					this.OnSoLuongToiThieuChanged();
+					this._GiaBan = value;
+					this.SendPropertyChanged("GiaBan");
+					this.OnGiaBanChanged();
 				}
 			}
 		}

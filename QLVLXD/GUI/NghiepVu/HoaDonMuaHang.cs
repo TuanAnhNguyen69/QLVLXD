@@ -161,7 +161,6 @@ namespace QLVLXD.GUI
                 if (vatlieudangchon.MaVL.Trim() == mem.MaVL.Trim())
                 {
                     mem.SoLuong += nud_SoLuong.Value;
-                    mem.TongTien += tientang;
                     haveinlist = true;
                     break;
                 }
@@ -171,12 +170,9 @@ namespace QLVLXD.GUI
             {
                 DLL.CTHoaDonMuaHang add = new DLL.CTHoaDonMuaHang();
                 add.MaHDMH = lb_MaHDMH.Text;
-                add.Live = "True";
-                add.DonViTinh = vatlieudangchon.DVT_Goc;
                 add.MaVL = vatlieudangchon.MaVL;
                 add.SoLuong = nud_SoLuong.Value;
-                add.TenVL = vatlieudangchon.TenVL;
-                add.TongTien = tientang;
+                add.GhiChu = vatlieudangchon.GhiChu;
 
                 List<string> DS_MaCTHDMH = new List<string>();
                 foreach (DLL.CTHoaDonMuaHang mem in _ListCTHoaDonMuaHang)
@@ -237,7 +233,6 @@ namespace QLVLXD.GUI
 
             int[] selectedindex = gridView1.GetSelectedRows();
             QLVLXD.DLL.VatLieu vatlieudangchon = (QLVLXD.DLL.VatLieu)gridView1.GetRow(selectedindex[0]);
-            lb_DonViTinh.Text = vatlieudangchon.DVT_Goc.Trim();
             var ncc = _BLL_NhaCungCap.GetObjectFromID(vatlieudangchon.MaNCC.Trim());
             lb_TenNCC.Text = ncc.TenNCC.Trim();
             lb_MaNCC.Text = ncc.MaNCC.Trim();
@@ -291,7 +286,7 @@ namespace QLVLXD.GUI
             DLL.NhaCungCap kh = _BLL_NhaCungCap.GetObjectFromID(lb_MaNCC.Text);
 
             // Thêm HDMH trước
-            string result = _BLL_HoaDonMuaHang.Insert(lb_MaHDMH.Text, DateTime.Today, lb_TenNhanVien.Text, lb_MaNV.Text, lb_MaNCC.Text, lb_TenNCC.Text, kh.SDT, TongTien);
+            string result = _BLL_HoaDonMuaHang.Insert(lb_MaHDMH.Text, DateTime.Today, lb_MaNV.Text, kh.SDT, TongTien);
 
             if (result != "Success")
             {
@@ -369,7 +364,7 @@ namespace QLVLXD.GUI
             _List_Bot.Add(ct);
 
             // Cập nhật lb_TongTien, lb_SoVatLieu
-            TongTien -= vatlieudangchon.TongTien;
+            //TongTien -= vatlieudangchon.TongTien;
             lb_TongTien.Text = ((long)TongTien).ToString("### ### ### ###").Trim() + " VNĐ";
             lb_SoVatLieu.Text = (_ListVatLieuHoaDon.Count - 1).ToString();
 
@@ -424,13 +419,11 @@ namespace QLVLXD.GUI
             DLL.HoaDonMuaHang hoadondangchon = (QLVLXD.DLL.HoaDonMuaHang)gridView3.GetRow(selectedindex[0]);
 
             lb_MaHDMH.Text = hoadondangchon.MaHDMH.Trim();
-            dt_NgayMua.DateTime = hoadondangchon.NgayMua;
+            dt_NgayMua.DateTime = hoadondangchon.NgayLap;
             lb_MaNV.Text = hoadondangchon.MaNV.Trim();
-            lb_TenNhanVien.Text = hoadondangchon.TenNV.Trim();
             TongTien = (long)hoadondangchon.TongTien;
             lb_TongTien.Text = TongTien.ToString() + " VNĐ";
             lb_MaNCC.Text = hoadondangchon.MaNCC.Trim();
-            lb_TenNCC.Text = hoadondangchon.TenNCC.Trim();
 
             _ListVatLieuHoaDon.Clear();
             _ListMaCTHDMH_New.Clear();
@@ -509,16 +502,12 @@ namespace QLVLXD.GUI
             DLL.HoaDonMuaHang old = new DLL.HoaDonMuaHang();
             old.MaHDMH = oldget.MaHDMH.Trim();
             old.MaNCC = oldget.MaNCC;
-            old.Live = "True";
             old.MaNV = oldget.MaNV;
-            old.SDTNCC = oldget.SDTNCC;
-            old.TenNV = oldget.TenNV;
             old.TongTien = oldget.TongTien;
-            old.TenNCC = oldget.TenNCC;
-            old.NgayMua = oldget.NgayMua;
+            old.NgayLap = oldget.NgayLap;
 
             //Cập nhật HDMH trước
-            string result = _BLL_HoaDonMuaHang.Update(lb_MaHDMH.Text.Trim(), dt_NgayMua.DateTime, lb_TenNhanVien.Text, lb_MaNV.Text, lb_MaNCC.Text, lb_TenNCC.Text, kh.SDT, TongTien);
+            string result = _BLL_HoaDonMuaHang.Update(lb_MaHDMH.Text.Trim(), dt_NgayMua.DateTime, lb_MaNV.Text, lb_MaNCC.Text, TongTien);
 
             if (result != "Success")
             {
@@ -539,7 +528,7 @@ namespace QLVLXD.GUI
                 MessageBox.Show("Không thể cập nhật! Đã có lỗi xảy ra, vui lòng kiểm tra lại dữ liệu nhập vào cũng như là cơ sở dữ liệu! (Mã lỗi 9857)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 // Nếu sai thì phục hồi cập nhật HDMH
-                _BLL_HoaDonMuaHang.Update(old.MaHDMH, old.NgayMua, old.TenNV, old.MaNV, old.MaNCC, old.TenNCC, old.SDTNCC, old.TongTien);
+                _BLL_HoaDonMuaHang.Update(old.MaHDMH, old.NgayLap, old.MaNV, old.MaNCC, old.TongTien);
 
                 ResetSearch();
                 return;
@@ -616,7 +605,7 @@ namespace QLVLXD.GUI
                 List<DLL.CTHoaDonMuaHang> data = new List<DLL.CTHoaDonMuaHang>();
 
                 foreach (DLL.CTHoaDonMuaHang mem in _ListVatLieuHoaDon)
-                    if (mem.TenVL.ToUpper().Contains(te_TimKiemVatLieuTrongHoaDon.Text.ToUpper()))
+                    //if (mem.TenVL.ToUpper().Contains(te_TimKiemVatLieuTrongHoaDon.Text.ToUpper()))
                         data.Add(mem);
 
                 grid_DanhSachVatLieuHoaDon.DataSource = data;
@@ -641,7 +630,7 @@ namespace QLVLXD.GUI
                 List<DLL.HoaDonMuaHang> data = new List<DLL.HoaDonMuaHang>();
 
                 foreach (DLL.HoaDonMuaHang mem in _List_HoaDonMuaHang)
-                    if (mem.TenNCC.ToUpper().Contains(te_TimKiemHDMH.Text.ToUpper()) || mem.TenNV.ToUpper().Contains(te_TimKiemHDMH.Text.ToUpper()))
+                    //if (mem.TenNCC.ToUpper().Contains(te_TimKiemHDMH.Text.ToUpper()) || mem.TenNV.ToUpper().Contains(te_TimKiemHDMH.Text.ToUpper()))
                         data.Add(mem);
 
                 grid_DanhSachHoaDonMuaHang.DataSource = data;

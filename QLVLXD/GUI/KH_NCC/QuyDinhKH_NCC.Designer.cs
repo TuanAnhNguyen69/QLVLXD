@@ -39,8 +39,7 @@
             this.num_TriGiaHoaDonToiThieu = new System.Windows.Forms.NumericUpDown();
             this.num_PhanTramGiam = new System.Windows.Forms.NumericUpDown();
             this.loaiKhachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet20 = new QLVLXD.QLVLXDDataSet20();
-            this.loaiKhachHangTableAdapter = new QLVLXD.QLVLXDDataSet20TableAdapters.LoaiKhachHangTableAdapter();
+       
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaLoaiKH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_TriGiaHoaDonToiThieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_PhanTramGiam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiKhachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet20)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -160,17 +158,7 @@
             // loaiKhachHangBindingSource
             // 
             this.loaiKhachHangBindingSource.DataMember = "LoaiKhachHang";
-            this.loaiKhachHangBindingSource.DataSource = this.qLVLXDDataSet20;
-            // 
-            // qLVLXDDataSet20
-            // 
-            this.qLVLXDDataSet20.DataSetName = "QLVLXDDataSet20";
-            this.qLVLXDDataSet20.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loaiKhachHangTableAdapter
-            // 
-            this.loaiKhachHangTableAdapter.ClearBeforeFill = true;
-            // 
+
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.labelControl2);
@@ -297,7 +285,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_TriGiaHoaDonToiThieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_PhanTramGiam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiKhachHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet20)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -316,9 +303,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_Reset;
         private System.Windows.Forms.NumericUpDown num_TriGiaHoaDonToiThieu;
         private System.Windows.Forms.NumericUpDown num_PhanTramGiam;
-        private QLVLXDDataSet20 qLVLXDDataSet20;
         private System.Windows.Forms.BindingSource loaiKhachHangBindingSource;
-        private QLVLXDDataSet20TableAdapters.LoaiKhachHangTableAdapter loaiKhachHangTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaLoaiKH;

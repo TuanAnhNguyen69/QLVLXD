@@ -53,7 +53,6 @@
             this.lb_SoHoaDon = new DevExpress.XtraEditors.LabelControl();
             this.grid = new DevExpress.XtraGrid.GridControl();
             this.hoaDonMuaHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet24 = new QLVLXD.QLVLXDDataSet24();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaHDMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayMua = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,7 +63,6 @@
             this.colSDTNCC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTongTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLive = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.hoaDonMuaHangTableAdapter = new QLVLXD.QLVLXDDataSet24TableAdapters.HoaDonMuaHangTableAdapter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.num_SoVatLieu = new System.Windows.Forms.NumericUpDown();
             this.rx_SoVatLieu = new System.Windows.Forms.RadioButton();
@@ -82,7 +80,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonMuaHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_SoVatLieu)).BeginInit();
@@ -371,13 +368,7 @@
             // hoaDonMuaHangBindingSource
             // 
             this.hoaDonMuaHangBindingSource.DataMember = "HoaDonMuaHang";
-            this.hoaDonMuaHangBindingSource.DataSource = this.qLVLXDDataSet24;
-            // 
-            // qLVLXDDataSet24
-            // 
-            this.qLVLXDDataSet24.DataSetName = "QLVLXDDataSet24";
-            this.qLVLXDDataSet24.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
+        
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -458,7 +449,6 @@
             // 
             // hoaDonMuaHangTableAdapter
             // 
-            this.hoaDonMuaHangTableAdapter.ClearBeforeFill = true;
             // 
             // groupBox2
             // 
@@ -614,7 +604,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonMuaHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -649,9 +638,7 @@
         private DevExpress.XtraEditors.LabelControl lb_SoHoaDon;
         private DevExpress.XtraGrid.GridControl grid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private QLVLXDDataSet24 qLVLXDDataSet24;
         private System.Windows.Forms.BindingSource hoaDonMuaHangBindingSource;
-        private QLVLXDDataSet24TableAdapters.HoaDonMuaHangTableAdapter hoaDonMuaHangTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colMaHDMH;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayMua;
         private DevExpress.XtraGrid.Columns.GridColumn colMaNV;

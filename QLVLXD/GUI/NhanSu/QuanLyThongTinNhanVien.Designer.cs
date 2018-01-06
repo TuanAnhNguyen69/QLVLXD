@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.gridControl_QuanLyNhanVien = new DevExpress.XtraGrid.GridControl();
             this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet19 = new QLVLXD.QLVLXDDataSet19();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +65,6 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.nhanVienTableAdapter = new QLVLXD.QLVLXDDataSet19TableAdapters.NhanVienTableAdapter();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txt_MucLuong = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -74,7 +72,6 @@
             this.btn_In = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanLyNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CMND.Properties)).BeginInit();
@@ -102,12 +99,7 @@
             // nhanVienBindingSource
             // 
             this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.qLVLXDDataSet19;
-            // 
-            // qLVLXDDataSet19
-            // 
-            this.qLVLXDDataSet19.DataSetName = "QLVLXDDataSet19";
-            this.qLVLXDDataSet19.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+     
             // 
             // gridView1
             // 
@@ -450,7 +442,6 @@
             // 
             // nhanVienTableAdapter
             // 
-            this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
             // labelControl6
             // 
@@ -547,7 +538,6 @@
             this.Load += new System.EventHandler(this.QuanLyNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanLyNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CMND.Properties)).EndInit();
@@ -586,9 +576,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private QLVLXDDataSet19 qLVLXDDataSet19;
         private System.Windows.Forms.BindingSource nhanVienBindingSource;
-        private QLVLXDDataSet19TableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colMaNV;
         private DevExpress.XtraGrid.Columns.GridColumn colTenNV;
         private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;

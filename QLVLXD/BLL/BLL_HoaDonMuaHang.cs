@@ -15,7 +15,7 @@ namespace QLVLXD.BLL
 {
     class BLL_HoaDonMuaHang : BLL
     {
-        public string Insert(string MaHDMH, DateTime NgayLap, string TenNV, string MaNV, string MaNCC, string TenNCC, decimal SDTNCC, decimal TongTien)
+        public string Insert(string MaHDMH, DateTime NgayLap,string MaNV, string MaNCC, decimal TongTien)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace QLVLXD.BLL
             }
         }
 
-        public string Update(string MaHDMH, DateTime NgayMua, string TenNV, string MaNV, string MaNCC, string TenNCC, decimal SDTNCC, decimal TongTien)
+        public string Update(string MaHDMH, DateTime NgayMua, string MaNV, string MaNCC, decimal TongTien)
         {
             try
             {

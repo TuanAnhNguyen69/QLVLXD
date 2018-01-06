@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HoaDonMuaHang_VatLieu" targetNamespace="http://tempuri.org/HoaDonMuaHang_VatLieu.xsd" xmlns:mstns="http://tempuri.org/HoaDonMuaHang_VatLieu.xsd" xmlns="http://tempuri.org/HoaDonMuaHang_VatLieu.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLVLXDConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLVLXDConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLVLXD.Properties.Settings.GlobalReference.Default.QLVLXDConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DonViTinhVatLieuTableAdapter" GeneratorDataComponentClassName="DonViTinhVatLieuTableAdapter" Name="DonViTinhVatLieu" UserDataComponentName="DonViTinhVatLieuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLVLXDConnectionString (Settings)" DbObjectName="QLVLXD.dbo.DonViTinhVatLieu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DVT FROM dbo.DonViTinhVatLieu</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DVT" DataSetColumn="DVT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VatLieuTableAdapter" GeneratorDataComponentClassName="VatLieuTableAdapter" Name="VatLieu" UserDataComponentName="VatLieuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLVLXDConnectionString (Settings)" DbObjectName="QLVLXD.dbo.VatLieu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TenVL, GiaMua FROM dbo.VatLieu</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TenVL" DataSetColumn="TenVL" />
+              <Mapping SourceColumn="GiaMua" DataSetColumn="GiaMua" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HoaDonMuaHang_VatLieu" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HoaDonMuaHang_VatLieu" msprop:Generator_UserDSName="HoaDonMuaHang_VatLieu">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DonViTinhVatLieu" msprop:Generator_TableClassName="DonViTinhVatLieuDataTable" msprop:Generator_TableVarName="tableDonViTinhVatLieu" msprop:Generator_TablePropName="DonViTinhVatLieu" msprop:Generator_RowDeletingName="DonViTinhVatLieuRowDeleting" msprop:Generator_RowChangingName="DonViTinhVatLieuRowChanging" msprop:Generator_RowEvHandlerName="DonViTinhVatLieuRowChangeEventHandler" msprop:Generator_RowDeletedName="DonViTinhVatLieuRowDeleted" msprop:Generator_UserTableName="DonViTinhVatLieu" msprop:Generator_RowChangedName="DonViTinhVatLieuRowChanged" msprop:Generator_RowEvArgName="DonViTinhVatLieuRowChangeEvent" msprop:Generator_RowClassName="DonViTinhVatLieuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DVT" msprop:Generator_ColumnVarNameInTable="columnDVT" msprop:Generator_ColumnPropNameInRow="DVT" msprop:Generator_ColumnPropNameInTable="DVTColumn" msprop:Generator_UserColumnName="DVT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VatLieu" msprop:Generator_TableClassName="VatLieuDataTable" msprop:Generator_TableVarName="tableVatLieu" msprop:Generator_TablePropName="VatLieu" msprop:Generator_RowDeletingName="VatLieuRowDeleting" msprop:Generator_RowChangingName="VatLieuRowChanging" msprop:Generator_RowEvHandlerName="VatLieuRowChangeEventHandler" msprop:Generator_RowDeletedName="VatLieuRowDeleted" msprop:Generator_UserTableName="VatLieu" msprop:Generator_RowChangedName="VatLieuRowChanged" msprop:Generator_RowEvArgName="VatLieuRowChangeEvent" msprop:Generator_RowClassName="VatLieuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TenVL" msprop:Generator_ColumnVarNameInTable="columnTenVL" msprop:Generator_ColumnPropNameInRow="TenVL" msprop:Generator_ColumnPropNameInTable="TenVLColumn" msprop:Generator_UserColumnName="TenVL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GiaMua" msprop:Generator_ColumnVarNameInTable="columnGiaMua" msprop:Generator_ColumnPropNameInRow="GiaMua" msprop:Generator_ColumnPropNameInTable="GiaMuaColumn" msprop:Generator_UserColumnName="GiaMua" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

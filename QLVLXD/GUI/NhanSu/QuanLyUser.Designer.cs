@@ -42,7 +42,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl_QuanlyUser = new DevExpress.XtraGrid.GridControl();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet22 = new QLVLXD.QLVLXDDataSet22();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colTenDangNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,12 +53,10 @@
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.cb_TenNhanVien = new System.Windows.Forms.ComboBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.userTableAdapter = new QLVLXD.QLVLXDDataSet22TableAdapters.UserTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenDangNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanlyUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -201,12 +198,7 @@
             // userBindingSource
             // 
             this.userBindingSource.DataMember = "User";
-            this.userBindingSource.DataSource = this.qLVLXDDataSet22;
-            // 
-            // qLVLXDDataSet22
-            // 
-            this.qLVLXDDataSet22.DataSetName = "QLVLXDDataSet22";
-            this.qLVLXDDataSet22.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            
             // 
             // gridView1
             // 
@@ -316,7 +308,6 @@
             // 
             // userTableAdapter
             // 
-            this.userTableAdapter.ClearBeforeFill = true;
             // 
             // QuanLyUser
             // 
@@ -340,7 +331,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanlyUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -366,9 +356,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cb_TenNhanVien;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private QLVLXDDataSet22 qLVLXDDataSet22;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private QLVLXDDataSet22TableAdapters.UserTableAdapter userTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colTenDangNhap;
         private DevExpress.XtraGrid.Columns.GridColumn colPassword;
         private DevExpress.XtraGrid.Columns.GridColumn colMaNV;

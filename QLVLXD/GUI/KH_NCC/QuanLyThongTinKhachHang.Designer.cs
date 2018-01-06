@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.gridControl_KhachHang = new DevExpress.XtraGrid.GridControl();
             this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVLXDDataSet18 = new QLVLXD.QLVLXDDataSet18();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +65,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.khachHangTableAdapter = new QLVLXD.QLVLXDDataSet18TableAdapters.KhachHangTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lb_CongNo = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,7 +72,6 @@
             this.btn_In = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_KhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Email.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CMND.Properties)).BeginInit();
@@ -100,12 +97,9 @@
             // khachHangBindingSource
             // 
             this.khachHangBindingSource.DataMember = "KhachHang";
-            this.khachHangBindingSource.DataSource = this.qLVLXDDataSet18;
             // 
             // qLVLXDDataSet18
             // 
-            this.qLVLXDDataSet18.DataSetName = "QLVLXDDataSet18";
-            this.qLVLXDDataSet18.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -420,7 +414,6 @@
             // 
             // khachHangTableAdapter
             // 
-            this.khachHangTableAdapter.ClearBeforeFill = true;
             // 
             // groupBox1
             // 
@@ -510,7 +503,6 @@
             this.VisibleChanged += new System.EventHandler(this.KhachHang_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_KhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Email.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CMND.Properties)).EndInit();
@@ -548,9 +540,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private QLVLXDDataSet18 qLVLXDDataSet18;
         private System.Windows.Forms.BindingSource khachHangBindingSource;
-        private QLVLXDDataSet18TableAdapters.KhachHangTableAdapter khachHangTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colMaKH;
         private DevExpress.XtraGrid.Columns.GridColumn colTenKH;
         private DevExpress.XtraGrid.Columns.GridColumn colNgaySinh;
