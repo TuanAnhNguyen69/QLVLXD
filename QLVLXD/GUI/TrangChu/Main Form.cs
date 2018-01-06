@@ -20,14 +20,14 @@ using QLVLXD.GUI.TrangChu;
 
 namespace QLVLXD
 {
-    public enum E_FORM { BANHANG, MUAHANG, VATLIEU, THONGKEBANHANG, TIENTE, NHANVIEN, NHACUNGCAP, KHACHHANG, LOAIKHACHHANG, USER, CAPNHATTAIKHOAN, CAUHINH, THONGKEMUAHANG, HOME };
+    public enum E_FORM { BANHANG, MUAHANG, VATLIEU, THONGKEBANHANG, NHANVIEN, NHACUNGCAP, KHACHHANG, LOAIKHACHHANG, USER, CAPNHATTAIKHOAN, CAUHINH, THONGKEMUAHANG, HOME };
 
     public partial class Main_Form : RibbonForm
     {
         public HoaDonBanHang frm_banhang; public
         GUI.HoaDonMuaHang frm_muahang; public
         GUI.NghiepVu.ThongKeBanHang frm_thongkebanhang; public
-        GUI.NghiepVu.TienTeDonViTinhLoaiVatLieu frm_tiente; public
+       // GUI.NghiepVu.TienTeDonViTinhLoaiVatLieu frm_tiente; public
         VatLieu frm_vatlieu; public
         QuanLyThongTinNhanVien frm_nhanvien; public
         NhaCungCap frm_nhacungcap; public
@@ -40,7 +40,7 @@ namespace QLVLXD
         public GUI.NghiepVu.ThongKeMuaHang frm_thongkemuahang;
         GUI.TrangChu.Home frm_home;
 
-        const int SOFORM = 14;
+        const int SOFORM = 13;
         bool[] IsOpen = new bool[SOFORM];
         string[] TitleTab = new string[SOFORM];
         public DLL.NhanVien _NhanVienLogining = new DLL.NhanVien();
@@ -205,8 +205,8 @@ namespace QLVLXD
                 btn_ThongKeBanHang_ItemClick(null, null);
             else if (nameindex == TitleTab[(int)E_FORM.VATLIEU])
                 barButtonItem6_ItemClick(null, null);
-            else if (nameindex == TitleTab[(int)E_FORM.TIENTE])
-                btn_TienTeDVTTinhTrang_ItemClick(null, null);
+           // else if (nameindex == TitleTab[(int)E_FORM.TIENTE])
+               // btn_TienTeDVTTinhTrang_ItemClick(null, null);
             else if (nameindex == TitleTab[(int)E_FORM.KHACHHANG])
                 btn_KhachHang_ItemClick(null, null);
             else if (nameindex == TitleTab[(int)E_FORM.NHACUNGCAP])
@@ -256,7 +256,7 @@ namespace QLVLXD
         }
 
         // [Tiền Tệ ... ]
-        private void btn_TienTeDVTTinhTrang_ItemClick(object sender, ItemClickEventArgs e)
+       /* private void btn_TienTeDVTTinhTrang_ItemClick(object sender, ItemClickEventArgs e)
         {
             if ((new BLL_User()).IsUser())
             {
@@ -271,7 +271,7 @@ namespace QLVLXD
                 frm_tiente = new GUI.NghiepVu.TienTeDonViTinhLoaiVatLieu();
                 this.addTabPage(frm_tiente, TitleTab[(int)E_FORM.TIENTE]);                
             }
-        }
+        }*/
 
         // [Nhân Viên]
         private void btn_QuanLyNhanVien_ItemClick(object sender, ItemClickEventArgs e)
@@ -370,7 +370,7 @@ namespace QLVLXD
             TitleTab[(int)E_FORM.MUAHANG] = "Lập Hóa Đơn Mua Hàng";
             TitleTab[(int)E_FORM.THONGKEBANHANG] = "Thống Kê Bán Hàng";
             TitleTab[(int)E_FORM.VATLIEU] = " Quản Lý Vật Liệu";
-            TitleTab[(int)E_FORM.TIENTE] = "Tiền Tệ - Đơn Vị Tính - Tình Trạng Vật Liệu";
+            //TitleTab[(int)E_FORM.TIENTE] = "Tiền Tệ - Đơn Vị Tính - Tình Trạng Vật Liệu";
             TitleTab[(int)E_FORM.NHANVIEN] = "Quản Lý Thông Tin Nhân Viên";
             TitleTab[(int)E_FORM.NHACUNGCAP] = "Nhà Cung Cấp";
             TitleTab[(int)E_FORM.KHACHHANG] = "Khách Hàng";

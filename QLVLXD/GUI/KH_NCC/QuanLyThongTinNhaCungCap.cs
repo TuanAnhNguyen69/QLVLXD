@@ -78,7 +78,7 @@ namespace QLVLXD
         {
             if (KiemTraDuLieuNhap() == false)
                 return;
-            if (nhacungcap.Insert(lb_MaNhaCungCap.Text, txt_TenNCC.Text, decimal.Parse(txt_SDT_NCC.Text), txt_DiaChiNCC.Text))
+            if (nhacungcap.Insert(lb_MaNhaCungCap.Text, txt_TenNCC.Text, txt_SDT_NCC.Text, txt_DiaChiNCC.Text))
             {
                 Refresh_Grid();
                 ResetThongTin();
@@ -100,7 +100,7 @@ namespace QLVLXD
         {
             if (KiemTraDuLieuNhap() == false)
                 return;
-            if (nhacungcap.Update(lb_MaNhaCungCap.Text, txt_TenNCC.Text, decimal.Parse(txt_SDT_NCC.Text), txt_DiaChiNCC.Text))
+            if (nhacungcap.Update(lb_MaNhaCungCap.Text, txt_TenNCC.Text, txt_SDT_NCC.Text, txt_DiaChiNCC.Text))
             {
                 Refresh_Grid();
                 ResetThongTin();

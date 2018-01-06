@@ -138,7 +138,7 @@ namespace QLVLXD
         {
             if (KiemTraDuLieuNhap() == false)
                 return;
-            if (nhanvien.Insert(lb_MaNhanVien.Text, txt_TenNhanVien.Text, txt_DiaChi.Text, decimal.Parse(txt_SDT.Text), dTP_NgaySinh.Value, cbb_GioiTinh.Text, cbb_ChucVu.Text, decimal.Parse(txt_MucLuong.Text), decimal.Parse(txt_CMND.Text), txt_Email.Text))
+            if (nhanvien.Insert(lb_MaNhanVien.Text, txt_TenNhanVien.Text, txt_DiaChi.Text, txt_SDT.Text, dTP_NgaySinh.Value, cbb_GioiTinh.Text, cbb_ChucVu.Text, decimal.Parse(txt_MucLuong.Text), decimal.Parse(txt_CMND.Text), txt_Email.Text))
             {
                 Refresh_Grid();
                 ResetThongTin();
@@ -162,7 +162,7 @@ namespace QLVLXD
         {
             if (KiemTraDuLieuNhap() == false)
                 return;
-            if (nhanvien.Update(lb_MaNhanVien.Text, txt_TenNhanVien.Text, txt_DiaChi.Text, decimal.Parse(txt_SDT.Text), dTP_NgaySinh.Value, cbb_GioiTinh.Text, cbb_ChucVu.Text, decimal.Parse(txt_MucLuong.Text), decimal.Parse(txt_CMND.Text), txt_Email.Text))
+            if (nhanvien.Update(lb_MaNhanVien.Text, txt_TenNhanVien.Text, txt_DiaChi.Text, txt_SDT.Text, dTP_NgaySinh.Value, cbb_GioiTinh.Text, cbb_ChucVu.Text, decimal.Parse(txt_MucLuong.Text), decimal.Parse(txt_CMND.Text), txt_Email.Text))
             {
                 Refresh_Grid();
                 ResetThongTin();
