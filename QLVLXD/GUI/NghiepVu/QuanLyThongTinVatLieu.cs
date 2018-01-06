@@ -330,7 +330,6 @@ namespace QLVLXD
             _VatLieuGridViewSelected.TenVL = grid_VatLieu.Rows[rowindex].Cells[1].Value.ToString().Trim();
             _VatLieuGridViewSelected.MaNCC = grid_VatLieu.Rows[rowindex].Cells[2].Value.ToString().Trim();
             _VatLieuGridViewSelected.SoLuong = Decimal.Parse(grid_VatLieu.Rows[rowindex].Cells[3].Value.ToString().Trim());
-            _TenTinhTrangGridViewSelected = grid_VatLieu.Rows[rowindex].Cells[12].Value.ToString().Trim();
             _TenKMGridViewSelected = grid_VatLieu.Rows[rowindex].Cells[13].Value.ToString().Trim();
             {// Ghi chú
                 var tmp = grid_VatLieu.Rows[rowindex].Cells[14].Value;

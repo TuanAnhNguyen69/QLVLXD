@@ -1193,7 +1193,7 @@
             this.btn_ThongKeMuaHang});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 442;
+            this.ribbonControl.MaxItemId = 443;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1231,9 +1231,6 @@
             // ribbonImageCollection
             // 
             this.ribbonImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollection.ImageStream")));
-            this.ribbonImageCollection.Images.SetKeyName(0, "Ribbon_Exit_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(1, "Ribbon_Content_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(2, "Ribbon_Info_16x16.png");
             // 
             // iHelp
             // 
@@ -3025,8 +3022,6 @@
     " when the category text is very long.";
             spreadsheetCommandGalleryItem111.Caption = "100% Stacked Bar";
             spreadsheetCommandGalleryItem111.CommandName = "InsertChartBarPercentStacked2D";
-            spreadsheetCommandGalleryItem111.Description = resources.GetString("spreadsheetCommandGalleryItem111.Description");
-            spreadsheetCommandGalleryItem111.Hint = resources.GetString("spreadsheetCommandGalleryItem111.Hint");
             spreadsheetCommandGalleryItemGroup25.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
             spreadsheetCommandGalleryItem109,
             spreadsheetCommandGalleryItem110,
@@ -4828,8 +4823,6 @@
             // 
             this.btn_QuanLyUser.Caption = "Quản lý User";
             this.btn_QuanLyUser.Id = 318;
-            this.btn_QuanLyUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuanLyUser.ImageOptions.Image")));
-            this.btn_QuanLyUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_QuanLyUser.ImageOptions.LargeImage")));
             this.btn_QuanLyUser.LargeWidth = 150;
             this.btn_QuanLyUser.Name = "btn_QuanLyUser";
             // 
@@ -4861,7 +4854,6 @@
             // 
             this.btn_ChuyenUser.Caption = "Chuyển User";
             this.btn_ChuyenUser.Id = 325;
-            this.btn_ChuyenUser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChuyenUser.ImageOptions.Image")));
             this.btn_ChuyenUser.ImageOptions.LargeImage = global::QLVLXD.Properties.Resources.unnamed1;
             this.btn_ChuyenUser.LargeWidth = 100;
             this.btn_ChuyenUser.Name = "btn_ChuyenUser";
@@ -4871,8 +4863,7 @@
             // 
             this.btn_Thoat.Caption = "Thoát";
             this.btn_Thoat.Id = 333;
-            this.btn_Thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.ImageOptions.Image")));
-            this.btn_Thoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.ImageOptions.LargeImage")));
+            this.btn_Thoat.ImageOptions.Image = global::QLVLXD.Properties.Resources.update_icon_66436;
             this.btn_Thoat.LargeWidth = 100;
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -4891,7 +4882,6 @@
             // 
             this.btn_MatHang.Caption = "Mặt hàng";
             this.btn_MatHang.Id = 338;
-            this.btn_MatHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_MatHang.ImageOptions.LargeImage")));
             this.btn_MatHang.LargeWidth = 150;
             this.btn_MatHang.Name = "btn_MatHang";
             // 
@@ -4899,7 +4889,6 @@
             // 
             this.btn_TienTe.Caption = "Tiền tệ";
             this.btn_TienTe.Id = 339;
-            this.btn_TienTe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_TienTe.ImageOptions.LargeImage")));
             this.btn_TienTe.LargeWidth = 150;
             this.btn_TienTe.Name = "btn_TienTe";
             // 
@@ -4916,7 +4905,6 @@
             // 
             this.btn_PhieuNhapKho.Caption = "Phiếu nhập kho";
             this.btn_PhieuNhapKho.Id = 341;
-            this.btn_PhieuNhapKho.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_PhieuNhapKho.ImageOptions.LargeImage")));
             this.btn_PhieuNhapKho.LargeWidth = 150;
             this.btn_PhieuNhapKho.Name = "btn_PhieuNhapKho";
             // 
@@ -4924,7 +4912,6 @@
             // 
             this.btn_XemChiTietDonMuaHang.Caption = "Xem chi tiết đơn mua hàng";
             this.btn_XemChiTietDonMuaHang.Id = 342;
-            this.btn_XemChiTietDonMuaHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_XemChiTietDonMuaHang.ImageOptions.LargeImage")));
             this.btn_XemChiTietDonMuaHang.LargeWidth = 150;
             this.btn_XemChiTietDonMuaHang.Name = "btn_XemChiTietDonMuaHang";
             // 
@@ -4932,7 +4919,6 @@
             // 
             this.btn_DonDatHang.Caption = "Đơn đặt hàng";
             this.btn_DonDatHang.Id = 343;
-            this.btn_DonDatHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DonDatHang.ImageOptions.LargeImage")));
             this.btn_DonDatHang.LargeWidth = 150;
             this.btn_DonDatHang.Name = "btn_DonDatHang";
             // 
@@ -4940,7 +4926,6 @@
             // 
             this.btn_HoaDonBanLe.Caption = "Hóa đơn bán lẻ";
             this.btn_HoaDonBanLe.Id = 344;
-            this.btn_HoaDonBanLe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_HoaDonBanLe.ImageOptions.LargeImage")));
             this.btn_HoaDonBanLe.LargeWidth = 150;
             this.btn_HoaDonBanLe.Name = "btn_HoaDonBanLe";
             // 
@@ -4948,7 +4933,6 @@
             // 
             this.btn_XemChiTietDonMuaHang2.Caption = "Xem chi tiết đơn mua hàng";
             this.btn_XemChiTietDonMuaHang2.Id = 345;
-            this.btn_XemChiTietDonMuaHang2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_XemChiTietDonMuaHang2.ImageOptions.LargeImage")));
             this.btn_XemChiTietDonMuaHang2.LargeWidth = 150;
             this.btn_XemChiTietDonMuaHang2.Name = "btn_XemChiTietDonMuaHang2";
             // 
@@ -5004,7 +4988,7 @@
             // 
             this.btn_KhachHang.Caption = "Quản Lý Khách Hàng";
             this.btn_KhachHang.Id = 395;
-            this.btn_KhachHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_KhachHang.ImageOptions.LargeImage")));
+            this.btn_KhachHang.ImageOptions.Image = global::QLVLXD.Properties.Resources.user_customer;
             this.btn_KhachHang.LargeWidth = 100;
             this.btn_KhachHang.Name = "btn_KhachHang";
             this.btn_KhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_KhachHang_ItemClick);
@@ -5066,9 +5050,6 @@
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
             this.ribbonImageCollectionLarge.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollectionLarge.ImageStream")));
-            this.ribbonImageCollectionLarge.Images.SetKeyName(0, "Ribbon_Exit_32x32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(1, "Ribbon_Content_32x32.png");
-            this.ribbonImageCollectionLarge.Images.SetKeyName(2, "Ribbon_Info_32x32.png");
             // 
             // fileRibbonPage1
             // 
@@ -5174,19 +5155,11 @@
             // 
             this.navbarImageCollectionLarge.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("navbarImageCollectionLarge.ImageStream")));
             this.navbarImageCollectionLarge.TransparentColor = System.Drawing.Color.Transparent;
-            this.navbarImageCollectionLarge.Images.SetKeyName(0, "Mail_16x16.png");
-            this.navbarImageCollectionLarge.Images.SetKeyName(1, "Organizer_16x16.png");
             // 
             // navbarImageCollection
             // 
             this.navbarImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("navbarImageCollection.ImageStream")));
             this.navbarImageCollection.TransparentColor = System.Drawing.Color.Transparent;
-            this.navbarImageCollection.Images.SetKeyName(0, "Inbox_16x16.png");
-            this.navbarImageCollection.Images.SetKeyName(1, "Outbox_16x16.png");
-            this.navbarImageCollection.Images.SetKeyName(2, "Drafts_16x16.png");
-            this.navbarImageCollection.Images.SetKeyName(3, "Trash_16x16.png");
-            this.navbarImageCollection.Images.SetKeyName(4, "Calendar_16x16.png");
-            this.navbarImageCollection.Images.SetKeyName(5, "Tasks_16x16.png");
             // 
             // spreadsheetBarController1
             // 
@@ -5508,7 +5481,6 @@
             // 
             this.barButtonItem7.Caption = "Bán Hàng";
             this.barButtonItem7.Id = 340;
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
             this.barButtonItem7.LargeWidth = 150;
             this.barButtonItem7.Name = "barButtonItem7";
             // 
@@ -5936,3 +5908,4 @@
         private DevExpress.XtraBars.BarButtonItem btn_ThongKeMuaHang;
     }
 }
+

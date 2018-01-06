@@ -262,14 +262,14 @@
     <EmbeddedResource Include="GUI\TrangChu\Login2.resx">
       <DependentUpon>Login2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\TrangChu\Main Form.resx">
-      <DependentUpon>Main Form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\KH_NCC\QuanLyThongTinNhaCungCap.resx">
       <DependentUpon>QuanLyThongTinNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NghiepVu\LapHoaDonBanHang.resx">
       <DependentUpon>LapHoaDonBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TrangChu\Main Form.resx">
+      <DependentUpon>Main Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
