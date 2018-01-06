@@ -575,7 +575,6 @@
             this.reviewRibbonPage1 = new DevExpress.XtraSpreadsheet.UI.ReviewRibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.spreadsheetBarController1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController();
@@ -595,11 +594,6 @@
             this.btn_QuanLyLuong2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.chk_ThongBaoHetHang = new System.Windows.Forms.CheckBox();
-            this.chk_GiaoHang = new System.Windows.Forms.CheckBox();
-            this.strip_ThongBaoHetHang = new System.Windows.Forms.ToolStripStatusLabel();
-            this.strip_GiaoHang = new System.Windows.Forms.ToolStripStatusLabel();
-            this.strip_ThongBao = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
@@ -637,7 +631,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabcontrol)).BeginInit();
-            this.strip_ThongBao.SuspendLayout();
             this.SuspendLayout();
             // 
             // spreadsheetCommandBarSubItem16
@@ -1200,7 +1193,7 @@
             this.btn_ThongKeMuaHang});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 439;
+            this.ribbonControl.MaxItemId = 442;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -1217,7 +1210,6 @@
             this.repositoryItemPopupGalleryEdit1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbonControl.Size = new System.Drawing.Size(1170, 143);
-            this.ribbonControl.StatusBar = this.ribbonStatusBar1;
             // 
             // appMenu
             // 
@@ -5005,11 +4997,8 @@
             // 
             // btn_TienTeDVTTinhTrang
             // 
-           // this.btn_TienTeDVTTinhTrang.Caption = "Tiền Tệ, Đơn Vị Tính\r\nTình Trạng Vật Liệu";
-           // this.btn_TienTeDVTTinhTrang.Id = 387;
-            //this.btn_TienTeDVTTinhTrang.ImageOptions.LargeImage = global::QLVLXD.Properties.Resources.flat_vector_money_icon_dollar_long_shadow_isolated_white_background_39939483;
-           // this.btn_TienTeDVTTinhTrang.Name = "btn_TienTeDVTTinhTrang";
-            //this.btn_TienTeDVTTinhTrang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TienTeDVTTinhTrang_ItemClick);
+            this.btn_TienTeDVTTinhTrang.Id = 440;
+            this.btn_TienTeDVTTinhTrang.Name = "btn_TienTeDVTTinhTrang";
             // 
             // btn_KhachHang
             // 
@@ -5180,13 +5169,6 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_CauHinh);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Admin";
-            // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 698);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1170, 31);
             // 
             // navbarImageCollectionLarge
             // 
@@ -5536,7 +5518,7 @@
             this.tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabcontrol.Location = new System.Drawing.Point(0, 143);
             this.tabcontrol.Name = "tabcontrol";
-            this.tabcontrol.Size = new System.Drawing.Size(1170, 555);
+            this.tabcontrol.Size = new System.Drawing.Size(1170, 582);
             this.tabcontrol.TabIndex = 2;
             this.tabcontrol.CloseButtonClick += new System.EventHandler(this.tabcontrol_CloseButtonClick);
             // 
@@ -5553,66 +5535,14 @@
             // timer2
             // 
             this.timer2.Interval = 2000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // chk_ThongBaoHetHang
-            // 
-            this.chk_ThongBaoHetHang.AutoSize = true;
-            this.chk_ThongBaoHetHang.BackColor = System.Drawing.Color.Gainsboro;
-            this.chk_ThongBaoHetHang.Location = new System.Drawing.Point(4, 704);
-            this.chk_ThongBaoHetHang.Name = "chk_ThongBaoHetHang";
-            this.chk_ThongBaoHetHang.Size = new System.Drawing.Size(123, 17);
-            this.chk_ThongBaoHetHang.TabIndex = 8;
-            this.chk_ThongBaoHetHang.Text = "Thông báo hết hàng";
-            this.chk_ThongBaoHetHang.UseVisualStyleBackColor = false;
-            // 
-            // chk_GiaoHang
-            // 
-            this.chk_GiaoHang.AutoSize = true;
-            this.chk_GiaoHang.BackColor = System.Drawing.Color.Gainsboro;
-            this.chk_GiaoHang.Location = new System.Drawing.Point(133, 704);
-            this.chk_GiaoHang.Name = "chk_GiaoHang";
-            this.chk_GiaoHang.Size = new System.Drawing.Size(127, 17);
-            this.chk_GiaoHang.TabIndex = 8;
-            this.chk_GiaoHang.Text = "Thông báo giao hàng";
-            this.chk_GiaoHang.UseVisualStyleBackColor = false;
-            // 
-            // strip_ThongBaoHetHang
-            // 
-            this.strip_ThongBaoHetHang.Name = "strip_ThongBaoHetHang";
-            this.strip_ThongBaoHetHang.Size = new System.Drawing.Size(0, 18);
-            // 
-            // strip_GiaoHang
-            // 
-            this.strip_GiaoHang.ForeColor = System.Drawing.Color.Purple;
-            this.strip_GiaoHang.Name = "strip_GiaoHang";
-            this.strip_GiaoHang.Size = new System.Drawing.Size(84, 18);
-            this.strip_GiaoHang.Text = "Giao Hàng";
-            // 
-            // strip_ThongBao
-            // 
-            this.strip_ThongBao.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.strip_ThongBao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.strip_ThongBaoHetHang,
-            this.strip_GiaoHang});
-            this.strip_ThongBao.Location = new System.Drawing.Point(0, 675);
-            this.strip_ThongBao.Name = "strip_ThongBao";
-            this.strip_ThongBao.Size = new System.Drawing.Size(1170, 23);
-            this.strip_ThongBao.TabIndex = 5;
-            this.strip_ThongBao.Text = "statusStrip1";
-            this.strip_ThongBao.Click += new System.EventHandler(this.strip_HetHang_Click);
             // 
             // Main_Form
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 729);
-            this.Controls.Add(this.chk_GiaoHang);
-            this.Controls.Add(this.chk_ThongBaoHetHang);
-            this.Controls.Add(this.strip_ThongBao);
+            this.ClientSize = new System.Drawing.Size(1170, 725);
             this.Controls.Add(this.tabcontrol);
-            this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1180, 730);
@@ -5620,7 +5550,6 @@
             this.Name = "Main_Form";
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.StatusBar = this.ribbonStatusBar1;
             this.Text = "QUẢN LÝ CỬA HÀNG VẬT LIỆU XÂY DỰNG";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_Form_FormClosed);
             this.Load += new System.EventHandler(this.Main_Form_Load);
@@ -5662,8 +5591,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabcontrol)).EndInit();
-            this.strip_ThongBao.ResumeLayout(false);
-            this.strip_ThongBao.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5969,7 +5896,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btn_ChuyenUser;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraSpreadsheet.UI.FormulaDefinedNamesRibbonPageGroup formulaDefinedNamesRibbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btn_Thoat;
         private DevExpress.XtraBars.BarButtonItem btn_QuanLyNhanVien;
@@ -6004,11 +5930,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_CauHinh;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.CheckBox chk_ThongBaoHetHang;
-        private System.Windows.Forms.CheckBox chk_GiaoHang;
-        private System.Windows.Forms.ToolStripStatusLabel strip_ThongBaoHetHang;
-        private System.Windows.Forms.ToolStripStatusLabel strip_GiaoHang;
-        private System.Windows.Forms.StatusStrip strip_ThongBao;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;

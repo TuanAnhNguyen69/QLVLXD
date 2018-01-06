@@ -47,7 +47,6 @@ namespace QLVLXD.GUI.NhanSu
 
         private void ResetThongTin()
         {
-            txt_TenUser.Text = null;
             txt_TenDangNhap.Text = null;
             txt_Password.Text = null;
             btn_Them.Visible = true;
@@ -64,12 +63,7 @@ namespace QLVLXD.GUI.NhanSu
 
         private bool KiemTraDuLieuNhap()
         {
-            if (txt_TenUser.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Tên User không được để trống,", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
+         
             if (txt_TenDangNhap.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Tên đăng nhập không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,7 +90,7 @@ namespace QLVLXD.GUI.NhanSu
                 return;
             }
 
-            quanlyuser.Insert(txt_TenUser.Text, txt_TenDangNhap.Text, nv.MaNV.Trim(), txt_Password.Text, cbb_PhanQuyen.Text);
+            quanlyuser.Insert(txt_TenDangNhap.Text, nv.MaNV.Trim(), txt_Password.Text, cbb_PhanQuyen.Text);
             Refresh_Grid();
             ResetThongTin();
         }
@@ -143,14 +137,13 @@ namespace QLVLXD.GUI.NhanSu
             btn_XemChiTiet.Visible = true;
             txt_Password.Enabled = false;
 
-            txt_TenUser.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenUser").ToString();
             txt_TenDangNhap.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenDangNhap").ToString();
             cbb_PhanQuyen.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "PhanQuyen").ToString();
         }
 
         private void cb_TenNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txt_TenUser.Text = (new BLL_NhanVien()).GetObjectFromTenNhanVien(cb_TenNhanVien.Text).TenNV.Trim();
+            
         }
     }
 }

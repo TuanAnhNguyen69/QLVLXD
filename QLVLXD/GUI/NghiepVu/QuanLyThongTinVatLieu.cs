@@ -54,7 +54,7 @@ namespace QLVLXD
             foreach (DLL.VatLieu var in listvl)
             {
                 var DVT = _DonViTinhVatLieu.GetObjectFromID(var.MaDVT);
-                var NCC = _BLL_NhaCungCap.GetObjectFromID(var.MaNCC);
+                var NCC = _BLL_NhaCungCap.GetObjectFromID(var.MaNCC.Trim());
                 grid_VatLieu.Rows.Add(var.MaVL.Trim(), var.TenVL.Trim(), NCC.MaNCC.Trim(), var.SoLuong, DVT.DVT.Trim(), var.GiaMua, var.GiaBan, var.GhiChu);
             }
         }
@@ -91,7 +91,8 @@ namespace QLVLXD
             }
 
             // Insert
-            result = _BLL_VatLieu.Insert(lb_MaVatLieu.Text.Trim(), tb_TenVatLieu.Text.Trim(), lb_MaNhaCungCap.Text.Trim(), num_SoLuong.Value, cb_DonViTinh.Text.Trim(), Decimal.Round(num_GiaMua.Value, 0), Decimal.Round(num_GiaBan.Value), GhiChu);
+            var DVT = _DonViTinhVatLieu.GetDonViTinhTuTen(cb_DonViTinh.Text.Trim());
+            result = _BLL_VatLieu.Insert(lb_MaVatLieu.Text.Trim(), tb_TenVatLieu.Text.Trim(), lb_MaNhaCungCap.Text.Trim(), num_SoLuong.Value, DVT.MaDVT.Trim(), Decimal.Round(num_GiaMua.Value, 0), Decimal.Round(num_GiaBan.Value), GhiChu);
             _BLL_VatLieu.MakeMessageBox(result);
 
             if (result._Code == (int)BLLResultType.S_ADD) // Thành công thì Reset
@@ -136,7 +137,6 @@ namespace QLVLXD
 
             // Đơn vị tính
             cb_DonViTinh.SelectedIndex = 0;
-            cb_DonViTinh.SelectedIndex = 0;
 
             // Phần giá
             num_GiaMua.Value = 0;
@@ -144,7 +144,7 @@ namespace QLVLXD
             num_SoLuong.Value = (new BLL_CTHoaDonBanHang()).ReadConfig()._SoLuongToiThieu;
 
             // Khuyến m
-            num_SoLuong.Value = 0;
+            num_SoLuong.Value = 1;
 
             // Nút
             IsAddNew = true;

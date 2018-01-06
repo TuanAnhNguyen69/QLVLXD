@@ -16,11 +16,11 @@ using QLVLXD.BLL;
 using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
 using QLVLXD.GUI;
-using QLVLXD.GUI.TrangChu;
+using QLVLXD.GUI.TrangChu; 
 
 namespace QLVLXD
 {
-    public enum E_FORM { BANHANG, MUAHANG, VATLIEU, THONGKEBANHANG, TIENTE, NHANVIEN, NHACUNGCAP, KHACHHANG, LOAIKHACHHANG, USER, CAPNHATTAIKHOAN, CAUHINH, THONGKEMUAHANG, HOME };
+    public enum E_FORM { BANHANG, MUAHANG, VATLIEU, THONGKEBANHANG, NHANVIEN, NHACUNGCAP, KHACHHANG, LOAIKHACHHANG, USER, CAPNHATTAIKHOAN, CAUHINH, THONGKEMUAHANG, HOME };
 
     public partial class Main_Form : RibbonForm
     {
@@ -354,17 +354,6 @@ namespace QLVLXD
         private void Main_Form_Shown(object sender, EventArgs e)
         {
             // Thông báo hết hàng, giao hàng
-            timer.Start();
-           
-            timer.Interval = (new BLL_CTHoaDonBanHang()).ReadConfig()._ThoiGianKiemTraCSDL * 60000;
-            timer2.Start();
-            strip_ThongBaoHetHang.ForeColor = Color.Red;
-            chk_ThongBaoHetHang.Checked = true;
-            chk_GiaoHang.Checked = true;
-            strip_GiaoHang.Text = null;
-            strip_ThongBaoHetHang.Text = (new BLL_VatLieu()).GetDanhSachHet();
-            strip_GiaoHang.Text = (new BLL_HoaDonBanHang()).GetHanGiao();
-
             // Khởi tạo cho IsOpen và TitleTab
             for (int i = 0; i < SOFORM; i++)
                 IsOpen[i] = false;
@@ -372,7 +361,6 @@ namespace QLVLXD
             TitleTab[(int)E_FORM.MUAHANG] = "Lập Hóa Đơn Mua Hàng";
             TitleTab[(int)E_FORM.THONGKEBANHANG] = "Thống Kê Bán Hàng";
             TitleTab[(int)E_FORM.VATLIEU] = " Quản Lý Vật Liệu";
-            //TitleTab[(int)E_FORM.TIENTE] = "Tiền Tệ - Đơn Vị Tính - Tình Trạng Vật Liệu";
             TitleTab[(int)E_FORM.NHANVIEN] = "Quản Lý Thông Tin Nhân Viên";
             TitleTab[(int)E_FORM.NHACUNGCAP] = "Nhà Cung Cấp";
             TitleTab[(int)E_FORM.KHACHHANG] = "Khách Hàng";
@@ -459,43 +447,11 @@ namespace QLVLXD
         // [Timer check CSDL]
         private void timer_Tick(object sender, EventArgs e)
         {
-            if (chk_ThongBaoHetHang.Checked)
-                strip_ThongBaoHetHang.Text = (new BLL_VatLieu()).GetDanhSachHet();
-
-            if (chk_GiaoHang.Checked)
-                strip_GiaoHang.Text = (new BLL_HoaDonBanHang()).GetHanGiao();
+            
         }
 
-        // [Timer hiển thị]
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            if (chk_ThongBaoHetHang.Checked)
-                strip_ThongBaoHetHang.Visible = strip_ThongBaoHetHang.Visible ? false : true;
-            else
-                strip_ThongBaoHetHang.Visible = false;
 
-            if (chk_GiaoHang.Checked)
-            {
-                if (chk_ThongBaoHetHang.Checked)
-                    strip_GiaoHang.Visible = !strip_ThongBaoHetHang.Visible;
-                else
-                    strip_GiaoHang.Visible = strip_GiaoHang.Visible ? false : true;
-            }
-            else
-                strip_GiaoHang.Visible = false;
-        }
-
-        // Click thông báo hết hàng
-        private void strip_HetHang_Click(object sender, EventArgs e)
-        {
-            if (strip_ThongBaoHetHang.Visible && strip_ThongBaoHetHang.Text != null)
-                barButtonItem1_ItemClick_2(null, null);
-            if (strip_GiaoHang.Visible && strip_GiaoHang.Text != null)
-            {
-                btn_ThongKeBanHang_ItemClick(null, null);
-                frm_thongkebanhang.SetLocChuaGiao();
-            }
-        }
+     
 
         // [Chuyển User]
         private void btn_ChuyenUser_ItemClick(object sender, ItemClickEventArgs e)

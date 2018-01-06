@@ -44,7 +44,7 @@ namespace QLVLXD.BLL
             return list;
         }
 
-        public void Insert(string TenUser, string TenDangNhap, string MaNV, string Password, string PhanQuyen)
+        public void Insert(string TenDangNhap, string MaNV, string Password, string PhanQuyen)
         {
             try
             {

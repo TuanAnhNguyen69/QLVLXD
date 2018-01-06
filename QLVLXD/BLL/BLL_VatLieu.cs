@@ -58,7 +58,7 @@ namespace QLVLXD.BLL
             {
                 return new BLLResult(10000741);
             }
-        }
+}
 
         public BLLResult UpdateSoLuong(string MaVL, decimal SoLuong)
         {
@@ -78,26 +78,6 @@ namespace QLVLXD.BLL
             }
         }
 
-        public string GetDanhSachHet()
-        {
-            try
-            {
-                string name = "";
-                var list = GetList();
-                
-                if (name == "")
-                    return null;
-                else
-                {
-                    name = name.Substring(0, name.Length - 2);
-                    return "Các vật liệu sắp hết: " + name + " (Nhấp vào để đến cửa sổ quản lý vật liệu)";
-                }
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
 
         public BLLResult UpdateSoLuongSub(string MaVL, decimal SoLuongSub)
         {
