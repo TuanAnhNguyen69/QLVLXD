@@ -70,6 +70,7 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txt_MucLuong = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_XuatFile = new DevExpress.XtraEditors.SimpleButton();
             this.btn_In = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanLyNhanVien)).BeginInit();
@@ -83,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MucLuong.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl_QuanLyNhanVien
@@ -93,7 +95,7 @@
             this.gridControl_QuanLyNhanVien.MainView = this.gridView1;
             this.gridControl_QuanLyNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl_QuanLyNhanVien.Name = "gridControl_QuanLyNhanVien";
-            this.gridControl_QuanLyNhanVien.Size = new System.Drawing.Size(1493, 236);
+            this.gridControl_QuanLyNhanVien.Size = new System.Drawing.Size(1221, 236);
             this.gridControl_QuanLyNhanVien.TabIndex = 20;
             this.gridControl_QuanLyNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -247,10 +249,10 @@
             // 
             // btn_ResetThongTin
             // 
-            this.btn_ResetThongTin.Location = new System.Drawing.Point(397, 318);
+            this.btn_ResetThongTin.Location = new System.Drawing.Point(280, 299);
             this.btn_ResetThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_ResetThongTin.Name = "btn_ResetThongTin";
-            this.btn_ResetThongTin.Size = new System.Drawing.Size(112, 28);
+            this.btn_ResetThongTin.Size = new System.Drawing.Size(135, 46);
             this.btn_ResetThongTin.TabIndex = 55;
             this.btn_ResetThongTin.Text = "Reset";
             this.btn_ResetThongTin.Click += new System.EventHandler(this.btn_ResetThongTin_Click);
@@ -259,10 +261,10 @@
             // 
             this.btn_CapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CapNhat.Appearance.Options.UseFont = true;
-            this.btn_CapNhat.Location = new System.Drawing.Point(1312, 186);
+            this.btn_CapNhat.Location = new System.Drawing.Point(1117, 254);
             this.btn_CapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.Size = new System.Drawing.Size(120, 48);
+            this.btn_CapNhat.Size = new System.Drawing.Size(120, 89);
             this.btn_CapNhat.TabIndex = 54;
             this.btn_CapNhat.Text = "Cập nhật";
             this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
@@ -273,10 +275,10 @@
             this.btn_Xoa.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_Xoa.Appearance.Options.UseFont = true;
             this.btn_Xoa.Appearance.Options.UseForeColor = true;
-            this.btn_Xoa.Location = new System.Drawing.Point(1312, 94);
+            this.btn_Xoa.Location = new System.Drawing.Point(1117, 140);
             this.btn_Xoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(120, 85);
+            this.btn_Xoa.Size = new System.Drawing.Size(120, 106);
             this.btn_Xoa.TabIndex = 53;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
@@ -287,10 +289,10 @@
             this.btn_Them.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_Them.Appearance.Options.UseFont = true;
             this.btn_Them.Appearance.Options.UseForeColor = true;
-            this.btn_Them.Location = new System.Drawing.Point(1312, 94);
+            this.btn_Them.Location = new System.Drawing.Point(1117, 24);
             this.btn_Them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(120, 140);
+            this.btn_Them.Size = new System.Drawing.Size(120, 108);
             this.btn_Them.TabIndex = 52;
             this.btn_Them.Text = "Thêm \r\nNhân \r\nViên";
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
@@ -497,7 +499,7 @@
             this.groupBox1.Controls.Add(this.labelControl2);
             this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(397, 15);
+            this.groupBox1.Location = new System.Drawing.Point(280, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -506,9 +508,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhân Viên";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.nahnvien;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 47);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 60;
+            this.pictureBox1.TabStop = false;
+            // 
             // btn_XuatFile
             // 
-            this.btn_XuatFile.Location = new System.Drawing.Point(1047, 300);
+            this.btn_XuatFile.Location = new System.Drawing.Point(924, 300);
             this.btn_XuatFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_XuatFile.Name = "btn_XuatFile";
             this.btn_XuatFile.Size = new System.Drawing.Size(103, 43);
@@ -518,7 +531,7 @@
             // 
             // btn_In
             // 
-            this.btn_In.Location = new System.Drawing.Point(1157, 300);
+            this.btn_In.Location = new System.Drawing.Point(1034, 300);
             this.btn_In.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_In.Name = "btn_In";
             this.btn_In.Size = new System.Drawing.Size(61, 43);
@@ -531,9 +544,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1525, 604);
+            this.ClientSize = new System.Drawing.Size(1250, 604);
             this.Controls.Add(this.btn_XuatFile);
             this.Controls.Add(this.btn_In);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_ResetThongTin);
             this.Controls.Add(this.btn_CapNhat);
@@ -557,6 +571,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_MucLuong.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,6 +618,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txt_MucLuong;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.SimpleButton btn_XuatFile;
         private DevExpress.XtraEditors.SimpleButton btn_In;
     }

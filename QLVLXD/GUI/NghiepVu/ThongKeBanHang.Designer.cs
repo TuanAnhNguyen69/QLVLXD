@@ -112,6 +112,7 @@
             this.btn_In = new DevExpress.XtraEditors.SimpleButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lb_SoHoaDon = new DevExpress.XtraEditors.LabelControl();
             this.MaHDBH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,6 +157,7 @@
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Reset
@@ -1098,9 +1100,9 @@
             // btn_XuatFile
             // 
             this.btn_XuatFile.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_XuatFile.Location = new System.Drawing.Point(0, 0);
+            this.btn_XuatFile.Location = new System.Drawing.Point(3, 0);
             this.btn_XuatFile.Name = "btn_XuatFile";
-            this.btn_XuatFile.Size = new System.Drawing.Size(90, 35);
+            this.btn_XuatFile.Size = new System.Drawing.Size(84, 35);
             this.btn_XuatFile.TabIndex = 89;
             this.btn_XuatFile.Text = "Xuất ra File\r";
             this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
@@ -1109,7 +1111,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Location = new System.Drawing.Point(90, 0);
+            this.label1.Location = new System.Drawing.Point(87, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 17);
             this.label1.TabIndex = 92;
@@ -1118,9 +1120,9 @@
             // btn_In
             // 
             this.btn_In.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_In.Location = new System.Drawing.Point(118, 0);
+            this.btn_In.Location = new System.Drawing.Point(115, 0);
             this.btn_In.Name = "btn_In";
-            this.btn_In.Size = new System.Drawing.Size(32, 35);
+            this.btn_In.Size = new System.Drawing.Size(35, 35);
             this.btn_In.TabIndex = 87;
             this.btn_In.Text = "In\r\n";
             this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
@@ -1137,6 +1139,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.labelControl3);
             this.panel5.Controls.Add(this.lb_SoHoaDon);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1145,6 +1148,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 314);
             this.panel5.TabIndex = 95;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.nahnvien;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // labelControl3
             // 
@@ -1313,6 +1326,7 @@
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1402,6 +1416,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_XuatFile;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btn_In;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl lb_SoHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHDBH;

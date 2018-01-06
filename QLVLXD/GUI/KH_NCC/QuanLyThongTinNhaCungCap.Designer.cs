@@ -52,6 +52,7 @@
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_XuatFile = new DevExpress.XtraEditors.SimpleButton();
             this.btn_In = new DevExpress.XtraEditors.SimpleButton();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_NCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,10 +90,10 @@
             // 
             // btn_ResetThongTin
             // 
-            this.btn_ResetThongTin.Location = new System.Drawing.Point(419, 212);
+            this.btn_ResetThongTin.Location = new System.Drawing.Point(276, 202);
             this.btn_ResetThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_ResetThongTin.Name = "btn_ResetThongTin";
-            this.btn_ResetThongTin.Size = new System.Drawing.Size(95, 34);
+            this.btn_ResetThongTin.Size = new System.Drawing.Size(109, 55);
             this.btn_ResetThongTin.TabIndex = 37;
             this.btn_ResetThongTin.Text = "Reset";
             this.btn_ResetThongTin.Click += new System.EventHandler(this.btn_ResetThongTin_Click);
@@ -110,7 +112,7 @@
             // 
             this.btn_CapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CapNhat.Appearance.Options.UseFont = true;
-            this.btn_CapNhat.Location = new System.Drawing.Point(1260, 128);
+            this.btn_CapNhat.Location = new System.Drawing.Point(1030, 197);
             this.btn_CapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_CapNhat.Name = "btn_CapNhat";
             this.btn_CapNhat.Size = new System.Drawing.Size(168, 59);
@@ -124,7 +126,7 @@
             this.btn_Xoa.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_Xoa.Appearance.Options.UseFont = true;
             this.btn_Xoa.Appearance.Options.UseForeColor = true;
-            this.btn_Xoa.Location = new System.Drawing.Point(1260, 50);
+            this.btn_Xoa.Location = new System.Drawing.Point(1030, 119);
             this.btn_Xoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(168, 70);
@@ -138,10 +140,10 @@
             this.btn_Them.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_Them.Appearance.Options.UseFont = true;
             this.btn_Them.Appearance.Options.UseForeColor = true;
-            this.btn_Them.Location = new System.Drawing.Point(1260, 50);
+            this.btn_Them.Location = new System.Drawing.Point(1030, 24);
             this.btn_Them.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(168, 137);
+            this.btn_Them.Size = new System.Drawing.Size(168, 87);
             this.btn_Them.TabIndex = 33;
             this.btn_Them.Text = "Thêm Nhà \r\nCung Cấp";
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
@@ -215,7 +217,7 @@
             this.gridControl_NCC.MainView = this.gridView1;
             this.gridControl_NCC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl_NCC.Name = "gridControl_NCC";
-            this.gridControl_NCC.Size = new System.Drawing.Size(1497, 325);
+            this.gridControl_NCC.Size = new System.Drawing.Size(1186, 325);
             this.gridControl_NCC.TabIndex = 42;
             this.gridControl_NCC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -272,6 +274,17 @@
             this.colLive.FieldName = "Live";
             this.colLive.Name = "colLive";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.Customers_customer_user_male_man_people_light;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txt_SDT_NCC);
@@ -283,7 +296,7 @@
             this.groupBox1.Controls.Add(this.labelControl2);
             this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(419, 23);
+            this.groupBox1.Location = new System.Drawing.Point(276, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -294,20 +307,20 @@
             // 
             // btn_XuatFile
             // 
-            this.btn_XuatFile.Location = new System.Drawing.Point(943, 212);
+            this.btn_XuatFile.Location = new System.Drawing.Point(393, 202);
             this.btn_XuatFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_XuatFile.Name = "btn_XuatFile";
-            this.btn_XuatFile.Size = new System.Drawing.Size(124, 43);
+            this.btn_XuatFile.Size = new System.Drawing.Size(144, 55);
             this.btn_XuatFile.TabIndex = 95;
             this.btn_XuatFile.Text = "Xuất ra File\r";
             this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
             // 
             // btn_In
             // 
-            this.btn_In.Location = new System.Drawing.Point(1075, 212);
+            this.btn_In.Location = new System.Drawing.Point(545, 202);
             this.btn_In.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_In.Name = "btn_In";
-            this.btn_In.Size = new System.Drawing.Size(81, 43);
+            this.btn_In.Size = new System.Drawing.Size(81, 55);
             this.btn_In.TabIndex = 94;
             this.btn_In.Text = "In\r\n";
             this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
@@ -317,11 +330,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1525, 604);
+            this.ClientSize = new System.Drawing.Size(1207, 604);
             this.Controls.Add(this.btn_XuatFile);
             this.Controls.Add(this.btn_In);
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gridControl_NCC);
             this.Controls.Add(this.btn_ResetThongTin);
             this.Controls.Add(this.btn_CapNhat);
@@ -338,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLVLXDDataSet17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_NCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -369,6 +384,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;
         private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
         private DevExpress.XtraGrid.Columns.GridColumn colLive;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.SimpleButton btn_XuatFile;
         private DevExpress.XtraEditors.SimpleButton btn_In;
