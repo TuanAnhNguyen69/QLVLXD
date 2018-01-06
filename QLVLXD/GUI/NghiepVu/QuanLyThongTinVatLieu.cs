@@ -55,7 +55,7 @@ namespace QLVLXD
             {
                 var DVT = _DonViTinhVatLieu.GetObjectFromID(var.MaDVT);
                 var NCC = _BLL_NhaCungCap.GetObjectFromID(var.MaNCC.Trim());
-                grid_VatLieu.Rows.Add(var.MaVL.Trim(), var.TenVL.Trim(), NCC.MaNCC.Trim(), var.SoLuong, DVT.DVT.Trim(), var.GiaMua, var.GiaBan, var.GhiChu);
+                grid_VatLieu.Rows.Add(var.MaVL.Trim(), var.TenVL.Trim(), NCC.TenNCC.Trim(), var.SoLuong, DVT.DVT.Trim(), var.GiaMua, var.GiaBan, var.GhiChu);
             }
         }
 
@@ -328,11 +328,15 @@ namespace QLVLXD
             #region Load vào biến _VatLieuGridViewSelected
             _VatLieuGridViewSelected.MaVL = grid_VatLieu.Rows[rowindex].Cells[0].Value.ToString().Trim();
             _VatLieuGridViewSelected.TenVL = grid_VatLieu.Rows[rowindex].Cells[1].Value.ToString().Trim();
-            _VatLieuGridViewSelected.MaNCC = grid_VatLieu.Rows[rowindex].Cells[2].Value.ToString().Trim();
+            _VatLieuGridViewSelected.MaNCC = _BLL_NhaCungCap.GetObjectFromTenNhaCungCap(grid_VatLieu.Rows[rowindex].Cells[2].Value.ToString().Trim()).MaNCC;
             _VatLieuGridViewSelected.SoLuong = Decimal.Parse(grid_VatLieu.Rows[rowindex].Cells[3].Value.ToString().Trim());
-            _TenKMGridViewSelected = grid_VatLieu.Rows[rowindex].Cells[13].Value.ToString().Trim();
+            _VatLieuGridViewSelected.MaDVT = _DonViTinhVatLieu.GetDonViTinhTuTen(grid_VatLieu.Rows[rowindex].Cells[4].Value.ToString().Trim()).MaDVT;
+            _VatLieuGridViewSelected.GiaMua = Decimal.Parse(grid_VatLieu.Rows[rowindex].Cells[5].Value.ToString().Trim());
+            _VatLieuGridViewSelected.GiaBan = Decimal.Parse(grid_VatLieu.Rows[rowindex].Cells[6].Value.ToString().Trim());
+
+
             {// Ghi chú
-                var tmp = grid_VatLieu.Rows[rowindex].Cells[14].Value;
+                var tmp = grid_VatLieu.Rows[rowindex].Cells[7].Value;
                 string ghichu = tmp == null ? "" : tmp.ToString().Trim();
                 _VatLieuGridViewSelected.GhiChu = ghichu;
             }
@@ -357,7 +361,7 @@ namespace QLVLXD
             num_GiaBan.Value = (decimal)_VatLieuGridViewSelected.GiaBan;
 
             // Đvt
-            cb_DonViTinh.Text = _DonViTinhVatLieu.GetObjectFromID(_VatLieuGridViewSelected.MaVL).DVT.Trim();
+            cb_DonViTinh.Text = _DonViTinhVatLieu.GetObjectFromID(_VatLieuGridViewSelected.MaDVT).DVT.Trim();
             #endregion
 
         }

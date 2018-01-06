@@ -61,14 +61,6 @@
             this.vatLieuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grid_VatLieu = new System.Windows.Forms.DataGridView();
-            this.colMaVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDVT_Goc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.num_GiaBan = new System.Windows.Forms.NumericUpDown();
             this.num_GiaMua = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -77,6 +69,14 @@
             this.cb_DonViTinh = new System.Windows.Forms.ComboBox();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.colMaVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDVT_Goc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tb_TenVatLieu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_GhiChu.Properties)).BeginInit();
@@ -350,56 +350,6 @@
             this.grid_VatLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_VatLieu_CellClick);
             this.grid_VatLieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_VatLieu_CellContentClick);
             // 
-            // colMaVL
-            // 
-            this.colMaVL.HeaderText = "Mã VL";
-            this.colMaVL.Name = "colMaVL";
-            this.colMaVL.ReadOnly = true;
-            // 
-            // colTenVL
-            // 
-            this.colTenVL.HeaderText = "Tên VL";
-            this.colTenVL.Name = "colTenVL";
-            this.colTenVL.ReadOnly = true;
-            // 
-            // NCC
-            // 
-            this.NCC.HeaderText = "NCC";
-            this.NCC.Name = "NCC";
-            this.NCC.ReadOnly = true;
-            this.NCC.Visible = false;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.HeaderText = "Số Lượng";
-            this.colSoLuong.Name = "colSoLuong";
-            this.colSoLuong.ReadOnly = true;
-            // 
-            // colDVT_Goc
-            // 
-            this.colDVT_Goc.HeaderText = "ĐVT";
-            this.colDVT_Goc.Name = "colDVT_Goc";
-            this.colDVT_Goc.ReadOnly = true;
-            // 
-            // colGiaMua
-            // 
-            this.colGiaMua.HeaderText = "Giá Mua";
-            this.colGiaMua.Name = "colGiaMua";
-            this.colGiaMua.ReadOnly = true;
-            // 
-            // colGiaBan
-            // 
-            this.colGiaBan.HeaderText = "Giá Bán";
-            this.colGiaBan.Name = "colGiaBan";
-            this.colGiaBan.ReadOnly = true;
-            // 
-            // colGhiChu
-            // 
-            this.colGhiChu.HeaderText = "Ghi Chú";
-            this.colGhiChu.Name = "colGhiChu";
-            this.colGhiChu.ReadOnly = true;
-            this.colGhiChu.Width = 200;
-            // 
             // num_GiaBan
             // 
             this.num_GiaBan.DecimalPlaces = 5;
@@ -492,6 +442,55 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Đơn vị tính";
             // 
+            // colMaVL
+            // 
+            this.colMaVL.HeaderText = "Mã VL";
+            this.colMaVL.Name = "colMaVL";
+            this.colMaVL.ReadOnly = true;
+            // 
+            // colTenVL
+            // 
+            this.colTenVL.HeaderText = "Tên VL";
+            this.colTenVL.Name = "colTenVL";
+            this.colTenVL.ReadOnly = true;
+            // 
+            // NCC
+            // 
+            this.NCC.HeaderText = "NCC";
+            this.NCC.Name = "NCC";
+            this.NCC.ReadOnly = true;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.HeaderText = "Số Lượng";
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.ReadOnly = true;
+            // 
+            // colDVT_Goc
+            // 
+            this.colDVT_Goc.HeaderText = "ĐVT";
+            this.colDVT_Goc.Name = "colDVT_Goc";
+            this.colDVT_Goc.ReadOnly = true;
+            // 
+            // colGiaMua
+            // 
+            this.colGiaMua.HeaderText = "Giá Mua";
+            this.colGiaMua.Name = "colGiaMua";
+            this.colGiaMua.ReadOnly = true;
+            // 
+            // colGiaBan
+            // 
+            this.colGiaBan.HeaderText = "Giá Bán";
+            this.colGiaBan.Name = "colGiaBan";
+            this.colGiaBan.ReadOnly = true;
+            // 
+            // colGhiChu
+            // 
+            this.colGhiChu.HeaderText = "Ghi Chú";
+            this.colGhiChu.Name = "colGhiChu";
+            this.colGhiChu.ReadOnly = true;
+            this.colGhiChu.Width = 200;
+            // 
             // VatLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,6 +579,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.SimpleButton btn_In;
         private DevExpress.XtraEditors.SimpleButton btn_XuatFile;
+        private System.Windows.Forms.ComboBox cb_DonViTinh;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaVL;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenVL;
         private System.Windows.Forms.DataGridViewTextBoxColumn NCC;
@@ -588,8 +590,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaMua;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGhiChu;
-        private System.Windows.Forms.ComboBox cb_DonViTinh;
-        private DevExpress.XtraEditors.LabelControl labelControl16;
-        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

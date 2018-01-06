@@ -556,7 +556,7 @@ namespace QLVLXD.GUI
             {
                 lb_MaKH.Text = data.MaKH.Trim();
                 SetFormHoaDon();
-                var loai = _LoaiKhachHang.GetObjectFromID(data.MaKH.Trim());
+                var loai = _LoaiKhachHang.GetObjectFromID(data.MaLoaiKH.Trim());
                 if (loai == null)
                 {
                     _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(12000777));
@@ -813,11 +813,9 @@ namespace QLVLXD.GUI
             // Thống kê
             long TongTienVatLieu = 0, TongTienKM = 0, TongTienTruocKM = 0, TongTien = 0, TienKMKH = 0;
             _IsKMSoLanMua = false;
-            foreach (DLL.CTHoaDonBanHang var in _ListVatLieuHoaDon)
-            {
-                TongTienVatLieu = (long) getTongTien();
-                TongTienKM += (long) getKhuyenMai();
-            }
+            TongTienVatLieu = (long) getTongTien();
+            TongTienKM += (long) getKhuyenMai();
+            
             TongTienTruocKM = TongTienVatLieu - TongTienKM;
             TienKMKH = 0;
             TongTien = TongTienTruocKM;
@@ -902,6 +900,7 @@ namespace QLVLXD.GUI
             // Hoàn thành biến _CTHDBHEditting
             _CTHDBHEditting.MaCTHDBH = _BLL_CTHoaDonBanHang.NewMaCTHDBH(_ListVatLieuHoaDon);
             _CTHDBHEditting.MaHDBH = lb_MaHDBH.Text;
+            _CTHDBHEditting.MaVL = _BLL_VatLieu.GetObjectFromTenVL(cb_TenVatLieu.Text.Trim()).MaVL;
             if (tb_GhiChuVatLieu.Text == null || tb_GhiChuVatLieu.Text == "")
                 _CTHDBHEditting.GhiChu = "<Không có ghi chú>";
             else
