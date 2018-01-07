@@ -32,17 +32,7 @@
             this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Them = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Reset = new DevExpress.XtraEditors.SimpleButton();
-            this.grid = new DevExpress.XtraGrid.GridControl();
             this.loaiKhachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaLoaiKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenLoaiKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSoLanMuaToiThieu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTriGiaToiThieuMoiLanMua = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPhanTramGiamLanMuaCuoi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTriGiaHoaDonToiThieu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPhanTramGiam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.tb_TenLoaiKH = new DevExpress.XtraEditors.TextEdit();
@@ -51,14 +41,18 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+            this.grid_loaiKH = new System.Windows.Forms.DataGridView();
+            this.MaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MocTieuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Giam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.loaiKhachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_TenLoaiKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_TriGiaHoaDonToiThieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_PhanTramGiam)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_loaiKH)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Xoa
@@ -69,7 +63,7 @@
             this.btn_Xoa.Appearance.Options.UseForeColor = true;
             this.btn_Xoa.Location = new System.Drawing.Point(1049, 289);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(99, 79);
+            this.btn_Xoa.Size = new System.Drawing.Size(94, 79);
             this.btn_Xoa.TabIndex = 87;
             this.btn_Xoa.Text = "-";
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
@@ -91,106 +85,17 @@
             // 
             this.btn_Reset.Location = new System.Drawing.Point(925, 378);
             this.btn_Reset.Name = "btn_Reset";
-            this.btn_Reset.Size = new System.Drawing.Size(223, 68);
+            this.btn_Reset.Size = new System.Drawing.Size(218, 68);
             this.btn_Reset.TabIndex = 99;
             this.btn_Reset.Text = "Reset";
-            // 
-            // grid
-            // 
-            this.grid.DataSource = this.loaiKhachHangBindingSource;
-            this.grid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.grid.Location = new System.Drawing.Point(262, 12);
-            this.grid.MainView = this.gridView1;
-            this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(886, 271);
-            this.grid.TabIndex = 101;
-            this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
             // 
             // loaiKhachHangBindingSource
             // 
             this.loaiKhachHangBindingSource.DataMember = "LoaiKhachHang";
             // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaLoaiKH,
-            this.colTenLoaiKH,
-            this.colSoLanMuaToiThieu,
-            this.colTriGiaToiThieuMoiLanMua,
-            this.colPhanTramGiamLanMuaCuoi,
-            this.colTriGiaHoaDonToiThieu,
-            this.colPhanTramGiam,
-            this.colLive});
-            this.gridView1.GridControl = this.grid;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colMaLoaiKH
-            // 
-            this.colMaLoaiKH.FieldName = "MaLoaiKH";
-            this.colMaLoaiKH.Name = "colMaLoaiKH";
-            // 
-            // colTenLoaiKH
-            // 
-            this.colTenLoaiKH.Caption = "Tên Loại Khách Hàng";
-            this.colTenLoaiKH.FieldName = "TenLoaiKH";
-            this.colTenLoaiKH.Name = "colTenLoaiKH";
-            this.colTenLoaiKH.Visible = true;
-            this.colTenLoaiKH.VisibleIndex = 0;
-            this.colTenLoaiKH.Width = 146;
-            // 
-            // colSoLanMuaToiThieu
-            // 
-            this.colSoLanMuaToiThieu.Caption = "Số Lần Mua Tối Thiểu";
-            this.colSoLanMuaToiThieu.FieldName = "SoLanMuaToiThieu";
-            this.colSoLanMuaToiThieu.Name = "colSoLanMuaToiThieu";
-            this.colSoLanMuaToiThieu.Width = 146;
-            // 
-            // colTriGiaToiThieuMoiLanMua
-            // 
-            this.colTriGiaToiThieuMoiLanMua.Caption = "Trị Giá Tối Thiểu Mỗi Lần Mua";
-            this.colTriGiaToiThieuMoiLanMua.FieldName = "TriGiaToiThieuMoiLanMua";
-            this.colTriGiaToiThieuMoiLanMua.Name = "colTriGiaToiThieuMoiLanMua";
-            this.colTriGiaToiThieuMoiLanMua.Width = 159;
-            // 
-            // colPhanTramGiamLanMuaCuoi
-            // 
-            this.colPhanTramGiamLanMuaCuoi.Caption = "Phần Trăm Giảm Lần Mua Cuối";
-            this.colPhanTramGiamLanMuaCuoi.FieldName = "PhanTramGiamLanMuaCuoi";
-            this.colPhanTramGiamLanMuaCuoi.Name = "colPhanTramGiamLanMuaCuoi";
-            this.colPhanTramGiamLanMuaCuoi.Width = 203;
-            // 
-            // colTriGiaHoaDonToiThieu
-            // 
-            this.colTriGiaHoaDonToiThieu.Caption = "Trị Giá Hóa Đơn Tối Thiểu";
-            this.colTriGiaHoaDonToiThieu.FieldName = "TriGiaHoaDonToiThieu";
-            this.colTriGiaHoaDonToiThieu.Name = "colTriGiaHoaDonToiThieu";
-            this.colTriGiaHoaDonToiThieu.Visible = true;
-            this.colTriGiaHoaDonToiThieu.VisibleIndex = 1;
-            this.colTriGiaHoaDonToiThieu.Width = 130;
-            // 
-            // colPhanTramGiam
-            // 
-            this.colPhanTramGiam.Caption = "Phần Trăm Giảm";
-            this.colPhanTramGiam.FieldName = "PhanTramGiam";
-            this.colPhanTramGiam.Name = "colPhanTramGiam";
-            this.colPhanTramGiam.Visible = true;
-            this.colPhanTramGiam.VisibleIndex = 2;
-            this.colPhanTramGiam.Width = 97;
-            // 
-            // colLive
-            // 
-            this.colLive.FieldName = "Live";
-            this.colLive.Name = "colLive";
-            // 
-            // loaiKhachHangTableAdapter
-            // 
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::QLVLXD.Properties.Resources.unnamed;
             this.pictureBox1.Location = new System.Drawing.Point(0, 79);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 256);
@@ -202,7 +107,7 @@
             // 
             this.labelControl15.Location = new System.Drawing.Point(13, 39);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(122, 17);
+            this.labelControl15.Size = new System.Drawing.Size(95, 13);
             this.labelControl15.TabIndex = 80;
             this.labelControl15.Text = "Tên loại khách hàng";
             // 
@@ -214,7 +119,7 @@
             this.tb_TenLoaiKH.Properties.Appearance.ForeColor = System.Drawing.Color.Purple;
             this.tb_TenLoaiKH.Properties.Appearance.Options.UseFont = true;
             this.tb_TenLoaiKH.Properties.Appearance.Options.UseForeColor = true;
-            this.tb_TenLoaiKH.Size = new System.Drawing.Size(456, 24);
+            this.tb_TenLoaiKH.Size = new System.Drawing.Size(456, 20);
             this.tb_TenLoaiKH.TabIndex = 75;
             // 
             // num_TriGiaHoaDonToiThieu
@@ -226,7 +131,7 @@
             0,
             0});
             this.num_TriGiaHoaDonToiThieu.Name = "num_TriGiaHoaDonToiThieu";
-            this.num_TriGiaHoaDonToiThieu.Size = new System.Drawing.Size(178, 24);
+            this.num_TriGiaHoaDonToiThieu.Size = new System.Drawing.Size(178, 21);
             this.num_TriGiaHoaDonToiThieu.TabIndex = 98;
             this.num_TriGiaHoaDonToiThieu.ThousandsSeparator = true;
             // 
@@ -240,14 +145,14 @@
             0,
             0});
             this.num_PhanTramGiam.Name = "num_PhanTramGiam";
-            this.num_PhanTramGiam.Size = new System.Drawing.Size(178, 24);
+            this.num_PhanTramGiam.Size = new System.Drawing.Size(178, 21);
             this.num_PhanTramGiam.TabIndex = 98;
             // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(13, 119);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(97, 17);
+            this.labelControl3.Size = new System.Drawing.Size(74, 13);
             this.labelControl3.TabIndex = 80;
             this.labelControl3.Text = "Phần trăm giảm";
             // 
@@ -255,7 +160,7 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(13, 84);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(76, 17);
+            this.labelControl2.Size = new System.Drawing.Size(59, 13);
             this.labelControl2.TabIndex = 80;
             this.labelControl2.Text = "Mốc tiêu thụ";
             // 
@@ -275,16 +180,62 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin loại khách hàng";
             // 
+            // grid_loaiKH
+            // 
+            this.grid_loaiKH.AllowUserToAddRows = false;
+            this.grid_loaiKH.AllowUserToDeleteRows = false;
+            this.grid_loaiKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_loaiKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaLoai,
+            this.Loai,
+            this.MocTieuThu,
+            this.Giam});
+            this.grid_loaiKH.Location = new System.Drawing.Point(262, 12);
+            this.grid_loaiKH.Name = "grid_loaiKH";
+            this.grid_loaiKH.ReadOnly = true;
+            this.grid_loaiKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grid_loaiKH.Size = new System.Drawing.Size(881, 255);
+            this.grid_loaiKH.TabIndex = 104;
+            this.grid_loaiKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_loaiKH_CellContentClick);
+            // 
+            // MaLoai
+            // 
+            this.MaLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaLoai.HeaderText = "Mã loại khách hàng";
+            this.MaLoai.Name = "MaLoai";
+            this.MaLoai.ReadOnly = true;
+            // 
+            // Loai
+            // 
+            this.Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Loai.HeaderText = "Loại khách hàng";
+            this.Loai.Name = "Loai";
+            this.Loai.ReadOnly = true;
+            // 
+            // MocTieuThu
+            // 
+            this.MocTieuThu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MocTieuThu.HeaderText = "Mốc tiêu thụ";
+            this.MocTieuThu.Name = "MocTieuThu";
+            this.MocTieuThu.ReadOnly = true;
+            // 
+            // Giam
+            // 
+            this.Giam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Giam.HeaderText = "Phần trăm giảm";
+            this.Giam.Name = "Giam";
+            this.Giam.ReadOnly = true;
+            // 
             // QuyDinhKH_NCC
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1155, 451);
+            this.Controls.Add(this.grid_loaiKH);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.grid);
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Them);
@@ -294,15 +245,14 @@
             this.Name = "QuyDinhKH_NCC";
             this.Text = "Quy Định Về Khách Hàng";
             this.Load += new System.EventHandler(this.QuyDinhKH_NCC_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiKhachHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_TenLoaiKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_TriGiaHoaDonToiThieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_PhanTramGiam)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_loaiKH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,17 +261,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_Xoa;
         private DevExpress.XtraEditors.SimpleButton btn_Them;
         private DevExpress.XtraEditors.SimpleButton btn_Reset;
-        private DevExpress.XtraGrid.GridControl grid;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.BindingSource loaiKhachHangBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaLoaiKH;
-        private DevExpress.XtraGrid.Columns.GridColumn colTenLoaiKH;
-        private DevExpress.XtraGrid.Columns.GridColumn colSoLanMuaToiThieu;
-        private DevExpress.XtraGrid.Columns.GridColumn colTriGiaToiThieuMoiLanMua;
-        private DevExpress.XtraGrid.Columns.GridColumn colPhanTramGiamLanMuaCuoi;
-        private DevExpress.XtraGrid.Columns.GridColumn colTriGiaHoaDonToiThieu;
-        private DevExpress.XtraGrid.Columns.GridColumn colPhanTramGiam;
-        private DevExpress.XtraGrid.Columns.GridColumn colLive;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.TextEdit tb_TenLoaiKH;
@@ -330,5 +270,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView grid_loaiKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MocTieuThu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Giam;
     }
 }

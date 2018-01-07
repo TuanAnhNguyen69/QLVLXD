@@ -72,12 +72,6 @@ namespace QLVLXD.GUI.NghiepVu
         {
         }
 
-
-        private void btn_In_Click(object sender, EventArgs e)
-        {
-            (new PrintDialog()).ShowDialog();
-        }
-
         private void btn_Loc_Click(object sender, EventArgs e)
         {
             _Filter.Clear();
@@ -162,33 +156,7 @@ namespace QLVLXD.GUI.NghiepVu
 
         }
 
-        private void btn_XuatFile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string filepath = "";
-                FolderBrowserDialog browse = new FolderBrowserDialog();
-                browse.Description = "Chọn đường dẫn lưu file:";
-                if (browse.ShowDialog() == DialogResult.OK)
-                {
-                    filepath = browse.SelectedPath; if (filepath[filepath.Length - 1] != '\\') filepath = filepath + "\\";
-                    string name = DateTime.Now.ToString();
-                    if (tb_TenThongKe.Text == "")
-                        tb_TenThongKe.Text = "Thống Kê Mua Hàng";
-                    name = name.Replace('/', '-');
-                    name = name.Replace(':', '-');
-                    this.Enabled = false;
-                    _CTHDMH.ExportExcel(gridView1, filepath, tb_TenThongKe.Text + " (" + name + ")");
-                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Enabled = true;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Xuất Excel không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+      
         private void btn_XoaHoaDon_Click(object sender, EventArgs e)
         {
             if ((new BLL_User()).IsUser())

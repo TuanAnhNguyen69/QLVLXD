@@ -18,7 +18,7 @@ namespace QLVLXD.BLL
     {
         public string MaHDBH, MaNV, TenNV, MaKH, TenKH, TrangThai, GhiChu;
         public DateTime NgayGiao, NgayLap;
-        public long SoVatLieu, TienVatLieu, TienKhuyenMai, TienKMKH, TongTien, LaiSuat, Von;        
+        public long SoVatLieu, TienVatLieu, TienKhuyenMai, TienKMKH, TongTien;        
     }
 
     class BLL_ThongKeBanHang : BLL
@@ -42,7 +42,10 @@ namespace QLVLXD.BLL
         {
             try
             {
+
                 RecordThongKeBanHang record = new RecordThongKeBanHang();
+
+
                 if (HoaDon == null) // Có lỗi hóa đơn truyền vào
                 {
                     return GetNullRecord();
@@ -71,20 +74,20 @@ namespace QLVLXD.BLL
                         var listcthd = _CTHoaDonBanHang.GetListFromHDBH(record.MaHDBH);
                         if (listcthd == null)
                             return GetNullRecord();
-                        record.SoVatLieu = record.TienVatLieu = record.TienKhuyenMai = record.TienKMKH = record.TongTien = record.LaiSuat = record.Von = 0;
+                        record.SoVatLieu = record.TienVatLieu = record.TienKhuyenMai = record.TienKMKH = record.TongTien = 0;
                         foreach (CTHoaDonBanHang var in listcthd)
                         {
                             var vatlieu = _VatLieu.GetObjectFromID(var.MaVL.Trim());
                             record.TienVatLieu += (int) (var.SoLuong * vatlieu.GiaBan.Value);
                             if (vatlieu == null)
                                 return GetNullRecord();
-                            record.Von += (int)(vatlieu.GiaMua) * (int)(var.SoLuong);
                         }
+                        var khachhang = _KhachHang.GetObjectFromID(record.MaKH);
+                        record.TienKhuyenMai = (long) (record.TienVatLieu * (new BLL_LoaiKhachHang()).GetObjectFromID(khachhang.MaLoaiKH).PhanTramGiam.Value / 100);
                         record.SoVatLieu = listcthd.Count;
                         record.TongTien = record.TienVatLieu - record.TienKhuyenMai;
                         //record.TienKMKH = Math.Abs(_HoaDonBanHang.GetTienKMKH(record.TongTien, record.MaKH, record.MaHDBH));
-                        record.TongTien -= record.TienKMKH;
-                        record.LaiSuat = record.TongTien - record.Von;
+                       
                     }
                 }
                 return record;

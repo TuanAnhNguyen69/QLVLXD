@@ -540,7 +540,6 @@
             this.btn_In.Size = new System.Drawing.Size(197, 37);
             this.btn_In.TabIndex = 102;
             this.btn_In.Text = "In";
-            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
             // 
             // btn_XuatFile
             // 
@@ -550,7 +549,6 @@
             this.btn_XuatFile.Size = new System.Drawing.Size(197, 37);
             this.btn_XuatFile.TabIndex = 102;
             this.btn_XuatFile.Text = "Xuất File";
-            this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
             // 
             // pictureBox1
             // 

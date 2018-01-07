@@ -20,7 +20,7 @@ using QLVLXD.GUI.TrangChu;
 
 namespace QLVLXD
 {
-    public enum E_FORM { BANHANG, MUAHANG, VATLIEU, THONGKEBANHANG, NHANVIEN, NHACUNGCAP, KHACHHANG, LOAIKHACHHANG, USER, CAPNHATTAIKHOAN, CAUHINH, THONGKEMUAHANG, HOME };
+    public enum E_FORM { BANHANG, MUAHANG, VATLIEU, THONGKEBANHANG, NHANVIEN, NHACUNGCAP, KHACHHANG, LOAIKHACHHANG, USER, CAPNHATTAIKHOAN, THONGKEMUAHANG, HOME };
 
     public partial class Main_Form : RibbonForm
     {
@@ -220,8 +220,6 @@ namespace QLVLXD
                 btn_QuanLyNhanVien_ItemClick(null, null);
             else if (nameindex == TitleTab[(int)E_FORM.USER])
                 btn_User_ItemClick(null, null);
-            else if (nameindex == TitleTab[(int)E_FORM.CAUHINH])
-                btn_CauHinh_ItemClick(null, null);
             else if (nameindex == TitleTab[(int)E_FORM.THONGKEMUAHANG])
                 btn_ThongKeMuaHang_ItemClick(null, null);
         }
@@ -367,7 +365,6 @@ namespace QLVLXD
             TitleTab[(int)E_FORM.LOAIKHACHHANG] = "Loại Khách Hàng";
             TitleTab[(int)E_FORM.USER] = "Quản Lý User";
             TitleTab[(int)E_FORM.CAPNHATTAIKHOAN] = "Cập Nhật Tài Khoản";
-            TitleTab[(int)E_FORM.CAUHINH] = "Cấu Hình";
             TitleTab[(int)E_FORM.THONGKEMUAHANG] = "Thống Kê Mua Hàng";
             TitleTab[(int)E_FORM.HOME] = "HOME";
 
@@ -425,24 +422,6 @@ namespace QLVLXD
         private void btn_About_ItemClick(object sender, ItemClickEventArgs e)
         { }
 
-        // [Cấu Hình]
-        private void btn_CauHinh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            if ((new BLL_User()).IsUser())
-            {
-                MessageBox.Show("Chức năng dành cho Admin, User thường không sử dụng được!", "Giới hạn quyền sử dụng", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (IsOpened(E_FORM.CAUHINH))
-                SelectTab(E_FORM.CAUHINH);
-            else
-            {
-                frm_cauhinh = new GUI.PhanMem.CauHinh();
-                frm_cauhinh.mainform = this;
-                this.addTabPage(frm_cauhinh, TitleTab[(int)E_FORM.CAUHINH]);
-            }
-        }
 
         // [Timer check CSDL]
         private void timer_Tick(object sender, EventArgs e)

@@ -120,7 +120,6 @@ namespace QLVLXD.GUI
             // Phần thống kê hóa đơn           
             ResetThongKe();
             cb_TrangThai.Text = "Giao ngay lúc lập";
-            cb_DonViTienTe.Text = "VND";
 
             // Phần thêm vật liệu
             cb_TenVatLieu.Text = "";
@@ -128,7 +127,6 @@ namespace QLVLXD.GUI
             lb_DVT.Text = "";
             tb_GhiChuVatLieu.Text = "<Không có ghi chú>";
             lb_GiaBanLe.Text = "(Số liệu)";
-            lb_GiaBanSi.Text = "(Số liệu)";
             ResetThemVatLieu();
 
             _ListVatLieuHoaDon.Clear();
@@ -150,8 +148,7 @@ namespace QLVLXD.GUI
 
         void ResetThemVatLieu()
         {
-            lb_TongSoLuong.Text = "(Số liệu)";
-            lb_TongTienAddVatLieu.Text = "(Số liệu)";
+
             nud_SoLuongMua.Value = 0;
         }
 
@@ -363,7 +360,7 @@ namespace QLVLXD.GUI
 
             var KhuyenMai = (new BLL_LoaiKhachHang()).GetKhuyenMai(KhachHang.MaLoaiKH);
 
-            return KhuyenMai * getTongTien();
+            return KhuyenMai * getTongTien() / 100;
         }
 
         // Khi chọn Tên khách hàng thì đổi mã KH
@@ -563,7 +560,7 @@ namespace QLVLXD.GUI
                     return;
                 }
                 lb_LoaiKH.Text = loai.TenLoaiKH.Trim();
-                lb_HinhThucKM.Text = _LoaiKhachHang.GetKhuyenMai(data.MaLoaiKH).ToString();
+                //lb_HinhThucKM.Text = _LoaiKhachHang.GetKhuyenMai(data.MaLoaiKH).ToString();
                 {// Set tình trạng theo tên KH
                     if (cb_TenKhachHang.Text == "[Không Tên]")
                     {
@@ -811,19 +808,16 @@ namespace QLVLXD.GUI
             }
 
             // Thống kê
-            long TongTienVatLieu = 0, TongTienKM = 0, TongTienTruocKM = 0, TongTien = 0, TienKMKH = 0;
+            long TongTienVatLieu = 0, TongTienKM = 0, TongTienTruocKM = 0, TongTien = 0;
             _IsKMSoLanMua = false;
             TongTienVatLieu = (long) getTongTien();
-            TongTienKM += (long) getKhuyenMai();
+            TongTienKM = (long) getKhuyenMai();
             
-            TongTienTruocKM = TongTienVatLieu - TongTienKM;
-            TienKMKH = 0;
-            TongTien = TongTienTruocKM;
+            TongTien = TongTienVatLieu - TongTienKM;
             lb_TongTienVatLieu.Text = TongTienVatLieu.ToString("# ### ###").Trim();
             lb_TongTienKhuyenMai.Text = TongTienKM == 0 ? "(Không khuyến mãi)" : TongTienKM.ToString("# ### ###").Trim();
 
             // Tính TiềnKMK
-            TongTien -= (long) getKhuyenMai();
             lb_TongTien.Text = TongTien.ToString("# ### ###").Trim();
             iTongTien = TongTien;
         }
@@ -867,6 +861,11 @@ namespace QLVLXD.GUI
                 }
         }
 
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void labelControl15_Click(object sender, EventArgs e)
         {
 
@@ -898,9 +897,11 @@ namespace QLVLXD.GUI
             #endregion
 
             // Hoàn thành biến _CTHDBHEditting
+            _CTHDBHEditting = new DLL.CTHoaDonBanHang();
             _CTHDBHEditting.MaCTHDBH = _BLL_CTHoaDonBanHang.NewMaCTHDBH(_ListVatLieuHoaDon);
             _CTHDBHEditting.MaHDBH = lb_MaHDBH.Text;
             _CTHDBHEditting.MaVL = _BLL_VatLieu.GetObjectFromTenVL(cb_TenVatLieu.Text.Trim()).MaVL;
+            _CTHDBHEditting.SoLuong = nud_SoLuongMua.Value;
             if (tb_GhiChuVatLieu.Text == null || tb_GhiChuVatLieu.Text == "")
                 _CTHDBHEditting.GhiChu = "<Không có ghi chú>";
             else

@@ -46,7 +46,6 @@ namespace QLVLXD
         void LoadGridView()
         {
             var listvl = _BLL_VatLieu.GetList();
-            lb_SoVatLieu.Text = "(" + listvl.Count.ToString() + " Vật liệu)";
 
             for (; grid_VatLieu.Rows.Count > 0;) // Xóa hết dòng
                 grid_VatLieu.Rows.RemoveAt(0);
@@ -413,6 +412,11 @@ namespace QLVLXD
         }
 
         private void cb_DonViTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl16_Click(object sender, EventArgs e)
         {
 
         }

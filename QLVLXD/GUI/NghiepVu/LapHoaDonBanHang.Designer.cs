@@ -57,36 +57,6 @@
             this.cb_TenKhachHang = new System.Windows.Forms.ComboBox();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.grid_VatLieu = new System.Windows.Forms.DataGridView();
-            this.lb_NgayGiao = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.lb_HinhThucKM = new DevExpress.XtraEditors.LabelControl();
-            this.lb_LoaiKH = new DevExpress.XtraEditors.LabelControl();
-            this.lb_TenNhanVien = new DevExpress.XtraEditors.LabelControl();
-            this.dtp_NgayGiao = new System.Windows.Forms.DateTimePicker();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.btn_ThemVatLieu = new DevExpress.XtraEditors.SimpleButton();
-            this.tb_GhiChuVatLieu = new DevExpress.XtraEditors.TextEdit();
-            this.btn_XoaVatLieu = new DevExpress.XtraEditors.SimpleButton();
-            this.cb_TenVatLieu = new System.Windows.Forms.ComboBox();
-            this.lb_TongTienAddVatLieu = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.lb_GiaBanSi = new DevExpress.XtraEditors.LabelControl();
-            this.lb_TongSoLuong = new DevExpress.XtraEditors.LabelControl();
-            this.lb_TenNCC = new DevExpress.XtraEditors.LabelControl();
-            this.lb_GiaBanLe = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_DonViTienTe = new System.Windows.Forms.ComboBox();
-            this.labelControl42 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_TrangThai = new System.Windows.Forms.ComboBox();
-            this.vatLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_XemChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
             this.MaCTHDBH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,7 +65,29 @@
             this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lb_NgayGiao = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.lb_LoaiKH = new DevExpress.XtraEditors.LabelControl();
+            this.lb_TenNhanVien = new DevExpress.XtraEditors.LabelControl();
+            this.dtp_NgayGiao = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lb_DVT = new System.Windows.Forms.Label();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_ThemVatLieu = new DevExpress.XtraEditors.SimpleButton();
+            this.tb_GhiChuVatLieu = new DevExpress.XtraEditors.TextEdit();
+            this.btn_XoaVatLieu = new DevExpress.XtraEditors.SimpleButton();
+            this.cb_TenVatLieu = new System.Windows.Forms.ComboBox();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.lb_TenNCC = new DevExpress.XtraEditors.LabelControl();
+            this.lb_GiaBanLe = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.cb_TrangThai = new System.Windows.Forms.ComboBox();
+            this.vatLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_XemChiTietHoaDon = new DevExpress.XtraEditors.SimpleButton();
+            this.lb_HinhThucKM = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.cTHoaDonBanHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_SoLuongMua)).BeginInit();
@@ -380,6 +372,47 @@
             this.grid_VatLieu.TabIndex = 127;
             this.grid_VatLieu.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_VatLieu_CellMouseClick);
             // 
+            // MaCTHDBH
+            // 
+            this.MaCTHDBH.HeaderText = "Mã CTHDBH";
+            this.MaCTHDBH.Name = "MaCTHDBH";
+            this.MaCTHDBH.Visible = false;
+            // 
+            // TenVL
+            // 
+            this.TenVL.HeaderText = "Tên VL";
+            this.TenVL.Name = "TenVL";
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.HeaderText = "Tên NCC";
+            this.MaNCC.Name = "MaNCC";
+            // 
+            // DVT_Goc
+            // 
+            this.DVT_Goc.HeaderText = "ĐVT";
+            this.DVT_Goc.Name = "DVT_Goc";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // GiaBan
+            // 
+            this.GiaBan.HeaderText = "Giá Bán";
+            this.GiaBan.Name = "GiaBan";
+            // 
+            // TongTien
+            // 
+            this.TongTien.HeaderText = "Tổng Tiền";
+            this.TongTien.Name = "TongTien";
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.HeaderText = "Ghi Chú";
+            this.GhiChu.Name = "GhiChu";
+            // 
             // lb_NgayGiao
             // 
             this.lb_NgayGiao.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -434,18 +467,6 @@
             this.labelControl20.TabIndex = 114;
             this.labelControl20.Text = "Loại khách hàng";
             // 
-            // lb_HinhThucKM
-            // 
-            this.lb_HinhThucKM.Appearance.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_HinhThucKM.Appearance.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_HinhThucKM.Appearance.Options.UseFont = true;
-            this.lb_HinhThucKM.Appearance.Options.UseForeColor = true;
-            this.lb_HinhThucKM.Location = new System.Drawing.Point(4, 203);
-            this.lb_HinhThucKM.Name = "lb_HinhThucKM";
-            this.lb_HinhThucKM.Size = new System.Drawing.Size(62, 11);
-            this.lb_HinhThucKM.TabIndex = 116;
-            this.lb_HinhThucKM.Text = "(Hình thức KM)";
-            // 
             // lb_LoaiKH
             // 
             this.lb_LoaiKH.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -485,16 +506,10 @@
             this.groupBox3.Controls.Add(this.tb_GhiChuVatLieu);
             this.groupBox3.Controls.Add(this.btn_XoaVatLieu);
             this.groupBox3.Controls.Add(this.cb_TenVatLieu);
-            this.groupBox3.Controls.Add(this.lb_TongTienAddVatLieu);
             this.groupBox3.Controls.Add(this.labelControl17);
-            this.groupBox3.Controls.Add(this.lb_GiaBanSi);
-            this.groupBox3.Controls.Add(this.lb_TongSoLuong);
             this.groupBox3.Controls.Add(this.lb_TenNCC);
             this.groupBox3.Controls.Add(this.lb_GiaBanLe);
             this.groupBox3.Controls.Add(this.labelControl10);
-            this.groupBox3.Controls.Add(this.labelControl40);
-            this.groupBox3.Controls.Add(this.labelControl31);
-            this.groupBox3.Controls.Add(this.labelControl28);
             this.groupBox3.Controls.Add(this.labelControl30);
             this.groupBox3.Controls.Add(this.labelControl5);
             this.groupBox3.Controls.Add(this.nud_SoLuongMua);
@@ -505,6 +520,16 @@
             this.groupBox3.TabIndex = 129;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thêm vật liệu vào hóa đơn";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // lb_DVT
+            // 
+            this.lb_DVT.AutoSize = true;
+            this.lb_DVT.Location = new System.Drawing.Point(188, 51);
+            this.lb_DVT.Name = "lb_DVT";
+            this.lb_DVT.Size = new System.Drawing.Size(41, 13);
+            this.lb_DVT.TabIndex = 122;
+            this.lb_DVT.Text = "label1";
             // 
             // labelControl19
             // 
@@ -520,7 +545,7 @@
             this.btn_ThemVatLieu.Appearance.ForeColor = System.Drawing.Color.ForestGreen;
             this.btn_ThemVatLieu.Appearance.Options.UseFont = true;
             this.btn_ThemVatLieu.Appearance.Options.UseForeColor = true;
-            this.btn_ThemVatLieu.Location = new System.Drawing.Point(217, 132);
+            this.btn_ThemVatLieu.Location = new System.Drawing.Point(64, 178);
             this.btn_ThemVatLieu.Name = "btn_ThemVatLieu";
             this.btn_ThemVatLieu.Size = new System.Drawing.Size(37, 34);
             this.btn_ThemVatLieu.TabIndex = 98;
@@ -542,7 +567,7 @@
             this.btn_XoaVatLieu.Appearance.ForeColor = System.Drawing.Color.Red;
             this.btn_XoaVatLieu.Appearance.Options.UseFont = true;
             this.btn_XoaVatLieu.Appearance.Options.UseForeColor = true;
-            this.btn_XoaVatLieu.Location = new System.Drawing.Point(218, 177);
+            this.btn_XoaVatLieu.Location = new System.Drawing.Point(135, 177);
             this.btn_XoaVatLieu.Name = "btn_XoaVatLieu";
             this.btn_XoaVatLieu.Size = new System.Drawing.Size(36, 34);
             this.btn_XoaVatLieu.TabIndex = 99;
@@ -559,16 +584,6 @@
             this.cb_TenVatLieu.TabIndex = 119;
             this.cb_TenVatLieu.SelectedIndexChanged += new System.EventHandler(this.cb_TenVatLieu_SelectedIndexChanged);
             // 
-            // lb_TongTienAddVatLieu
-            // 
-            this.lb_TongTienAddVatLieu.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TongTienAddVatLieu.Appearance.Options.UseFont = true;
-            this.lb_TongTienAddVatLieu.Location = new System.Drawing.Point(97, 202);
-            this.lb_TongTienAddVatLieu.Name = "lb_TongTienAddVatLieu";
-            this.lb_TongTienAddVatLieu.Size = new System.Drawing.Size(54, 16);
-            this.lb_TongTienAddVatLieu.TabIndex = 106;
-            this.lb_TongTienAddVatLieu.Text = "(Số liệu)";
-            // 
             // labelControl17
             // 
             this.labelControl17.Location = new System.Drawing.Point(6, 81);
@@ -576,26 +591,6 @@
             this.labelControl17.Size = new System.Drawing.Size(35, 13);
             this.labelControl17.TabIndex = 111;
             this.labelControl17.Text = "Ghi chú";
-            // 
-            // lb_GiaBanSi
-            // 
-            this.lb_GiaBanSi.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_GiaBanSi.Appearance.Options.UseFont = true;
-            this.lb_GiaBanSi.Location = new System.Drawing.Point(97, 156);
-            this.lb_GiaBanSi.Name = "lb_GiaBanSi";
-            this.lb_GiaBanSi.Size = new System.Drawing.Size(54, 16);
-            this.lb_GiaBanSi.TabIndex = 106;
-            this.lb_GiaBanSi.Text = "(Số liệu)";
-            // 
-            // lb_TongSoLuong
-            // 
-            this.lb_TongSoLuong.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TongSoLuong.Appearance.Options.UseFont = true;
-            this.lb_TongSoLuong.Location = new System.Drawing.Point(97, 180);
-            this.lb_TongSoLuong.Name = "lb_TongSoLuong";
-            this.lb_TongSoLuong.Size = new System.Drawing.Size(54, 16);
-            this.lb_TongSoLuong.TabIndex = 106;
-            this.lb_TongSoLuong.Text = "(Số liệu)";
             // 
             // lb_TenNCC
             // 
@@ -617,37 +612,13 @@
             this.lb_GiaBanLe.TabIndex = 106;
             this.lb_GiaBanLe.Text = "(Số liệu)";
             // 
-            // labelControl40
-            // 
-            this.labelControl40.Location = new System.Drawing.Point(7, 202);
-            this.labelControl40.Name = "labelControl40";
-            this.labelControl40.Size = new System.Drawing.Size(45, 13);
-            this.labelControl40.TabIndex = 105;
-            this.labelControl40.Text = "Tổng tiền";
-            // 
-            // labelControl31
-            // 
-            this.labelControl31.Location = new System.Drawing.Point(8, 157);
-            this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(46, 13);
-            this.labelControl31.TabIndex = 105;
-            this.labelControl31.Text = "Giá bán sỉ";
-            // 
-            // labelControl28
-            // 
-            this.labelControl28.Location = new System.Drawing.Point(8, 179);
-            this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(38, 13);
-            this.labelControl28.TabIndex = 105;
-            this.labelControl28.Text = "Tổng SL";
-            // 
             // labelControl30
             // 
             this.labelControl30.Location = new System.Drawing.Point(7, 136);
             this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(47, 13);
+            this.labelControl30.Size = new System.Drawing.Size(36, 13);
             this.labelControl30.TabIndex = 105;
-            this.labelControl30.Text = "Giá bán lẻ";
+            this.labelControl30.Text = "Giá bán";
             // 
             // labelControl5
             // 
@@ -656,27 +627,6 @@
             this.labelControl5.Size = new System.Drawing.Size(65, 13);
             this.labelControl5.TabIndex = 105;
             this.labelControl5.Text = "Nhà cung cấp";
-            // 
-            // cb_DonViTienTe
-            // 
-            this.cb_DonViTienTe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_DonViTienTe.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cb_DonViTienTe.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_DonViTienTe.FormattingEnabled = true;
-            this.cb_DonViTienTe.Location = new System.Drawing.Point(415, 139);
-            this.cb_DonViTienTe.Name = "cb_DonViTienTe";
-            this.cb_DonViTienTe.Size = new System.Drawing.Size(154, 21);
-            this.cb_DonViTienTe.TabIndex = 131;
-            this.cb_DonViTienTe.Visible = false;
-            // 
-            // labelControl42
-            // 
-            this.labelControl42.Location = new System.Drawing.Point(309, 142);
-            this.labelControl42.Name = "labelControl42";
-            this.labelControl42.Size = new System.Drawing.Size(81, 13);
-            this.labelControl42.TabIndex = 130;
-            this.labelControl42.Text = "Xem bằng tiền tệ";
-            this.labelControl42.Visible = false;
             // 
             // cb_TrangThai
             // 
@@ -706,55 +656,17 @@
             this.btn_XemChiTietHoaDon.Text = "Xem và in hóa đơn";
             this.btn_XemChiTietHoaDon.Click += new System.EventHandler(this.btn_XemChiTietHoaDon_Click);
             // 
-            // MaCTHDBH
+            // lb_HinhThucKM
             // 
-            this.MaCTHDBH.HeaderText = "Mã CTHDBH";
-            this.MaCTHDBH.Name = "MaCTHDBH";
-            this.MaCTHDBH.Visible = false;
-            // 
-            // TenVL
-            // 
-            this.TenVL.HeaderText = "Tên VL";
-            this.TenVL.Name = "TenVL";
-            // 
-            // MaNCC
-            // 
-            this.MaNCC.HeaderText = "Tên NCC";
-            this.MaNCC.Name = "MaNCC";
-            // 
-            // DVT_Goc
-            // 
-            this.DVT_Goc.HeaderText = "ĐVT";
-            this.DVT_Goc.Name = "DVT_Goc";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // GiaBan
-            // 
-            this.GiaBan.HeaderText = "Giá Bán";
-            this.GiaBan.Name = "GiaBan";
-            // 
-            // TongTien
-            // 
-            this.TongTien.HeaderText = "Tổng Tiền";
-            this.TongTien.Name = "TongTien";
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.HeaderText = "Ghi Chú";
-            this.GhiChu.Name = "GhiChu";
-            // 
-            // lb_DVT
-            // 
-            this.lb_DVT.AutoSize = true;
-            this.lb_DVT.Location = new System.Drawing.Point(188, 51);
-            this.lb_DVT.Name = "lb_DVT";
-            this.lb_DVT.Size = new System.Drawing.Size(41, 13);
-            this.lb_DVT.TabIndex = 122;
-            this.lb_DVT.Text = "label1";
+            this.lb_HinhThucKM.Appearance.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_HinhThucKM.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_HinhThucKM.Appearance.Options.UseFont = true;
+            this.lb_HinhThucKM.Appearance.Options.UseForeColor = true;
+            this.lb_HinhThucKM.Location = new System.Drawing.Point(4, 203);
+            this.lb_HinhThucKM.Name = "lb_HinhThucKM";
+            this.lb_HinhThucKM.Size = new System.Drawing.Size(62, 11);
+            this.lb_HinhThucKM.TabIndex = 116;
+            this.lb_HinhThucKM.Text = "(Hình thức KM)";
             // 
             // HoaDonBanHang
             // 
@@ -773,8 +685,6 @@
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_Reset);
-            this.Controls.Add(this.cb_DonViTienTe);
-            this.Controls.Add(this.labelControl42);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HoaDonBanHang";
@@ -838,17 +748,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.LabelControl lb_LoaiKH;
         private System.Windows.Forms.GroupBox groupBox3;
-        private DevExpress.XtraEditors.LabelControl lb_TongTienAddVatLieu;
-        private DevExpress.XtraEditors.LabelControl lb_GiaBanSi;
-        private DevExpress.XtraEditors.LabelControl lb_TongSoLuong;
         private DevExpress.XtraEditors.LabelControl lb_GiaBanLe;
-        private DevExpress.XtraEditors.LabelControl labelControl40;
-        private DevExpress.XtraEditors.LabelControl labelControl31;
-        private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.LabelControl labelControl30;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private System.Windows.Forms.ComboBox cb_DonViTienTe;
-        private DevExpress.XtraEditors.LabelControl labelControl42;
         private System.Windows.Forms.ComboBox cb_TenVatLieu;
         private System.Windows.Forms.ComboBox cb_TrangThai;
         private DevExpress.XtraEditors.TextEdit tb_GhiChuVatLieu;
@@ -857,7 +759,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_XoaVatLieu;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.LabelControl lb_TenNCC;
-        private DevExpress.XtraEditors.LabelControl lb_HinhThucKM;
         private DevExpress.XtraEditors.SimpleButton btn_XemChiTietHoaDon;
         private DevExpress.XtraEditors.LabelControl lb_TenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCTHDBH;
@@ -869,5 +770,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.Label lb_DVT;
+        private DevExpress.XtraEditors.LabelControl lb_HinhThucKM;
     }
 }

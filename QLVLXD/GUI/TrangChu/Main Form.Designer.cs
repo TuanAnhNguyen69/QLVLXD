@@ -574,7 +574,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.reviewRibbonPage1 = new DevExpress.XtraSpreadsheet.UI.ReviewRibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.spreadsheetBarController1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController();
@@ -1193,7 +1192,7 @@
             this.btn_ThongKeMuaHang});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 443;
+            this.ribbonControl.MaxItemId = 445;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -4863,7 +4862,7 @@
             // 
             this.btn_Thoat.Caption = "Thoát";
             this.btn_Thoat.Id = 333;
-            this.btn_Thoat.ImageOptions.Image = global::QLVLXD.Properties.Resources.update_icon_66436;
+            this.btn_Thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.ImageOptions.Image")));
             this.btn_Thoat.LargeWidth = 100;
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -4988,7 +4987,8 @@
             // 
             this.btn_KhachHang.Caption = "Quản Lý Khách Hàng";
             this.btn_KhachHang.Id = 395;
-            this.btn_KhachHang.ImageOptions.Image = global::QLVLXD.Properties.Resources.user_customer;
+            this.btn_KhachHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_KhachHang.ImageOptions.Image")));
+            this.btn_KhachHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_KhachHang.ImageOptions.LargeImage")));
             this.btn_KhachHang.LargeWidth = 100;
             this.btn_KhachHang.Name = "btn_KhachHang";
             this.btn_KhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_KhachHang_ItemClick);
@@ -5036,7 +5036,6 @@
             this.btn_CauHinh.ImageOptions.LargeImage = global::QLVLXD.Properties.Resources.Rade8_Minium_2_Sidebar_Utilities__1_;
             this.btn_CauHinh.LargeWidth = 100;
             this.btn_CauHinh.Name = "btn_CauHinh";
-            this.btn_CauHinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_CauHinh_ItemClick);
             // 
             // btn_ThongKeMuaHang
             // 
@@ -5134,8 +5133,7 @@
             // reviewRibbonPage1
             // 
             this.reviewRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup3});
             this.reviewRibbonPage1.Name = "reviewRibbonPage1";
             this.reviewRibbonPage1.Text = "Về Phần Mềm";
             // 
@@ -5144,12 +5142,6 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btn_About);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "User";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btn_CauHinh);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Admin";
             // 
             // navbarImageCollectionLarge
             // 
@@ -5904,7 +5896,6 @@
         private System.Windows.Forms.Timer timer2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btn_ThongKeMuaHang;
     }
 }

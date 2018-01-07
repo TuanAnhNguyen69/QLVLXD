@@ -670,5 +670,10 @@ namespace QLVLXD.GUI
                     IsReset = false;
                 }
         }
+
+        private void grid_DanhSachVatLieuCuaHang_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

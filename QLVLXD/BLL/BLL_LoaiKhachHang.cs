@@ -185,6 +185,8 @@ namespace QLVLXD.BLL
                         if (result == DialogResult.No)
                             return new BLLResult((int)BLLResultType.NOT_DELETE);
                     }
+
+                    DB.LoaiKhachHangs.DeleteOnSubmit(row);
                     DB.SubmitChanges();
                     return new BLLResult((int)BLLResultType.S_DELETE);
                 }

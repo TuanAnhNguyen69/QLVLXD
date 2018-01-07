@@ -39,12 +39,12 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl_QuanlyUser = new DevExpress.XtraGrid.GridControl();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colTenDangNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPhanQuyen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.cb_TenNhanVien = new System.Windows.Forms.ComboBox();
@@ -52,8 +52,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenDangNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanlyUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,9 +62,9 @@
             // 
             this.cbb_PhanQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_PhanQuyen.FormattingEnabled = true;
-            this.cbb_PhanQuyen.Location = new System.Drawing.Point(380, 132);
+            this.cbb_PhanQuyen.Location = new System.Drawing.Point(111, 130);
             this.cbb_PhanQuyen.Name = "cbb_PhanQuyen";
-            this.cbb_PhanQuyen.Size = new System.Drawing.Size(157, 21);
+            this.cbb_PhanQuyen.Size = new System.Drawing.Size(443, 21);
             this.cbb_PhanQuyen.TabIndex = 29;
             // 
             // btn_ResetThongTin
@@ -117,7 +117,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(303, 135);
+            this.labelControl4.Location = new System.Drawing.Point(17, 133);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(66, 13);
             this.labelControl4.TabIndex = 22;
@@ -125,16 +125,16 @@
             // 
             // txt_TenDangNhap
             // 
-            this.txt_TenDangNhap.Location = new System.Drawing.Point(111, 132);
+            this.txt_TenDangNhap.Location = new System.Drawing.Point(111, 57);
             this.txt_TenDangNhap.Name = "txt_TenDangNhap";
-            this.txt_TenDangNhap.Size = new System.Drawing.Size(157, 20);
+            this.txt_TenDangNhap.Size = new System.Drawing.Size(443, 20);
             this.txt_TenDangNhap.TabIndex = 21;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(17, 135);
+            this.labelControl3.Location = new System.Drawing.Point(17, 60);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(83, 13);
             this.labelControl3.TabIndex = 19;
@@ -144,7 +144,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(303, 97);
+            this.labelControl2.Location = new System.Drawing.Point(17, 95);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(54, 13);
             this.labelControl2.TabIndex = 18;
@@ -160,10 +160,6 @@
             this.gridControl_QuanlyUser.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl_QuanlyUser.MouseCaptureChanged += new System.EventHandler(this.gridControl_QuanlyUser_MouseCaptureChanged);
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "User";
             // 
             // gridView1
             // 
@@ -195,7 +191,7 @@
             this.colMaNV.FieldName = "MaNV";
             this.colMaNV.Name = "colMaNV";
             this.colMaNV.Visible = true;
-            this.colMaNV.VisibleIndex = 2;
+            this.colMaNV.VisibleIndex = 1;
             // 
             // colPhanQuyen
             // 
@@ -203,7 +199,11 @@
             this.colPhanQuyen.FieldName = "PhanQuyen";
             this.colPhanQuyen.Name = "colPhanQuyen";
             this.colPhanQuyen.Visible = true;
-            this.colPhanQuyen.VisibleIndex = 3;
+            this.colPhanQuyen.VisibleIndex = 2;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
             // 
             // groupBox1
             // 
@@ -224,18 +224,18 @@
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(380, 94);
+            this.txt_Password.Location = new System.Drawing.Point(111, 92);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(157, 21);
+            this.txt_Password.Size = new System.Drawing.Size(443, 21);
             this.txt_Password.TabIndex = 30;
             // 
             // cb_TenNhanVien
             // 
             this.cb_TenNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_TenNhanVien.FormattingEnabled = true;
-            this.cb_TenNhanVien.Location = new System.Drawing.Point(111, 54);
+            this.cb_TenNhanVien.Location = new System.Drawing.Point(111, 20);
             this.cb_TenNhanVien.Name = "cb_TenNhanVien";
-            this.cb_TenNhanVien.Size = new System.Drawing.Size(157, 21);
+            this.cb_TenNhanVien.Size = new System.Drawing.Size(443, 21);
             this.cb_TenNhanVien.TabIndex = 29;
             this.cb_TenNhanVien.SelectedIndexChanged += new System.EventHandler(this.cb_TenNhanVien_SelectedIndexChanged);
             // 
@@ -243,7 +243,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(17, 59);
+            this.labelControl5.Location = new System.Drawing.Point(17, 28);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(55, 13);
             this.labelControl5.TabIndex = 22;
@@ -279,8 +279,8 @@
             this.Load += new System.EventHandler(this.QuanLyUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenDangNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_QuanlyUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

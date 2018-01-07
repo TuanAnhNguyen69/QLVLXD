@@ -16,6 +16,7 @@ namespace QLVLXD.GUI.KH_NCC
     {
         BLL_LoaiKhachHang _LoaiKhachHang = new BLL_LoaiKhachHang();
         public Main_Form mainform;
+        string maLoaiKH;
 
         public QuyDinhKH_NCC()
         {
@@ -27,8 +28,19 @@ namespace QLVLXD.GUI.KH_NCC
 
         void ResetGrid()
         {
-            grid.DataSource = null;
-            grid.DataSource = _LoaiKhachHang.GetList();
+            try
+            {
+                for (; grid_loaiKH.Rows.Count > 0;) // Xóa hết dòng
+                    grid_loaiKH.Rows.RemoveAt(0);
+            }
+            catch
+            { }
+
+            var listLoai = _LoaiKhachHang.GetList();
+            foreach (DLL.LoaiKhachHang var in listLoai)
+            {
+                grid_loaiKH.Rows.Add(var.MaLoaiKH, var.TenLoaiKH, var.MocTieuThu, var.PhanTramGiam);
+            }
         }
 
         void Reset()
@@ -118,9 +130,8 @@ namespace QLVLXD.GUI.KH_NCC
         {
             try
             {
-                int[] selectedindex = gridView1.GetSelectedRows();
-                var loai = gridView1.GetRow(selectedindex[0]);
-                BLLResult res = _LoaiKhachHang.Delete(((DLL.LoaiKhachHang)loai).MaLoaiKH.ToString().Trim(), false);
+                
+                BLLResult res = _LoaiKhachHang.Delete(maLoaiKH, false);
                 _LoaiKhachHang.MakeMessageBox(res);
                 if (res._Code == (int)BLLResultType.S_DELETE)
                 {
@@ -132,6 +143,12 @@ namespace QLVLXD.GUI.KH_NCC
             {
                 MessageBox.Show("Vui lòng chọn loại khách hàng để xóa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void grid_loaiKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            maLoaiKH = grid_loaiKH.Rows[e.RowIndex].Cells["MaLoai"].Value.ToString().Trim();
+
         }
     }
 }

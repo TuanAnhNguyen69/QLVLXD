@@ -35,6 +35,8 @@ namespace QLVLXD.GUI.TrangChu
             tb_Password.ResetText();
             tb_TenDangNhap.ResetText();
             tb_TenDangNhap.Focus();
+            label2.Visible = true;
+            label3.Visible = true;
             Visible = true;
             _Login = new BLL_Login();               
         }
@@ -45,6 +47,10 @@ namespace QLVLXD.GUI.TrangChu
             {
                 pic_Waiting.Visible = true;
                 pic_Background.Visible = true;
+                label2.Visible = false;
+                label3.Visible = false;
+                btn_dangNhap.Visible = false;
+                btn_thoat.Visible = false;
                 truee = true;
             }
             else

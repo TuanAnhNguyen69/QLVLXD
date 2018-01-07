@@ -74,7 +74,7 @@ namespace QLVLXD.GUI.NghiepVu
                 lb_SoHoaDon.Text = ListRecord.Count.ToString();
                 foreach (RecordThongKeBanHang vari in ListRecord)
                 {
-                    grid_Filter.Rows.Add(vari.MaHDBH, vari.NgayGiao.ToShortDateString(), vari.NgayLap.ToShortDateString(), vari.MaNV, vari.TenNV, vari.MaKH, vari.TenKH, vari.SoVatLieu, vari.TienVatLieu, vari.TienKhuyenMai, vari.TienKMKH, vari.TongTien, vari.LaiSuat, vari.Von, vari.TrangThai, vari.GhiChu);
+                    grid_Filter.Rows.Add(vari.MaHDBH, vari.NgayGiao.ToShortDateString(), vari.NgayLap.ToShortDateString(),vari.TenNV, vari.TenKH, vari.SoVatLieu, vari.TienVatLieu, vari.TienKhuyenMai, vari.TongTien, vari.TrangThai, vari.GhiChu);
                 }
             }
             catch (Exception)
@@ -92,7 +92,7 @@ namespace QLVLXD.GUI.NghiepVu
         {
             IsReset = false;
             LoadGrid(_ListOrginal);
-            btn_OkThietLapTrangThai.Enabled = false;
+            cb_ThietLapTrangThai.Enabled = false;
             foreach (Control vari in this.panel4.Controls)
             {
                 if (vari is System.Windows.Forms.GroupBox)
@@ -137,12 +137,6 @@ namespace QLVLXD.GUI.NghiepVu
                     continue;
                 if (!TextinText(orgi.TrangThai, cb_TrangThai.Text, false))
                     continue;
-                if (!rx_GhiChu.Checked)
-                {
-                    if ((rco_GhiChu.Checked && orgi.GhiChu != "True")
-                        || (rkhong_GhiChu.Checked && orgi.GhiChu != "False"))
-                        continue;
-                }
                 {
                     if (!rx_NgayLap.Checked)
                     {
@@ -167,15 +161,6 @@ namespace QLVLXD.GUI.NghiepVu
                         if ((rl_SoVatLieu.Checked && !(orgi.SoVatLieu > num_SoVatLieu.Value))
                             || (rn_SoVatLieu.Checked && !(orgi.SoVatLieu < num_SoVatLieu.Value))
                             || (rb_SoVatLieu.Checked && !(orgi.SoVatLieu == num_SoVatLieu.Value)))
-                            continue;
-                    }
-                }
-                {
-                    if (!rx_LaiSuat.Checked)
-                    {
-                        if ((rl_LaiSuat.Checked && !(orgi.LaiSuat > num_LaiSuat.Value))
-                            || (rn_LaiSuat.Checked && !(orgi.LaiSuat < num_LaiSuat.Value))
-                            || (rb_LaiSuat.Checked && !(orgi.LaiSuat == num_LaiSuat.Value)))
                             continue;
                     }
                 }
@@ -215,16 +200,6 @@ namespace QLVLXD.GUI.NghiepVu
                             continue;
                     }
                 }
-                {
-                    if (!rx_Von.Checked)
-                    {
-                        if ((rl_Von.Checked && !(orgi.Von > num_Von.Value))
-                            || (rn_Von.Checked && !(orgi.Von < num_Von.Value))
-                            || (rb_Von.Checked && !(orgi.Von == num_Von.Value)))
-                            continue;
-                    }
-                }
-
                 _ListFilter.Add(orgi);
             }
             LoadGrid(_ListFilter);
@@ -243,9 +218,9 @@ namespace QLVLXD.GUI.NghiepVu
                 grid_Filter.Rows[rowindex].Selected = true;
                 string trangthai = grid_Filter.Rows[rowindex].Cells["TrangThai"].Value.ToString().Trim();
                 if (trangthai == "Đã Giao" || trangthai == "Giao Ngay Lúc Lập")
-                    btn_OkThietLapTrangThai.Enabled = false;
+                    cb_ThietLapTrangThai.Enabled = false;
                 else
-                    btn_OkThietLapTrangThai.Enabled = true;
+                    cb_ThietLapTrangThai.Enabled = true;
             }
             catch (Exception)
             {
@@ -347,38 +322,6 @@ namespace QLVLXD.GUI.NghiepVu
                 btn_Loc_Click(null, null);
         }
 
-        // [Xuất ra File]
-        private async void btn_XuatFile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string filepath = "";
-                FolderBrowserDialog browse = new FolderBrowserDialog();
-                browse.Description = "Chọn đường dẫn lưu file:";
-                if (browse.ShowDialog() == DialogResult.OK)
-                {
-                    filepath = browse.SelectedPath; if (filepath[filepath.Length - 1] != '\\') filepath = filepath + "\\";
-                    string name = DateTime.Now.ToString();
-                    if (tb_TenThongKe.Text == "")
-                        tb_TenThongKe.Text = "Thống Kê Bán Hàng";
-                    name = name.Replace('/', '-');
-                    name = name.Replace(':', '-');
-                    this.Enabled = false;
-                    _HoaDonBanHang.ExportExcel(grid_Filter, filepath, tb_TenThongKe.Text + " (" + name + ")");
-                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Enabled = true;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Xuất Excel không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         // [Xem chi tiết hóa đơn]
         private void btn_XemChiTietHoaDon_Click(object sender, EventArgs e)
@@ -436,11 +379,6 @@ namespace QLVLXD.GUI.NghiepVu
 
         private void ThongKeBanHang_FormClosing(object sender, FormClosingEventArgs e)
         {
-        }
-
-        private void btn_In_Click(object sender, EventArgs e)
-        {
-            (new PrintDialog()).ShowDialog();
         }
     }
 }

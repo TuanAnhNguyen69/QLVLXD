@@ -34,6 +34,8 @@ namespace QLVLXD.GUI.NghiepVu
                 return;
             }
 
+          
+
             this._MaHDBH = MaHDBH;
             this.Text = "Xem Hóa Đơn Bán Hàng (Hóa Đơn " + thongke.MaHDBH + ")";
             lb_MaHDBH.Text = thongke.MaHDBH;
@@ -63,13 +65,33 @@ namespace QLVLXD.GUI.NghiepVu
                 return;
             lb_TongTienVatLieu.Text = thongke.TienVatLieu.ToString("# ### ###").Trim() + " VND";
             lb_TongTienKhuyenMai.Text = thongke.TienKhuyenMai == 0 ? "(Không có khuyến mãi)" : thongke.TienKhuyenMai.ToString("# ### ###").Trim() + " VND";
-            lb_TongTienKMKH.Text = thongke.TienKMKH == 0 ? "(Không có khuyến mãi)" : thongke.TienKMKH.ToString("# ### ###").Trim() + " VND";
             lb_TongTien.Text = thongke.TongTien.ToString("# ### ###").Trim() + " VND";
             lb_TrangThai.Text = thongke.TrangThai;
+            LoadGrid();
+        }
+
+        private void LoadGrid()
+        {
+            try
             {
-                grid.DataSource = null;
-                grid.DataSource = listhoadon;
+                for (; grid_CT_view.Rows.Count > 0;) // Xóa hết dòng
+                    grid_CT_view.Rows.RemoveAt(0);
             }
+            catch
+            { }
+            try
+            {
+                var listCT = (new BLL_CTHoaDonBanHang()).GetListFromHDBH(_MaHDBH);
+                foreach (DLL.CTHoaDonBanHang vari in listCT)
+                {
+                    var VatLieu = (new BLL_VatLieu()).GetObjectFromID(vari.MaVL);
+                    var NCC = (new BLL_NhaCungCap()).GetObjectFromID(VatLieu.MaNCC);
+                    var DVT = (new BLL_DonViTinhVatLieu()).GetObjectFromID(VatLieu.MaDVT);
+                    grid_CT_view.Rows.Add(VatLieu.TenVL, NCC.TenNCC, DVT.DVT, vari.SoLuong, VatLieu.GiaBan, VatLieu.GiaBan * vari.SoLuong, vari.GhiChu);
+                }
+            }
+            catch (Exception)
+            { }
         }
 
         private void XemHoaDonBanHang_Load(object sender, EventArgs e)
@@ -117,7 +139,6 @@ namespace QLVLXD.GUI.NghiepVu
                     name = name.Replace(':', '-');
                     if (tb_TenThongKe.Text == "")
                         tb_TenThongKe.Text = "Hóa Đơn Bán Hàng";
-                    _HoaDon.ExportHoaDonBanHang(lb_TrangThai.Text, lb_HinhThucKM.Text, lb_TongTienKMKH.Text, lb_TongTienKhuyenMai.Text, lb_TongTienVatLieu.Text, lb_SoVatLieu.Text, lb_TongTien.Text, lb_LoaiKH.Text, lb_NgayLap.Text, lb_MaHDBH.Text, lb_TenKH.Text, lb_TenNV.Text, lb_NgayGiao.Text, gridView1, filepath, tb_TenThongKe.Text + " (" + name + ")");
                     MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -130,6 +151,11 @@ namespace QLVLXD.GUI.NghiepVu
         private void btn_In_Click(object sender, EventArgs e)
         {
             (new PrintDialog()).ShowDialog();
+        }
+
+        private void cTHoaDonBanHangBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

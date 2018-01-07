@@ -375,7 +375,7 @@
             // 
             // dt_NgayMua
             // 
-            this.dt_NgayMua.EditValue = null;
+            this.dt_NgayMua.EditValue = new System.DateTime(2018, 1, 7, 0, 0, 0, 0);
             this.dt_NgayMua.Location = new System.Drawing.Point(128, 34);
             this.dt_NgayMua.Name = "dt_NgayMua";
             this.dt_NgayMua.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -578,7 +578,6 @@
             // 
             // grid_DanhSachVatLieuHoaDon
             // 
-            this.grid_DanhSachVatLieuHoaDon.DataSource = this.cTHoaDonMuaHangBindingSource1;
             this.grid_DanhSachVatLieuHoaDon.Location = new System.Drawing.Point(606, 242);
             this.grid_DanhSachVatLieuHoaDon.MainView = this.gridView2;
             this.grid_DanhSachVatLieuHoaDon.Name = "grid_DanhSachVatLieuHoaDon";
@@ -702,6 +701,7 @@
             this.grid_DanhSachVatLieuCuaHang.TabIndex = 165;
             this.grid_DanhSachVatLieuCuaHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.grid_DanhSachVatLieuCuaHang.Click += new System.EventHandler(this.grid_DanhSachVatLieuCuaHang_Click);
             this.grid_DanhSachVatLieuCuaHang.MouseCaptureChanged += new System.EventHandler(this.grid_DanhSachVatLieuCuaHang_MouseCaptureChanged);
             // 
             // vatLieuBindingSource2
