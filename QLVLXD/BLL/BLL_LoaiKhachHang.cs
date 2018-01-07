@@ -89,53 +89,9 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(14000852);
+                return new BLLResult(0);
             }
         }
-
-        //public BLLResult Insert(string TenLoai, decimal SoLanMuaToiThieu, decimal TriGiaMoiLanMua, decimal PhanTramGiamLanMuaCuoi)
-        //{
-        //    try
-        //    {
-        //        if (!CheckData(TenLoai)
-        //            return new BLLResult("Đã tồn tại loại khách hàng này!");
-
-        //        QLVLXD.DLL.LoaiKhachHang loai = new QLVLXD.DLL.LoaiKhachHang();
-        //        loai.TenLoaiKH = TenLoai.Trim();
-        //        loai.MaLoaiKH = NewMaLoaiKH();
-        //        loai.PhanTramGiam = null;
-        //        loai.TriGiaHoaDonToiThieu = null;
-        //        loai.SoLanMuaToiThieu = SoLanMuaToiThieu;
-        //        loai.PhanTramGiamLanMuaCuoi = PhanTramGiamLanMuaCuoi;
-        //        loai.TriGiaToiThieuMoiLanMua = TriGiaMoiLanMua;
-        //        loai.Live = "True";
-
-        //        DB.LoaiKhachHangs.InsertOnSubmit(loai);
-        //        DB.SubmitChanges();
-        //        return new BLLResult((int)BLLResultType.S_ADD);
-        //    }
-        //    catch
-        //    {
-        //        return new BLLResult(14000852);
-        //    }
-        //}
-
-        //public List<QLVLXD.DLL.LoaiKhachHang> GetDanhSachLoaiKhachHang(string MaLoaiKH)
-        //{
-        //    try
-        //    {
-        //        List<QLVLXD.DLL.LoaiKhachHang> list = new List<QLVLXD.DLL.LoaiKhachHang>();
-        //        foreach (QLVLXD.DLL.LoaiKhachHang var in DB.LoaiKhachHangs)
-        //            if (var.MaLoaiKH.Trim() == MaLoaiKH.Trim())
-        //                list.Add(var);
-
-        //        return list;
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //}
 
         public decimal GetKhuyenMai(string MaLoaiKH)
         {
@@ -162,16 +118,7 @@ namespace QLVLXD.BLL
                 var row = GetObjectFromID(MaLoaiKH);
                 if (row != null)
                 {
-                    if (row.TenLoaiKH.Trim() == "Thường")
-                    {
-                        return new BLLResult("Đây là loại khách hàng mặc định, không được xóa!");
-                    }
-                    {// Kiểm tra loại KH này có sử dụng hay không
-                        var list = (new BLL_KhachHang()).GetList();
-                        foreach (DLL.KhachHang vari in list)
-                            if (vari.MaLoaiKH.Trim() == MaLoaiKH)
-                                return new BLLResult("Có khách hàng thuộc loại khách hàng này, không xóa được!");
-                    }
+                  
                     var listkh = (new BLL_KhachHang()).GetList();
                     foreach (DLL.KhachHang vari in listkh)
                     {
@@ -194,7 +141,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(140008521);
+                return new BLLResult(0);
             }
         }
 

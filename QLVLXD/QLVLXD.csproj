@@ -111,6 +111,12 @@
     <Compile Include="GUI\KH_NCC\QuyDinhKH_NCC.Designer.cs">
       <DependentUpon>QuyDinhKH_NCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NghiepVu\DonViTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NghiepVu\DonViTinh.Designer.cs">
+      <DependentUpon>DonViTinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NghiepVu\HoaDonMuaHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,18 +164,6 @@
     </Compile>
     <Compile Include="GUI\NhanSu\QuanLyUser.Designer.cs">
       <DependentUpon>QuanLyUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\PhanMem\CauHinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\PhanMem\CauHinh.Designer.cs">
-      <DependentUpon>CauHinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\PhanMem\Waiting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\PhanMem\Waiting.Designer.cs">
-      <DependentUpon>Waiting.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\TrangChu\Home.cs">
       <SubType>Form</SubType>
@@ -229,6 +223,9 @@
     <EmbeddedResource Include="GUI\KH_NCC\QuanLyThongTinKhachHang.resx">
       <DependentUpon>QuanLyThongTinKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NghiepVu\DonViTinh.resx">
+      <DependentUpon>DonViTinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\NghiepVu\HoaDonMuaHang.resx">
       <DependentUpon>HoaDonMuaHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,12 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhanSu\QuanLyUser.resx">
       <DependentUpon>QuanLyUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PhanMem\CauHinh.resx">
-      <DependentUpon>CauHinh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PhanMem\Waiting.resx">
-      <DependentUpon>Waiting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TrangChu\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -334,9 +325,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\ThuChi_Thue\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>

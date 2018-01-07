@@ -20,9 +20,8 @@ namespace QLVLXD.BLL
         BLL_KhachHang _BLL_KhachHang = new BLL_KhachHang();
         BLL_LoaiKhachHang _LoaiKhachHang = new BLL_LoaiKhachHang();
 
-        public BLLResult CheckData(bool IsInsert, string MaHDBH, DateTime NgayGiao, string MaNV, string MaKH, DateTime NgayLap, string GhiChu, string TrangThai)
+        public BLLResult CheckData(bool IsInsert, string MaHDBH)
         {
-            // Mã HD
             if (IsInsert && GetObjectFromID(MaHDBH) != null)
             {
                 return new BLLResult("Mã hóa đơn bán hàng đã tồn tại");
@@ -50,7 +49,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(11000852);
+                return new BLLResult(0);
             }
         }
 
@@ -69,7 +68,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(11000456);
+                return new BLLResult(0);
             }
         }
 
@@ -92,6 +91,7 @@ namespace QLVLXD.BLL
                         foreach (CTHoaDonBanHang vari in listct)
                             (new BLL_CTHoaDonBanHang()).Delete(vari.MaCTHDBH.Trim(), true);
                     }
+                    DB.HoaDonBanHangs.DeleteOnSubmit(row);
                     DB.SubmitChanges();
                     return new BLLResult((int)BLLResultType.S_DELETE);
                 }
@@ -99,96 +99,11 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(100008521);
+                return new BLLResult(0);
             }
         }
 
-        public BLLResult SetDaTinhKM(string MaHDBH)
-        {
-            try
-            {
-                var ob = GetObjectFromID(MaHDBH.Trim());
-                if (ob == null)
-                    throw new Exception();
-                 DB.SubmitChanges();
-                return new BLLResult((int)BLLResultType.SUCCESS);
-            }
-            catch
-            {
-                return new BLLResult(100008545);
-            }
-        }
-
-        public List<QLVLXD.DLL.HoaDonBanHang> GetListHDBHChuaTinhKMFromKH(string MaKH)
-        {
-            try
-            {
-                List<QLVLXD.DLL.HoaDonBanHang> listret = new List<HoaDonBanHang>();
-                var list = GetList();
-                foreach (DLL.HoaDonBanHang var in list)
-                    if (var.MaKH.Trim() == MaKH.Trim())
-                        listret.Add(var);
-                return listret;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        //public List<QLVLXD.DLL.HoaDonBanHang> GetListHDBHChuaTinhKMFromKH(string MaKH, string FromMaHDBH)
-        //{
-        //    try
-        //    {
-        //        List<QLVLXD.DLL.HoaDonBanHang> listret = new List<HoaDonBanHang>();
-        //        var list = GetList();
-        //        for (int i = list.Count - 1; i >= 0; i--)
-        //        {
-        //            if (FromMaHDBH == "" || list[i].MaHDBH.Trim() == FromMaHDBH) // Chọn nơi bắt đầu tính
-        //            {
-        //                if (FromMaHDBH != "") // Tính từ HD
-        //                    i--;
-        //                for (int x = i; x >= 0; x--)
-        //                {
-        //                    if (list[x].MaKH.Trim() == MaKH.Trim())
-        //                    {
-        //                        if (list[x].GhiChu == null || list[x].GhiChu.Trim() == "False")
-        //                            listret.Add(list[x]);
-        //                        else 
-        //                            break;
-        //                    }
-        //                }
-        //                break;
-        //            }
-        //        }
-        //        return listret;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return null;
-        //    }
-        //}
-
-        public BLLResult SetListTinhKM(string MaKH)
-        {
-            try
-            {
-                List<QLVLXD.DLL.HoaDonBanHang> listret = GetListHDBHChuaTinhKMFromKH(MaKH.Trim());
-                if (listret == null)
-                    throw new Exception();
-                foreach (DLL.HoaDonBanHang var in listret)
-                {
-                    if (SetDaTinhKM(var.MaHDBH.Trim())._Code != (int)BLLResultType.SUCCESS)
-                        throw new Exception();
-                }
-                return new BLLResult((int)BLLResultType.SUCCESS);
-            }
-            catch (Exception)
-            {
-                return new BLLResult(10000666);
-            }
-        }
-
+      
         public BLLResult SetTrangThai(string TenTrangThai, string MaHDBH)
         {
             try
@@ -202,7 +117,7 @@ namespace QLVLXD.BLL
             }
             catch (Exception)
             {
-                return new BLLResult(10000999);
+                return new BLLResult(0);
             }
         }
 
@@ -222,47 +137,7 @@ namespace QLVLXD.BLL
             }
         }
 
-        //public int GetTienKMKH(long TongTienTruocKM, string MaKH, string MaHDBH)
-        //{
-        //    var loaikh = _LoaiKhachHang.GetObjectFromID(_BLL_KhachHang.GetObjectFromID(MaKH.Trim()).KHTT.Trim());
-        //    if (loaikh == null)
-        //    {
-        //        return 0;
-        //    }
-        //    if (loaikh.SoLanMuaToiThieu != null || loaikh.TriGiaHoaDonToiThieu != null) // KH ko phải loại thường
-        //    {
-        //        if (loaikh.SoLanMuaToiThieu != null) // KM dựa trên số lần mua của KH
-        //        {
-        //            List<DLL.HoaDonBanHang> dshoadonchuatinhkm = GetListHDBHChuaTinhKMFromKH(MaKH.Trim(), MaHDBH);
-        //            if (dshoadonchuatinhkm.Count >= loaikh.SoLanMuaToiThieu - 1) // Số hóa đơn chưa tính KM đủ để tính KM
-        //            {
-        //                if (MaHDBH == "") // K tính lần mới nhất (trước lập bán hàng)
-        //                {
-        //                    if (TongTienTruocKM < loaikh.TriGiaToiThieuMoiLanMua)
-        //                        return 0;
-        //                }
-
-        //                foreach (DLL.HoaDonBanHang var in dshoadonchuatinhkm)
-        //                    if (_BLL_CTHoaDonBanHang.GetTongTienHDBH(var.MaHDBH.Trim()) < loaikh.TriGiaToiThieuMoiLanMua) // Có 1 hóa đơn k thỏa đk thì xác định
-        //                    {
-        //                        return 0;
-        //                    }
-
-        //                // Tính KM
-        //                return -1 * (int)(TongTienTruocKM * (decimal)loaikh.PhanTramGiamLanMuaCuoi / 100);
-        //            }
-
-        //        }
-        //        else // KM dựa trên Trị giá hóa đơn mua
-        //        {
-        //            if (TongTienTruocKM >= loaikh.TriGiaHoaDonToiThieu) // Thỏa điều kiện
-        //            {
-        //                return (int)(TongTienTruocKM * (decimal)loaikh.PhanTramGiam / 100);
-        //            }
-        //        }
-        //    }
-        //    return 0;
-        //}
+    
 
         public string GetHanGiao()
         {

@@ -15,30 +15,22 @@ namespace QLVLXD.BLL
 {
     class BLL_HoaDonMuaHang : BLL
     {
-        public string Insert(string MaHDMH, DateTime NgayLap,string MaNV, string MaNCC, decimal TongTien)
+        public string Insert(string MaHDMH, DateTime NgayLap,string MaNV, decimal TongTien)
         {
             try
             {
-                // ---------------------------------------------------------
-                // Kiểm tra các thông tin nhập vào có hợp cmn lệ hay không:
-                // ---------------------------------------------------------
 
-                /* Kiểm tra có trùng MaVL hay không */
+
                 if (GetObjectFromID(MaHDMH) != null)
                 {
                     return "Mã hóa đơn đã tồn tại trong CSDL! Vui lòng nhấn nút [Reset thông tin để thêm mới] để thêm mới.";
                 }
-
-                // ---------------------------------------------------------
-                // Nếu hợp lệ thì thêm vào CSDL:
-                // ---------------------------------------------------------
-
                 QLVLXD.DLL.HoaDonMuaHang variable = new QLVLXD.DLL.HoaDonMuaHang();
 
                 variable.MaHDMH = MaHDMH;
                 variable.NgayLap = NgayLap;
                 variable.MaNV = MaNV;
-                variable.MaNCC = MaNCC;
+                variable.MaNCC = "NCC001";
                 variable.TongTien = TongTien;
 
                 DB.HoaDonMuaHangs.InsertOnSubmit(variable);
@@ -93,13 +85,14 @@ namespace QLVLXD.BLL
                 if (CTHDMH.DeleteFromMaHDMH(MaHDMH) == "Error")
                     throw new Exception();
 
+                DB.HoaDonMuaHangs.DeleteOnSubmit(row);
                 DB.SubmitChanges();
 
                 return new BLLResult((int)BLLResultType.S_DELETE);
             }
             catch
             {
-                return new BLLResult(15000852);
+                return new BLLResult(0);
             }
         }
 
@@ -109,10 +102,7 @@ namespace QLVLXD.BLL
             foreach (QLVLXD.DLL.HoaDonMuaHang var in DB.HoaDonMuaHangs)
                 danhsach.Add(var.MaHDMH.Trim());
             return NewID(danhsach, "HDMH");
-            // Hàm NewID là hàm trả về mã một đối tượng mà chưa có trong danh sách mã. 
-            // Ví dụ:
-            // + Danh sách mã là VL001, VL003 thì hàm nãy sẽ trả về VL002
-            // + Danh sách mã là VL001, VL002, VL003 thì hàm nãy sẽ trả về VL004        
+        
         }
 
         public List<QLVLXD.DLL.HoaDonMuaHang> GetList()

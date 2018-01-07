@@ -443,7 +443,6 @@
             this.btn_In.Size = new System.Drawing.Size(60, 34);
             this.btn_In.TabIndex = 0;
             this.btn_In.Text = "In";
-            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
             // 
             // btn_XuatFile
             // 
@@ -454,7 +453,6 @@
             this.btn_XuatFile.Size = new System.Drawing.Size(131, 34);
             this.btn_XuatFile.TabIndex = 0;
             this.btn_XuatFile.Text = "Xuất ra File";
-            this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
             // 
             // grid_CT_view
             // 
@@ -474,36 +472,43 @@
             // 
             // TenVL
             // 
+            this.TenVL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TenVL.HeaderText = "Tên VL";
             this.TenVL.Name = "TenVL";
             // 
             // MaNCC
             // 
+            this.MaNCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MaNCC.HeaderText = "Tên NCC";
             this.MaNCC.Name = "MaNCC";
             // 
             // DVT_Goc
             // 
+            this.DVT_Goc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DVT_Goc.HeaderText = "ĐVT";
             this.DVT_Goc.Name = "DVT_Goc";
             // 
             // SoLuong
             // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SoLuong.HeaderText = "Số lượng";
             this.SoLuong.Name = "SoLuong";
             // 
             // GiaBan
             // 
+            this.GiaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.GiaBan.HeaderText = "Giá Bán";
             this.GiaBan.Name = "GiaBan";
             // 
             // TongTien
             // 
+            this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TongTien.HeaderText = "Tổng Tiền";
             this.TongTien.Name = "TongTien";
             // 
             // GhiChu
             // 
+            this.GhiChu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.GhiChu.HeaderText = "Ghi Chú";
             this.GhiChu.Name = "GhiChu";
             // 

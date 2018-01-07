@@ -12,14 +12,10 @@ using DevExpress.XtraTab;
 
 using QLVLXD.DLL;
 
-// NOTES:
-// - Kiểm tra tất cả các trường hợp có thể xảy ra lỗi trước khi thao tác đến CSDL, khi có lỗi thì dùng return
-
 namespace QLVLXD.BLL
 {
     class BLL_NhaCungCap : BLL
     {
-        // Hàm GetList để lấy danh sách tất cả các dòng của bảng. (chỉ các đối tượng Live = "True")
         public List<QLVLXD.DLL.NhaCungCap> GetList()
         {
             List<QLVLXD.DLL.NhaCungCap> list = new List<DLL.NhaCungCap>();
@@ -29,7 +25,6 @@ namespace QLVLXD.BLL
             return list;
         }
 
-        // Hàm GetObjectFromID để lấy thông tin 1 vật liệu từ mã vật liệu, nếu ko có thì trả về null.
         public QLVLXD.DLL.NhaCungCap GetObjectFromID(string MaNCC)
         {
             var Return = DB.NhaCungCaps.FirstOrDefault(data => data.MaNCC.Trim() == MaNCC);
@@ -63,8 +58,7 @@ namespace QLVLXD.BLL
                 var row = GetObjectFromID(MaNCC);
                 if (row == null)
                     return false;
-                // Kiểm tra nhà cung cấp này có sử dụng hay không
-                /* CTBH */
+
                 var list = (new BLL_CTHoaDonBanHang()).GetList();
                 foreach (DLL.CTHoaDonBanHang vari in list)
                 {
@@ -76,7 +70,6 @@ namespace QLVLXD.BLL
                     }
                 }
 
-                /* Vật liệu */
                 var list2 = (new BLL_VatLieu()).GetList();
                 foreach (DLL.VatLieu vari in list2)
                     if (vari.MaNCC.Trim() == MaNCC)
@@ -89,8 +82,7 @@ namespace QLVLXD.BLL
                 if (result == DialogResult.No)
                     return false;
 
-                // Xóa bên bảng NhaCungCap
-
+                DB.NhaCungCaps.DeleteOnSubmit(row);
                 DB.SubmitChanges();
 
                 MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -110,7 +102,6 @@ namespace QLVLXD.BLL
             {
                 var old_data = DB.NhaCungCaps.FirstOrDefault(data => data.MaNCC.Trim() == MaNCC);  
 
-                /* Kiểm tra trùng tên */
                 if (old_data.TenNCC.Trim() != TenNCC)
                 {
                     List<string> DanhSachTen = new List<string>();
@@ -124,8 +115,7 @@ namespace QLVLXD.BLL
                         }
                     }
                 }
-                // Update tên ncc trong bản CTHDBH, HDMH
-                    /* Cập nhật ở bảng NhaCungCap */
+
                 old_data.TenNCC = TenNCC;
                 old_data.SDT = SDT;
                 old_data.DiaChi = DiaChi;
@@ -145,7 +135,6 @@ namespace QLVLXD.BLL
         {
             try
             {
-                /* Kiểm tra trùng tên */
                 List<string> DanhSachTen = new List<string>();
                 foreach (QLVLXD.DLL.NhaCungCap ncc in DB.NhaCungCaps)
                 {

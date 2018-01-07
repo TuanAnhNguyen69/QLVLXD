@@ -20,27 +20,27 @@ using QLVLXD.GUI.TrangChu;
 
 namespace QLVLXD
 {
-    public enum E_FORM { BANHANG, MUAHANG, VATLIEU, THONGKEBANHANG, NHANVIEN, NHACUNGCAP, KHACHHANG, LOAIKHACHHANG, USER, CAPNHATTAIKHOAN, THONGKEMUAHANG, HOME };
+    public enum E_FORM { BANHANG, MUAHANG, VATLIEU, THONGKEBANHANG, NHANVIEN, NHACUNGCAP, KHACHHANG, LOAIKHACHHANG, USER, CAPNHATTAIKHOAN, THONGKEMUAHANG, HOME, DONVI };
 
     public partial class Main_Form : RibbonForm
     {
-        public HoaDonBanHang frm_banhang; public
-        GUI.HoaDonMuaHang frm_muahang; public
-        GUI.NghiepVu.ThongKeBanHang frm_thongkebanhang; public
-        //GUI.NghiepVu.TienTeDonViTinhLoaiVatLieu frm_tiente; public
-        VatLieu frm_vatlieu; public
-        QuanLyThongTinNhanVien frm_nhanvien; public
-        NhaCungCap frm_nhacungcap; public
-        KhachHang frm_khachhang; public
-        GUI.KH_NCC.QuyDinhKH_NCC frm_loaikhachhang;
-        public GUI.TrangChu.Login2 frm_login; public
-        GUI.NhanSu.QuanLyUser frm_user; public
-        GUI.NhanSu.CapNhatTaiKhoan frm_capnhattaikhoan; public
-        GUI.PhanMem.CauHinh frm_cauhinh;
+        public HoaDonBanHang frm_banhang;
+        public GUI.HoaDonMuaHang frm_muahang;
+        public GUI.NghiepVu.ThongKeBanHang frm_thongkebanhang;
+        public GUI.NghiepVu.DonViTinh frm_DonVi;
+        public VatLieu frm_vatlieu;
+        public QuanLyThongTinNhanVien frm_nhanvien;
+        public NhaCungCap frm_nhacungcap;
+        public KhachHang frm_khachhang;
+        public GUI.KH_NCC.QuyDinhKH_NCC frm_loaikhachhang;
+        public GUI.TrangChu.Login2 frm_login;
+        public GUI.NhanSu.QuanLyUser frm_user;
+        public GUI.NhanSu.CapNhatTaiKhoan frm_capnhattaikhoan;
         public GUI.NghiepVu.ThongKeMuaHang frm_thongkemuahang;
         GUI.TrangChu.Home frm_home;
+        
 
-        const int SOFORM = 13;
+        const int SOFORM = 14;
         bool[] IsOpen = new bool[SOFORM];
         string[] TitleTab = new string[SOFORM];
         public DLL.NhanVien _NhanVienLogining = new DLL.NhanVien();
@@ -367,6 +367,7 @@ namespace QLVLXD
             TitleTab[(int)E_FORM.CAPNHATTAIKHOAN] = "Cập Nhật Tài Khoản";
             TitleTab[(int)E_FORM.THONGKEMUAHANG] = "Thống Kê Mua Hàng";
             TitleTab[(int)E_FORM.HOME] = "HOME";
+            TitleTab[(int)E_FORM.DONVI] = "Đơn vị";
 
             frm_home = new GUI.TrangChu.Home();
             this.addTabPage(frm_home, TitleTab[(int)E_FORM.HOME]);
@@ -439,6 +440,24 @@ namespace QLVLXD
             {
                 frm_login.Reset();
                 this.Dispose();
+            }
+        }
+
+        private void btn_DonVi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if ((new BLL_User()).IsUser())
+            {
+                MessageBox.Show("Chức năng dành cho Admin, User thường không sử dụng được!", "Giới hạn quyền sử dụng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (IsOpened(E_FORM.DONVI))
+                SelectTab(E_FORM.DONVI);
+            else
+            {
+                frm_DonVi = new GUI.NghiepVu.DonViTinh();
+                frm_DonVi.mainform = this;
+                this.addTabPage(frm_DonVi, TitleTab[(int)E_FORM.DONVI]);
             }
         }
     }

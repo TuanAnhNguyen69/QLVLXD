@@ -56,7 +56,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(10000741);
+                return new BLLResult(0);
             }
 }
 
@@ -74,7 +74,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(10000122);
+                return new BLLResult(0);
             }
         }
 
@@ -93,7 +93,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(10000122);
+                return new BLLResult(0);
             }
         }
 
@@ -138,7 +138,8 @@ namespace QLVLXD.BLL
                         DialogResult result = MessageBox.Show("Xóa vật liệu \"" + row.TenVL.Trim() + "\" ?", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (result == DialogResult.No)
                             return new BLLResult((int)BLLResultType.NOT_DELETE);
-                    }                  
+                    }
+                    DB.VatLieus.DeleteOnSubmit(row);
                     DB.SubmitChanges();
                     return new BLLResult((int)BLLResultType.S_DELETE);
                 }
@@ -146,11 +147,11 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(100008521);
+                return new BLLResult(0);
             }
         }
 
-        public BLLResult Update(string MaVL, string TenVL, string MaNCC, decimal SoLuong, string MaDVT, decimal GiaMua, decimal GiaLe, decimal GiaSi, decimal SoLuongBanSi, string MaTinhTrang, string MaKM, decimal SoLuongToiThieu, string GhiChu)
+        public BLLResult Update(string MaVL, string TenVL, string MaNCC, decimal SoLuong, string MaDVT, decimal GiaMua, decimal GiaBan, string GhiChu)
         {
             try
             {
@@ -161,38 +162,33 @@ namespace QLVLXD.BLL
                 if (old_data.MaNCC.Trim() != MaNCC)
                 {
                     old_data.MaNCC = MaNCC;
-                    //DB.SubmitChanges();
                 }
                 
                 if (old_data.GhiChu.Trim() != GhiChu)
                 {
                     old_data.GhiChu = GhiChu;
-                    //DB.SubmitChanges();
                 }
 
                 // Phần DVT
                 if (old_data.MaDVT.Trim() != MaDVT)
                 {
                     old_data.MaDVT = MaDVT;
-                    //DB.SubmitChanges();
                 }
 
                 // Phần giá
                 if (old_data.GiaMua != GiaMua)
                 {
                     old_data.GiaMua = GiaMua;
-                    //DB.SubmitChanges();
                 }
-                if (old_data.GiaBan != GiaLe)
+                if (old_data.GiaBan != GiaBan)
                 {
-                    old_data.GiaBan = GiaLe;
+                    old_data.GiaBan = GiaBan;
                 }
       
 
                 if (old_data.SoLuong != SoLuong)
                 {
                     old_data.SoLuong = SoLuong;
-                    //DB.SubmitChanges();
                 }
 
                 DB.SubmitChanges();
@@ -200,7 +196,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(10000456);
+                return new BLLResult(0);
             }
         }
 

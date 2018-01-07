@@ -59,6 +59,13 @@
             this.vatLieuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grid_VatLieu = new System.Windows.Forms.DataGridView();
+            this.num_GiaBan = new System.Windows.Forms.NumericUpDown();
+            this.num_GiaMua = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_In = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_XuatFile = new DevExpress.XtraEditors.SimpleButton();
+            this.cb_DonViTinh = new System.Windows.Forms.ComboBox();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.colMaVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,13 +74,6 @@
             this.colGiaMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num_GiaBan = new System.Windows.Forms.NumericUpDown();
-            this.num_GiaMua = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_In = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_XuatFile = new DevExpress.XtraEditors.SimpleButton();
-            this.cb_DonViTinh = new System.Windows.Forms.ComboBox();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tb_TenVatLieu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_GhiChu.Properties)).BeginInit();
@@ -263,16 +263,16 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(680, 167);
+            this.labelControl15.Location = new System.Drawing.Point(674, 167);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(84, 13);
+            this.labelControl15.Size = new System.Drawing.Size(42, 13);
             this.labelControl15.TabIndex = 6;
-            this.labelControl15.Text = "Số lượng tối thiểu";
+            this.labelControl15.Text = "Số lượng";
             // 
             // num_SoLuong
             // 
             this.num_SoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num_SoLuong.Location = new System.Drawing.Point(770, 165);
+            this.num_SoLuong.Location = new System.Drawing.Point(741, 165);
             this.num_SoLuong.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -284,7 +284,7 @@
             0,
             0});
             this.num_SoLuong.Name = "num_SoLuong";
-            this.num_SoLuong.Size = new System.Drawing.Size(146, 20);
+            this.num_SoLuong.Size = new System.Drawing.Size(175, 20);
             this.num_SoLuong.TabIndex = 127;
             this.num_SoLuong.ThousandsSeparator = true;
             this.num_SoLuong.Value = new decimal(new int[] {
@@ -328,57 +328,6 @@
             this.grid_VatLieu.Size = new System.Drawing.Size(904, 257);
             this.grid_VatLieu.TabIndex = 129;
             this.grid_VatLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_VatLieu_CellClick);
-            this.grid_VatLieu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_VatLieu_CellContentClick);
-            // 
-            // colMaVL
-            // 
-            this.colMaVL.HeaderText = "Mã VL";
-            this.colMaVL.Name = "colMaVL";
-            this.colMaVL.ReadOnly = true;
-            // 
-            // colTenVL
-            // 
-            this.colTenVL.HeaderText = "Tên VL";
-            this.colTenVL.Name = "colTenVL";
-            this.colTenVL.ReadOnly = true;
-            // 
-            // NCC
-            // 
-            this.NCC.HeaderText = "NCC";
-            this.NCC.Name = "NCC";
-            this.NCC.ReadOnly = true;
-            this.NCC.Visible = false;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.HeaderText = "Số Lượng";
-            this.colSoLuong.Name = "colSoLuong";
-            this.colSoLuong.ReadOnly = true;
-            // 
-            // colDVT_Goc
-            // 
-            this.colDVT_Goc.HeaderText = "ĐVT";
-            this.colDVT_Goc.Name = "colDVT_Goc";
-            this.colDVT_Goc.ReadOnly = true;
-            // 
-            // colGiaMua
-            // 
-            this.colGiaMua.HeaderText = "Giá Mua";
-            this.colGiaMua.Name = "colGiaMua";
-            this.colGiaMua.ReadOnly = true;
-            // 
-            // colGiaBan
-            // 
-            this.colGiaBan.HeaderText = "Giá Bán";
-            this.colGiaBan.Name = "colGiaBan";
-            this.colGiaBan.ReadOnly = true;
-            // 
-            // colGhiChu
-            // 
-            this.colGhiChu.HeaderText = "Ghi Chú";
-            this.colGhiChu.Name = "colGhiChu";
-            this.colGhiChu.ReadOnly = true;
-            this.colGhiChu.Width = 200;
             // 
             // num_GiaBan
             // 
@@ -429,7 +378,6 @@
             this.btn_In.Size = new System.Drawing.Size(34, 27);
             this.btn_In.TabIndex = 131;
             this.btn_In.Text = "In";
-            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
             // 
             // btn_XuatFile
             // 
@@ -440,7 +388,6 @@
             this.btn_XuatFile.Size = new System.Drawing.Size(78, 27);
             this.btn_XuatFile.TabIndex = 132;
             this.btn_XuatFile.Text = "Xuất ra File";
-            this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
             // 
             // cb_DonViTinh
             // 
@@ -450,16 +397,77 @@
             this.cb_DonViTinh.Name = "cb_DonViTinh";
             this.cb_DonViTinh.Size = new System.Drawing.Size(175, 21);
             this.cb_DonViTinh.TabIndex = 125;
-            this.cb_DonViTinh.SelectedIndexChanged += new System.EventHandler(this.cb_DonViTinh_SelectedIndexChanged);
             // 
             // labelControl16
             // 
             this.labelControl16.Location = new System.Drawing.Point(674, 131);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(61, 13);
+            this.labelControl16.Size = new System.Drawing.Size(52, 13);
             this.labelControl16.TabIndex = 5;
-            this.labelControl16.Text = "Đơn vị tính 2";
-            this.labelControl16.Click += new System.EventHandler(this.labelControl16_Click);
+            this.labelControl16.Text = "Đơn vị tính";
+            // 
+            // colMaVL
+            // 
+            this.colMaVL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colMaVL.HeaderText = "Mã VL";
+            this.colMaVL.Name = "colMaVL";
+            this.colMaVL.ReadOnly = true;
+            this.colMaVL.Width = 61;
+            // 
+            // colTenVL
+            // 
+            this.colTenVL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colTenVL.HeaderText = "Tên VL";
+            this.colTenVL.Name = "colTenVL";
+            this.colTenVL.ReadOnly = true;
+            this.colTenVL.Width = 65;
+            // 
+            // NCC
+            // 
+            this.NCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NCC.HeaderText = "NCC";
+            this.NCC.Name = "NCC";
+            this.NCC.ReadOnly = true;
+            this.NCC.Width = 52;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSoLuong.HeaderText = "Số Lượng";
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.ReadOnly = true;
+            this.colSoLuong.Width = 76;
+            // 
+            // colDVT_Goc
+            // 
+            this.colDVT_Goc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colDVT_Goc.HeaderText = "ĐVT";
+            this.colDVT_Goc.Name = "colDVT_Goc";
+            this.colDVT_Goc.ReadOnly = true;
+            this.colDVT_Goc.Width = 52;
+            // 
+            // colGiaMua
+            // 
+            this.colGiaMua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colGiaMua.HeaderText = "Giá Mua";
+            this.colGiaMua.Name = "colGiaMua";
+            this.colGiaMua.ReadOnly = true;
+            this.colGiaMua.Width = 70;
+            // 
+            // colGiaBan
+            // 
+            this.colGiaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colGiaBan.HeaderText = "Giá Bán";
+            this.colGiaBan.Name = "colGiaBan";
+            this.colGiaBan.ReadOnly = true;
+            this.colGiaBan.Width = 68;
+            // 
+            // colGhiChu
+            // 
+            this.colGhiChu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colGhiChu.HeaderText = "Ghi Chú";
+            this.colGhiChu.Name = "colGhiChu";
+            this.colGhiChu.ReadOnly = true;
             // 
             // VatLieu
             // 
@@ -499,7 +507,6 @@
             this.Text = "Quản lý Thông Tin Vật Liệu";
             this.Load += new System.EventHandler(this.VatLieu_Load);
             this.VisibleChanged += new System.EventHandler(this.VatLieu_VisibleChanged);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VatLieu_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.tb_TenVatLieu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vatLieuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_GhiChu.Properties)).EndInit();

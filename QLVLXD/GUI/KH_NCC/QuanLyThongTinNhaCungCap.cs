@@ -148,42 +148,12 @@ namespace QLVLXD
                 e.Handled = true;
             }
 
-            // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
         }
 
-        private void btn_XuatFile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string filepath = "";
-                FolderBrowserDialog browse = new FolderBrowserDialog();
-                browse.Description = "Chọn đường dẫn lưu file:";
-                if (browse.ShowDialog() == DialogResult.OK)
-                {
-                    filepath = browse.SelectedPath;
-                    if (filepath[filepath.Length - 1] != '\\')
-                        filepath = filepath + "\\";
-                    string name = DateTime.Now.ToString();
-                    name = name.Replace('/', '-');
-                    name = name.Replace(':', '-');
-                    nhacungcap.ExportExcel(gridView1, filepath, "Danh Sách Nhà Cung Cấp (" + name + ")");
-                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Xuất Excel không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btn_In_Click(object sender, EventArgs e)
-        {
-            (new PrintDialog()).ShowDialog();
-        }
     }
 }
 

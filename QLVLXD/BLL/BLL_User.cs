@@ -96,7 +96,7 @@ namespace QLVLXD.BLL
 
                 if (result == DialogResult.No)
                     return;
-
+                DB.Users.DeleteOnSubmit(row);
                 DB.SubmitChanges();
                 MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

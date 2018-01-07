@@ -37,7 +37,6 @@ namespace QLVLXD.BLL
             return record;
         }
 
-        // null nếu hóa đơn truyền vào lỗi
         public RecordThongKeBanHang GetRecord(HoaDonBanHang HoaDon)
         {
             try
@@ -46,11 +45,11 @@ namespace QLVLXD.BLL
                 RecordThongKeBanHang record = new RecordThongKeBanHang();
 
 
-                if (HoaDon == null) // Có lỗi hóa đơn truyền vào
+                if (HoaDon == null) 
                 {
                     return GetNullRecord();
                 }
-                else // Tính toán
+                else 
                 {
                     record.MaHDBH = HoaDon.MaHDBH.Trim();
                     record.NgayGiao = HoaDon.NgayLap.Value;
@@ -86,7 +85,7 @@ namespace QLVLXD.BLL
                         record.TienKhuyenMai = (long) (record.TienVatLieu * (new BLL_LoaiKhachHang()).GetObjectFromID(khachhang.MaLoaiKH).PhanTramGiam.Value / 100);
                         record.SoVatLieu = listcthd.Count;
                         record.TongTien = record.TienVatLieu - record.TienKhuyenMai;
-                        //record.TienKMKH = Math.Abs(_HoaDonBanHang.GetTienKMKH(record.TongTien, record.MaKH, record.MaHDBH));
+                      
                        
                     }
                 }

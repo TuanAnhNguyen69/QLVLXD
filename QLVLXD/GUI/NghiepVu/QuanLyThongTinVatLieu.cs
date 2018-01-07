@@ -14,7 +14,6 @@ namespace QLVLXD
 {
     public partial class VatLieu : Form
     {
-        // Các biến BLL
         BLL_NhaCungCap _BLL_NhaCungCap = new BLL_NhaCungCap();
         BLL_VatLieu _BLL_VatLieu = new BLL_VatLieu();
         BLL_DonViTinhVatLieu _DonViTinhVatLieu = new BLL_DonViTinhVatLieu();
@@ -22,14 +21,9 @@ namespace QLVLXD
         public Main_Form mainform;
         public bool IsReset;
 
-        // Các biến khác
         bool IsAddNew;
-        string _TienTeCu;
 
-        // Các biến về vật liệu đang chọn trong Gridview
         DLL.VatLieu _VatLieuGridViewSelected = new DLL.VatLieu();
-        string _TenKMGridViewSelected;
-        string _TenTinhTrangGridViewSelected;
 
         public VatLieu()
         {
@@ -47,7 +41,7 @@ namespace QLVLXD
         {
             var listvl = _BLL_VatLieu.GetList();
 
-            for (; grid_VatLieu.Rows.Count > 0;) // Xóa hết dòng
+            for (; grid_VatLieu.Rows.Count > 0;) 
                 grid_VatLieu.Rows.RemoveAt(0);
 
             foreach (DLL.VatLieu var in listvl)
@@ -63,38 +57,32 @@ namespace QLVLXD
 
         }
 
-        // Nhấn [Thêm] :
         private void btn_Them_Click_1(object sender, EventArgs e)
         {
-            // Thiết đặt
             if (!IsAddNew || !CheckInput())
                 return;
 
             BLLResult result;
 
-            // Phần tên
           
             string GhiChu = tb_GhiChu.Text;
             if (GhiChu == null || GhiChu == "")
                 GhiChu = "<Không có ghi chú>";
           
 
-            // Kiểm tra dữ liệu truyền vào
             result = _BLL_VatLieu.CheckData(true, lb_MaVatLieu.Text.Trim(), tb_TenVatLieu.Text.Trim(), lb_MaNhaCungCap.Text.Trim(), num_SoLuong.Value, cb_DonViTinh.Text.Trim(), num_GiaMua.Value, num_GiaBan.Value, GhiChu);
 
-            // Lỗi dữ liệu truyền vào khi checkdata
             if (result._Code == 111)
             {
                 _BLL_VatLieu.MakeMessageBox(result);
                 return;
             }
 
-            // Insert
             var DVT = _DonViTinhVatLieu.GetDonViTinhTuTen(cb_DonViTinh.Text.Trim());
             result = _BLL_VatLieu.Insert(lb_MaVatLieu.Text.Trim(), tb_TenVatLieu.Text.Trim(), lb_MaNhaCungCap.Text.Trim(), num_SoLuong.Value, DVT.MaDVT.Trim(), Decimal.Round(num_GiaMua.Value, 0), Decimal.Round(num_GiaBan.Value), GhiChu);
             _BLL_VatLieu.MakeMessageBox(result);
 
-            if (result._Code == (int)BLLResultType.S_ADD) // Thành công thì Reset
+            if (result._Code == (int)BLLResultType.S_ADD) 
             {
                 ResetForNewInsert();
                 LoadGridView();
@@ -105,47 +93,36 @@ namespace QLVLXD
 
         void LoadDataToForm()
         {
-            // Các combobox DVT
             List<DLL.DonViTinhVatLieu> listdvt = _DonViTinhVatLieu.GetList();
             foreach(DLL.DonViTinhVatLieu var in listdvt)
             {
                 cb_DonViTinh.Items.Add(var.DVT.Trim());
             }
 
-            // Combobox NCC
             List<string> listtenncc = new List<string>();
             List<DLL.NhaCungCap> listncc = _BLL_NhaCungCap.GetList();
             foreach (DLL.NhaCungCap mem in listncc)
             {
-                cb_TenNhaCungCap.Items.Add(mem.TenNCC);
+                cb_TenNhaCungCap.Items.Add(mem.TenNCC.Trim());
             }
-
-            num_SoLuong.Enabled = false;
 
             LoadGridView();
         }
 
-        // Reset Form để thêm mới
         void ResetForNewInsert()
         {
-            // Phần tên
             tb_TenVatLieu.Text = "";
             lb_MaVatLieu.Text = _BLL_VatLieu.NewMaVL();
             tb_GhiChu.Text = "<Không có ghi chú>";
            
-
-            // Đơn vị tính
             cb_DonViTinh.SelectedIndex = 0;
 
-            // Phần giá
             num_GiaMua.Value = 0;
             num_GiaBan.Value = 0;
             num_SoLuong.Value = (new BLL_CTHoaDonBanHang()).ReadConfig()._SoLuongToiThieu;
 
-            // Khuyến m
             num_SoLuong.Value = 1;
 
-            // Nút
             IsAddNew = true;
             btn_Them.Visible = true;
             btn_CapNhat.Visible = false;
@@ -189,7 +166,7 @@ namespace QLVLXD
             ResetForNewInsert();
         }
 
-        // [Xóa]
+
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             if (IsAddNew)
@@ -209,45 +186,33 @@ namespace QLVLXD
             }
         }
 
-        // Nhấn [Cập nhật] :
+
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
-            // Thiết đặt
             if (IsAddNew || !CheckInput())
                 return;
 
             BLLResult result;
 
             #region Chuẩn bị data để insert
-            // Phần tên
          
             string GhiChu = tb_GhiChu.Text;
             if (GhiChu == null || GhiChu == "")
                 GhiChu = "<Không có ghi chú>";
-            // Phần DVT
-            string dvt2, dvt3;
-            decimal tile2, tile3;
-          
-       
-            dvt2 = "";
-            tile2 = 0;
-            dvt3 = "";
-            tile3 = 0;
-
-  
             #endregion
 
-            // Kiểm tra dữ liệu truyền vào
             result = _BLL_VatLieu.CheckData(false, lb_MaVatLieu.Text.Trim(), tb_TenVatLieu.Text.Trim(), lb_MaNhaCungCap.Text.Trim(), num_SoLuong.Value, cb_DonViTinh.Text.Trim(), num_GiaMua.Value, num_GiaBan.Value, GhiChu);
 
-            // Lỗi dữ liệu truyền vào khi checkdata
             if (result._Code == 111)
             {
                 _BLL_VatLieu.MakeMessageBox(result);
                 return;
             }
 
-            if (result._Code == (int)BLLResultType.S_UPDATE) // Thành công thì Reset
+
+            result = _BLL_VatLieu.Update(lb_MaVatLieu.Text.Trim(), tb_TenVatLieu.Text.Trim(), lb_MaNhaCungCap.Text.Trim(), num_SoLuong.Value, _DonViTinhVatLieu.GetDonViTinhTuTen(cb_DonViTinh.Text).MaDVT, num_GiaMua.Value, num_GiaBan.Value, GhiChu);
+
+            if (result._Code == (int)BLLResultType.S_UPDATE)
             {
                 ResetForNewInsert();
                 LoadGridView();
@@ -255,18 +220,6 @@ namespace QLVLXD
                  try {mainform.frm_muahang.IsReset = true; } catch {}
                 try { mainform.frm_thongkebanhang.IsReset = true; } catch { }
             }
-        }
-
-        private void btn_XemInfoNCC_Click(object sender, EventArgs e)
-        {
-            //if (gridView1.SelectedRowsCount != 1)
-            //    return;
-
-            //int[] selectedindex = gridView1.GetSelectedRows();
-            //DLL.VatLieu vldangchon = (QLVLXD.DLL.VatLieu)gridView1.GetRow(selectedindex[0]);
-
-            //GUI.XemThongTinNCC form = new GUI.XemThongTinNCC(vldangchon.TenNCC.Trim());
-            //form.Show();
         }
 
         private void cb_TenNhaCungCap_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -278,47 +231,11 @@ namespace QLVLXD
             }
         }
 
-        // Nhấn phím [Esc] thì thoát:
-        private void VatLieu_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Escape)
-            //{
-            //    if (IsAddNew && (tb_TenVatLieu.Text != "" || nud_SoLuong.Value > 0 || nud_DonGia.Value > 0 || nud_DonGiaBan.Value > 0))
-            //    {
-            //        DialogResult result = MessageBox.Show("Hủy việc Thêm vào? Nhấn [Yes] để thoát hoặc nhấn [No] để tiếp tục.", "Thông báo", MessageBoxButtons.YesNo,
-            //                      MessageBoxIcon.Information);
 
-            //        if (result == DialogResult.Yes)
-            //            this.Close();
-            //    }
-            //}
+      
 
-            Application.Exit();
-            
-        }
-
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grid_DanhSachVatLieuCuaHang_Click(object sender, EventArgs e)
-        {
-
-        }
-
-     
-
-
-        private void grid_VatLieu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        // Click vào GridView
         private void grid_VatLieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Tiền xử lý
             if (!IsAddNew)
                 ResetForNewInsert();
             int rowindex = grid_VatLieu.SelectedCells[0].RowIndex;
@@ -334,7 +251,7 @@ namespace QLVLXD
             _VatLieuGridViewSelected.GiaBan = Decimal.Parse(grid_VatLieu.Rows[rowindex].Cells[6].Value.ToString().Trim());
 
 
-            {// Ghi chú
+            {
                 var tmp = grid_VatLieu.Rows[rowindex].Cells[7].Value;
                 string ghichu = tmp == null ? "" : tmp.ToString().Trim();
                 _VatLieuGridViewSelected.GhiChu = ghichu;
@@ -348,26 +265,21 @@ namespace QLVLXD
             btn_Xoa.Visible = true;
             lb_MaVatLieu.ForeColor = Color.Red;
 
-            // Phần tên vl
             tb_TenVatLieu.Text = _VatLieuGridViewSelected.TenVL.Trim();
             lb_MaVatLieu.Text = _VatLieuGridViewSelected.MaVL.Trim();
             cb_TenNhaCungCap.Text = _BLL_NhaCungCap.GetTenNCCFromMaNCC(_VatLieuGridViewSelected.MaNCC.Trim());
             lb_MaNhaCungCap.Text = _VatLieuGridViewSelected.MaNCC.Trim();
             tb_GhiChu.Text = _VatLieuGridViewSelected.GhiChu;
 
-            // Giá
             num_GiaMua.Value = (decimal)_VatLieuGridViewSelected.GiaMua;
             num_GiaBan.Value = (decimal)_VatLieuGridViewSelected.GiaBan;
 
-            // Đvt
             cb_DonViTinh.Text = _DonViTinhVatLieu.GetObjectFromID(_VatLieuGridViewSelected.MaDVT).DVT.Trim();
+
+            num_SoLuong.Value = (decimal)_VatLieuGridViewSelected.SoLuong;
             #endregion
 
         }
-
-
-
-
 
         private void VatLieu_VisibleChanged(object sender, EventArgs e)
         {
@@ -377,48 +289,6 @@ namespace QLVLXD
                     mainform.ResetTab(mainform.IndexTabFormTenTab(E_FORM.VATLIEU));
                     IsReset = false;
                 }
-        }
-
-        // [Xuất file]
-        private void btn_XuatFile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string filepath = "";
-                FolderBrowserDialog browse = new FolderBrowserDialog();
-                browse.Description = "Chọn đường dẫn lưu file:";
-                if (browse.ShowDialog() == DialogResult.OK)
-                {
-                    filepath = browse.SelectedPath;
-                    if (filepath[filepath.Length - 1] != '\\')
-                        filepath = filepath + "\\";  
-                    string name = DateTime.Now.ToString();
-                    name = name.Replace('/', '-');
-                    name = name.Replace(':', '-');                    
-                    _BLL_VatLieu.ExportExcel(grid_VatLieu, filepath, "Danh Sách Vật Liệu (" + name + ")");
-                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Xuất Excel không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // [In]
-        private void btn_In_Click(object sender, EventArgs e)
-        {
-            (new PrintDialog()).ShowDialog();
-        }
-
-        private void cb_DonViTinh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl16_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

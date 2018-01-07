@@ -14,7 +14,6 @@ namespace QLVLXD.GUI
 {
     public partial class HoaDonBanHang : DevExpress.XtraEditors.XtraForm
     {
-        // Biến BLL
         BLL.BLL_NhanVien _NhanVien = new BLL_NhanVien();
         BLL.BLL_VatLieu _BLL_VatLieu = new BLL.BLL_VatLieu();
         BLL.BLL_CTHoaDonBanHang _BLL_CTHoaDonBanHang = new BLL.BLL_CTHoaDonBanHang();
@@ -24,13 +23,11 @@ namespace QLVLXD.GUI
         BLL.BLL_NhaCungCap _NhaCungCap = new BLL.BLL_NhaCungCap();
         BLL.BLL_DonViTinhVatLieu _DonViTinhVatLieu = new BLL.BLL_DonViTinhVatLieu();
 
-        //// Biến lưu dữ liệu load
         List<DLL.CTHoaDonBanHang> _ListVatLieuHoaDon = new List<DLL.CTHoaDonBanHang>();
         DLL.CTHoaDonBanHang _CTHDBHEditting = new DLL.CTHoaDonBanHang();
         DLL.HoaDonBanHang _HDBHEditting = new DLL.HoaDonBanHang();
 
-        // Biến khác
-        public bool IsAddNew, _IsKMSoLanMua, IsReset;
+        public bool IsAddNew, IsReset;
         public long iTongTien;
         public Main_Form mainform;
 
@@ -136,7 +133,6 @@ namespace QLVLXD.GUI
             btn_Them.Visible = true;
             lb_MaHDBH.ForeColor = Color.Green;
             IsAddNew = true;
-            _IsKMSoLanMua = false;
         }
 
         void ResetThongKe()
@@ -157,22 +153,9 @@ namespace QLVLXD.GUI
 
         }
 
-        void ResetSearch()
-        {
-            //if (te_TimKiemVatLieu.Text != "")
-            //    te_TimKiemVatLieu.Text = "";
 
-            //if (te_TimKiemHDBH.Text != "")
-            //    te_TimKiemHDBH.Text = "";
+ 
 
-            //if (te_TimKiemVatLieuTrongHoaDon.Text != "")
-            //    te_TimKiemVatLieuTrongHoaDon.Text = "";
-        }
-
-        private void grid_DanhSachVatLieuCuaHang_Click(object sender, EventArgs e)
-        {
-
-        }
 
         // Nhấn [Reset để thêm mới]:
         private void btn_Reset_Click(object sender, EventArgs e)
@@ -180,52 +163,17 @@ namespace QLVLXD.GUI
             ResetForNewInsert();
         }
 
-        private void grid_DanhSachVatLieuCuaHang_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
-        {
 
-        }
-
-        private void grid_DanhSachVatLieuCuaHang_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        // Khi bấm vào 1 dòng trong danh sách vật liệu của cửa hàng thì cập nhật lb_DonViTinh
-        private void grid_DanhSachVatLieuCuaHang_MouseCaptureChanged(object sender, EventArgs e)
-        {
-            //if (gridView1.SelectedRowsCount != 1)
-            //    return;
-
-            //int[] selectedindex = gridView1.GetSelectedRows();
-            //QLVLXD.DLL.VatLieu vatlieudangchon = (QLVLXD.DLL.VatLieu)gridView1.GetRow(selectedindex[0]);
-            //lb_DonViTinh.Text = vatlieudangchon.DonViTinh.Trim();
-        }
-
-        private void grid_DanhSachVatLieuCuaHang_DataSourceChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void grid_DanhSachVatLieuCuaHang_ProcessGridKey(object sender, KeyEventArgs e)
-        {
-        }
 
         // Thoát form
         private void HoaDonBanHang_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (!MakeBreak())
-            //    e.Cancel = true;
+         
         }
 
-        // Khi chọn Tên nhân viên thì đổi mã nhân viên
-        private void cb_TenNhanVien_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        // Kiểm tra đã nhập đủ hay chưa:
         private bool CheckInput()
         {
-            // Phần thông tin hóa đơn
             if (dtp_NgayGiao.Value < DateTime.Today)
             {
                 MessageBox.Show("Vui lòng chọn Ngày giao từ ngày hiện tại trở về trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -236,7 +184,6 @@ namespace QLVLXD.GUI
                 MessageBox.Show("Vui lòng chọn Khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            // Phần thêm vật liệu cho hóa đơn
             if (_ListVatLieuHoaDon.Count == 0)
             {
                 MessageBox.Show("Vui lòng thêm vật liệu cho hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -246,24 +193,20 @@ namespace QLVLXD.GUI
             return true;
         }
 
-        // Bấm nút Thêm [Thêm]:
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            // Thiết đặt
             if (!IsAddNew || !CheckInput())
                 return;
 
             BLLResult result;
 
-            // Kiểm tra dữ liệu truyền vào HDBH
-            result = _BLL_HoaDonBanHang.CheckData(true, lb_MaHDBH.Text, dtp_NgayGiao.Value, lb_MaNV.Text, lb_MaKH.Text, DateTime.Today, _IsKMSoLanMua ? "True" : "False", cb_TrangThai.Text);
+            result = _BLL_HoaDonBanHang.CheckData(true, lb_MaHDBH.Text);
             if (result._Code != (long)BLLResultType.SUCCESS)
             {
                 _BLL_VatLieu.MakeMessageBox(result);
                 return;
             }
 
-            // Kiểm tra check CTHDBH, cập nhật số vật liệu
             foreach (DLL.CTHoaDonBanHang var in _ListVatLieuHoaDon)
             {
                 result = _BLL_CTHoaDonBanHang.CheckData(true, var);
@@ -280,7 +223,6 @@ namespace QLVLXD.GUI
                 }
             }
 
-            // Công nợ khách hàng
             if (cb_TrangThai.Text != "Đã Giao"
                 && cb_TrangThai.Text != "Giao Ngay Lúc Lập")
             {
@@ -292,19 +234,16 @@ namespace QLVLXD.GUI
                 }
             }
 
-            // Insert HDBH
-            //UpdateGia(cb_DonViTienTe.Text.Trim(), "VND"); // Khi lưu vào CSCL chỉ lưu VND
+
             
 
             result = _BLL_HoaDonBanHang.Insert(lb_MaHDBH.Text, dtp_NgayGiao.Value, lb_MaNV.Text, lb_MaKH.Text, DateTime.Today, getTongTien(), getKhuyenMai(), cb_TrangThai.Text);
-            //UpdateGia("VND", cb_DonViTienTe.Text.Trim());
             if (result._Code != (long)BLLResultType.S_ADD)
             {
                 _BLL_VatLieu.MakeMessageBox(result);
                 return;
             }
 
-            // Insert CTHDBH
             foreach (DLL.CTHoaDonBanHang var in _ListVatLieuHoaDon)
             {
                 result = _BLL_CTHoaDonBanHang.Insert(var);
@@ -317,7 +256,7 @@ namespace QLVLXD.GUI
 
             _BLL_VatLieu.MakeMessageBox(result);
 
-            if (result._Code == (long)BLLResultType.S_ADD) // Thành công thì Reset
+            if (result._Code == (long)BLLResultType.S_ADD) 
             {
                 ResetForNewInsert();
                 _ListVatLieuHoaDon.Clear();
@@ -326,7 +265,6 @@ namespace QLVLXD.GUI
             }
         }
 
-        // Bấm nút [<<]:
         private void btn_DeleteVatLieu_Click(object sender, EventArgs e)
         {
             int rowindex = grid_VatLieu.SelectedCells[0].RowIndex;
@@ -556,7 +494,7 @@ namespace QLVLXD.GUI
                 var loai = _LoaiKhachHang.GetObjectFromID(data.MaLoaiKH.Trim());
                 if (loai == null)
                 {
-                    _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(12000777));
+                    _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(0));
                     return;
                 }
                 lb_LoaiKH.Text = loai.TenLoaiKH.Trim();
@@ -659,7 +597,7 @@ namespace QLVLXD.GUI
             var vl = _BLL_VatLieu.GetObjectFromTenVL(cb_TenVatLieu.Text.Trim());
             if (vl == null)
             {
-                _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(12000963));
+                _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(0));
                 return;
             }
             // Kiểm tra vật liệu đang chọn có trong ListVatLieuHoaDon chưa
@@ -757,7 +695,7 @@ namespace QLVLXD.GUI
             var ncc = _NhaCungCap.GetObjectFromID(vl.MaNCC.Trim());
             if (ncc == null)
             {
-                _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(12000964));
+                _BLL_VatLieu.MakeMessageBox(new BLL.BLLResult(0));
                 return;
             }
             lb_TenNCC.Text = ncc.TenNCC.Trim();
@@ -808,8 +746,7 @@ namespace QLVLXD.GUI
             }
 
             // Thống kê
-            long TongTienVatLieu = 0, TongTienKM = 0, TongTienTruocKM = 0, TongTien = 0;
-            _IsKMSoLanMua = false;
+            long TongTienVatLieu = 0, TongTienKM = 0, TongTien = 0;
             TongTienVatLieu = (long) getTongTien();
             TongTienKM = (long) getKhuyenMai();
             

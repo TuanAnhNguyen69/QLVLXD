@@ -21,14 +21,12 @@ namespace QLVLXD.GUI.NhanSu
         {
             InitializeComponent();
 
-            /* Tao List phan quyen */            
             HashSet<string> listphanquyen = new HashSet<string>();
             listphanquyen.Add("Admin");
             listphanquyen.Add("User");
             quanlyuser.MakeComboBoxNoAuto(cbb_PhanQuyen, listphanquyen.ToList());
             cbb_PhanQuyen.SelectedIndex = 0;
 
-            // Tạo ds cho cb_TenNhanVien
             List<DLL.NhanVien> bll_nhanvien = (new BLL_NhanVien()).GetList();
             List<string> namenv = new List<string>();
             foreach (DLL.NhanVien mem in bll_nhanvien)
@@ -121,11 +119,6 @@ namespace QLVLXD.GUI.NhanSu
             ResetThongTin();
         }
 
-        private void btn_XemChiTiet_Click(object sender, EventArgs e)
-        {
-            //QuanLyUser_XemChiTiet xemchitiet = new QuanLyUser_XemChiTiet();
-            //xemchitiet.Show();
-        }
 
         private void gridControl_QuanlyUser_MouseCaptureChanged(object sender, EventArgs e)
         {

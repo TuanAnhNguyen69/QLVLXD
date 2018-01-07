@@ -300,7 +300,6 @@
             this.btn_XuatFile.Size = new System.Drawing.Size(144, 55);
             this.btn_XuatFile.TabIndex = 95;
             this.btn_XuatFile.Text = "Xuất ra File\r";
-            this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
             // 
             // btn_In
             // 
@@ -310,7 +309,6 @@
             this.btn_In.Size = new System.Drawing.Size(81, 55);
             this.btn_In.TabIndex = 94;
             this.btn_In.Text = "In\r\n";
-            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
             // 
             // NhaCungCap
             // 

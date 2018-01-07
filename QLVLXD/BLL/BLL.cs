@@ -15,7 +15,7 @@ namespace QLVLXD.BLL
     {
         public MessageBoxIcon _Icon;
         public string _Content;
-        public int _Code; // Lỗi chủ quan: 111, lỗi exception > 1000
+        public int _Code;
 
         public bool IsErrorException() { return _Code > 1000; }
         public BLLResult(MessageBoxIcon Icon, string Content, int Code) { _Code = Code; _Icon = Icon; _Content = Content; }
@@ -56,7 +56,7 @@ namespace QLVLXD.BLL
             }
             else // Lỗi khác
             {
-                _Icon = MessageBoxIcon.Error; _Content = "[Error] Đã có lỗi truy suất dữ liệu xảy ra! (Mã lỗi " + iCode.ToString() + ")";
+                _Icon = MessageBoxIcon.Error; _Content = "[Error] Đã có lỗi truy suất dữ liệu xảy ra!";
             }
         }
     }
@@ -92,189 +92,9 @@ namespace QLVLXD.BLL
             MSComBoBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
         }
 
-        public void ExportExcel(DevExpress.XtraGrid.Views.Grid.GridView grid, string path, string name)
-        {
-            GUI.PhanMem.Waiting wait = new GUI.PhanMem.Waiting();
-            wait.Show();
+      
 
-            app obj = new app();
-            obj.Application.Workbooks.Add(Type.Missing);
-            obj.Columns.ColumnWidth = 20;
-
-            for (int i = 1; i < grid.Columns.Count + 1; i++)
-            {
-                obj.Cells[1, i] = grid.Columns[i - 1].GetCaption();
-            }
-
-            for (int i = 0; i < grid.RowCount; i++)
-            {
-                for (int j = 0; j < grid.Columns.Count; j++)
-                {
-                    string value = "";
-                    var ob = grid.GetRowCellValue(i, grid.Columns[j].FieldName);
-                    if (ob != null)
-                        value = ob.ToString();
-                    obj.Cells[i + 2, j + 1] = value;
-                }
-            }
-
-            obj.ActiveWorkbook.SaveCopyAs(path + name + ".xlsx");
-            obj.ActiveWorkbook.Saved = true;
-            wait.Close();
-        }
-
-        public void ExportExcel(DataGridView grid, string path, string name)
-        {
-            GUI.PhanMem.Waiting wait = new GUI.PhanMem.Waiting();
-            wait.Show();
-
-            app obj = new app();
-            obj.Application.Workbooks.Add(Type.Missing);
-            obj.Columns.ColumnWidth = 20;
-
-            for (int i = 1; i < grid.Columns.Count + 1; i++)
-            {
-                obj.Cells[1, i] = grid.Columns[i - 1].HeaderText;
-            }
-
-            for (int i = 0; i < grid.Rows.Count; i++)
-            {
-                for (int j = 0; j < grid.Columns.Count; j++)
-                {
-                    if (grid.Rows[i].Cells[j].Value != null)
-                    {
-                        obj.Cells[i + 2, j + 1] = grid.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-            }
-
-            obj.ActiveWorkbook.SaveCopyAs(path + name + ".xlsx");
-            obj.ActiveWorkbook.Saved = true;
-            wait.Close();
-        }
-
-        public void ExportHoaDonBanHang(string lb_TrangThai, string lb_HinhThucKM, string lb_TongTienKMKH, string lb_TongTienKhuyenMai, string lb_TongTienVatLieu, string lb_SoVatLieu, string lb_TongTien, string lb_LoaiKH, string lb_NgayLap, string lb_MaHDBH, string lb_TenKH, string lb_TenNV, string lb_NgayGiao, DevExpress.XtraGrid.Views.Grid.GridView grid, string path, string name)
-        {
-            GUI.PhanMem.Waiting wait = new GUI.PhanMem.Waiting();
-            wait.Show();
-
-            app obj = new app();
-            obj.Application.Workbooks.Add(Type.Missing);
-            obj.Columns.ColumnWidth = 20;
-            const int infocolumnindex1 = 1, infocolumnindex2 = 5, gridrowindex = 10;
-
-            #region Ghi Info
-            obj.Cells[1, infocolumnindex1] = "Mã hóa đơn";
-            obj.Cells[2, infocolumnindex1] = "Ngày lập";
-            obj.Cells[3, infocolumnindex1] = "Ngày giao";
-            obj.Cells[4, infocolumnindex1] = "Tên nhân viên";
-            obj.Cells[5, infocolumnindex1] = "Tên khách hàng";
-            obj.Cells[6, infocolumnindex1] = "Loại khách hàng";
-            obj.Cells[1, infocolumnindex2] = "Số vật liệu";
-            obj.Cells[2, infocolumnindex2] = "Tổng tiền vật liệu";
-            obj.Cells[3, infocolumnindex2] = "Tổng tiền khuyến mãi";
-            obj.Cells[4, infocolumnindex2] = "Khuyến mãi khách hàng";
-            obj.Cells[5, infocolumnindex2] = "Hình thức khuyến mãi";
-            obj.Cells[6, infocolumnindex2] = "Tổng tiền";
-            obj.Cells[7, infocolumnindex2] = "Trạng thái";
-            obj.Cells[1, infocolumnindex1 + 1] = lb_MaHDBH;
-            obj.Cells[2, infocolumnindex1 + 1] = lb_NgayLap;
-            obj.Cells[3, infocolumnindex1 + 1] = lb_NgayGiao;
-            obj.Cells[4, infocolumnindex1 + 1] = lb_TenNV;
-            obj.Cells[5, infocolumnindex1 + 1] = lb_TenKH;
-            obj.Cells[6, infocolumnindex1 + 1] = lb_LoaiKH;
-            obj.Cells[1, infocolumnindex2 + 1] = lb_SoVatLieu;
-            obj.Cells[2, infocolumnindex2 + 1] = lb_TongTienVatLieu;
-            obj.Cells[3, infocolumnindex2 + 1] = lb_TongTienKhuyenMai;
-            obj.Cells[4, infocolumnindex2 + 1] = lb_TongTienKMKH;
-            obj.Cells[5, infocolumnindex2 + 1] = lb_HinhThucKM;
-            obj.Cells[6, infocolumnindex2 + 1] = lb_TongTien;
-            obj.Cells[7, infocolumnindex2 + 1] = lb_TrangThai;
-            #endregion
-
-            // Ghi Grid            
-            for (int i = 1; i < grid.Columns.Count + 1; i++)
-            {
-                obj.Cells[1 + gridrowindex, i] = grid.Columns[i - 1].GetCaption();
-            }
-            for (int i = 0; i < grid.RowCount; i++)
-            {
-                for (int j = 0; j < grid.Columns.Count; j++)
-                {
-                    string value = "";
-                    var ob = grid.GetRowCellValue(i, grid.Columns[j].FieldName);
-                    if (ob != null)
-                        value = ob.ToString();
-                    obj.Cells[i + 2 + gridrowindex, j + 1] = value;
-                }
-            }
-
-            obj.ActiveWorkbook.SaveCopyAs(path + name + ".xlsx");
-            obj.ActiveWorkbook.Saved = true;
-            wait.Close();
-        }
-
-        //public void ExportHoaDonBanHang(string lb_TrangThai, string lb_HinhThucKM, string lb_TongTienKMKH, string lb_TongTienKhuyenMai, string lb_TongTienVatLieu, string lb_SoVatLieu, string lb_TongTien, string lb_LoaiKH, string lb_NgayLap, string lb_MaHDBH, string lb_TenKH, string lb_TenNV, string lb_NgayGiao, DevExpress.XtraGrid.Views.Grid.GridView grid, string path, string name)
-        //{
-        //    GUI.PhanMem.Waiting wait = new GUI.PhanMem.Waiting();
-        //    wait.Show();
-
-        //    app obj = new app();
-        //    obj.Application.Workbooks.Add(Type.Missing);
-        //    obj.Columns.ColumnWidth = 20;
-        //    const int infocolumnindex1 = 1, infocolumnindex2 = 5, gridrowindex = 10;
-
-        //    #region Ghi Info
-        //    obj.Cells[1, infocolumnindex1] = "Mã hóa đơn";
-        //    obj.Cells[2, infocolumnindex1] = "Ngày lập";
-        //    obj.Cells[3, infocolumnindex1] = "Ngày giao";
-        //    obj.Cells[4, infocolumnindex1] = "Tên nhân viên";
-        //    obj.Cells[5, infocolumnindex1] = "Tên khách hàng";
-        //    obj.Cells[6, infocolumnindex1] = "Loại khách hàng";
-        //    obj.Cells[1, infocolumnindex2] = "Số vật liệu";
-        //    obj.Cells[2, infocolumnindex2] = "Tổng tiền vật liệu";
-        //    obj.Cells[3, infocolumnindex2] = "Tổng tiền khuyến mãi";
-        //    obj.Cells[4, infocolumnindex2] = "Khuyến mãi khách hàng";
-        //    obj.Cells[5, infocolumnindex2] = "Hình thức khuyến mãi";
-        //    obj.Cells[6, infocolumnindex2] = "Tổng tiền";
-        //    obj.Cells[7, infocolumnindex2] = "Trạng thái";
-        //    obj.Cells[1, infocolumnindex1 + 1] = lb_MaHDBH;
-        //    obj.Cells[2, infocolumnindex1 + 1] = lb_NgayLap;
-        //    obj.Cells[3, infocolumnindex1 + 1] = lb_NgayGiao;
-        //    obj.Cells[4, infocolumnindex1 + 1] = lb_TenNV;
-        //    obj.Cells[5, infocolumnindex1 + 1] = lb_TenKH;
-        //    obj.Cells[6, infocolumnindex1 + 1] = lb_LoaiKH;
-        //    obj.Cells[1, infocolumnindex2 + 1] = lb_SoVatLieu;
-        //    obj.Cells[2, infocolumnindex2 + 1] = lb_TongTienVatLieu;
-        //    obj.Cells[3, infocolumnindex2 + 1] = lb_TongTienKhuyenMai;
-        //    obj.Cells[4, infocolumnindex2 + 1] = lb_TongTienKMKH;
-        //    obj.Cells[5, infocolumnindex2 + 1] = lb_HinhThucKM;
-        //    obj.Cells[6, infocolumnindex2 + 1] = lb_TongTien;
-        //    obj.Cells[7, infocolumnindex2 + 1] = lb_TrangThai;
-        //    #endregion
-
-        //    // Ghi Grid            
-        //    for (int i = 1; i < grid.Columns.Count + 1; i++)
-        //    {
-        //        obj.Cells[1 + gridrowindex, i] = grid.Columns[i - 1].GetCaption();
-        //    }
-        //    for (int i = 0; i < grid.RowCount; i++)
-        //    {
-        //        for (int j = 0; j < grid.Columns.Count; j++)
-        //        {
-        //            string value = "";
-        //            var ob = grid.GetRowCellValue(i, grid.Columns[j].FieldName);
-        //            if (ob != null)
-        //                value = ob.ToString();
-        //            obj.Cells[i + 2 + gridrowindex, j + 1] = value;
-        //        }
-        //    }
-
-        //    obj.ActiveWorkbook.SaveCopyAs(path + name + ".xlsx");
-        //    obj.ActiveWorkbook.Saved = true;
-        //    wait.Close();
-        //}
-
+      
         public void MakeComboBoxNoAuto(System.Windows.Forms.ComboBox MSComBoBox, List<string> DanhSach)
         {
             foreach (string mem in DanhSach)
@@ -443,7 +263,6 @@ namespace QLVLXD.BLL
                 return Letters + ireturn.ToString();
         }
 
-        // Hàm kiểm tra chuỗi nhập vào có nằm trong list phần tử của ComboBoxEdit (DevExpress) chưa:
         public bool CheckNotInComboBox(DevExpress.XtraEditors.ComboBoxEdit DevComboBox)
         {
             foreach (string mem in DevComboBox.Properties.Items)
@@ -456,7 +275,7 @@ namespace QLVLXD.BLL
         public bool CheckNotInComboBox(System.Windows.Forms.ComboBox MSComboBox)
         {
             foreach (string mem in MSComboBox.Items)
-                if ((string)mem == MSComboBox.Text)
+                if (mem.Equals(MSComboBox.Text))
                     return false;
 
             return true;

@@ -117,7 +117,6 @@
             this.btn_XoaHoaDon.Size = new System.Drawing.Size(230, 154);
             this.btn_XoaHoaDon.TabIndex = 0;
             this.btn_XoaHoaDon.Text = "Xóa hóa đơn\r\nvà thoát";
-            this.btn_XoaHoaDon.Click += new System.EventHandler(this.btn_XoaHoaDon_Click);
             // 
             // btn_In
             // 
@@ -129,7 +128,6 @@
             this.btn_In.Size = new System.Drawing.Size(70, 42);
             this.btn_In.TabIndex = 0;
             this.btn_In.Text = "In";
-            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
             // 
             // btn_XuatFile
             // 
@@ -141,7 +139,6 @@
             this.btn_XuatFile.Size = new System.Drawing.Size(153, 42);
             this.btn_XuatFile.TabIndex = 0;
             this.btn_XuatFile.Text = "Xuất ra File";
-            this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
             // 
             // groupBox2
             // 

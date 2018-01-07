@@ -31,21 +31,18 @@ namespace QLVLXD.GUI.NghiepVu
             InitializeComponent();
             _ListOrginal = _ThongKeBanHang.GetListOrginal();
             Reset();
-            // Tạo ds cho cb_TenNhanVien
             List<DLL.NhanVien> listuser = (new BLL_NhanVien()).GetList();
             List<string> listnameuser = new List<string>();
             listnameuser.Add("");
             foreach (DLL.NhanVien mem in listuser)
                 listnameuser.Add(mem.TenNV.Trim());
             _CTHoaDonBanHang.MakeComboBoxNoAuto(cb_TenNhanVien, listnameuser);
-            // Tạo ds cho cb_TenKH
             List<DLL.KhachHang> listKH = _KhachHang.GetList();
             List<string> listnamekh = new List<string>();
             listnamekh.Add("");
             foreach (DLL.KhachHang mem in listKH)
                 listnamekh.Add(mem.TenKH.Trim());
             _CTHoaDonBanHang.MakeComboBoxNoAuto(cb_TenKhachHang, listnamekh);
-            // Tạo ds cho cb_TrangThai
             List<string> liststt = new List<string>();
             liststt.Add("");
             liststt.Add("Giao Ngay Lúc Lập");
@@ -228,7 +225,6 @@ namespace QLVLXD.GUI.NghiepVu
             }            
         }
 
-        // [Xóa hóa đơn]
         private void btn_XoaHoaDon_Click(object sender, EventArgs e)
         {
             if ((new BLL_User()).IsUser())
@@ -254,7 +250,7 @@ namespace QLVLXD.GUI.NghiepVu
             BLLResult res = new BLLResult();
             res = _HoaDonBanHang.Delete(MaHD, false);
             _HoaDonBanHang.MakeMessageBox(res);
-            if (res._Code == (int)BLLResultType.S_DELETE) // Xóa thành công
+            if (res._Code == (int)BLLResultType.S_DELETE) 
             {
                 foreach (RecordThongKeBanHang vari in _ListOrginal)
                     if (vari.MaHDBH == MaHD)
@@ -268,7 +264,6 @@ namespace QLVLXD.GUI.NghiepVu
             return false;
         }
 
-        // [OK]
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             if ((new BLL_User()).IsUser())
@@ -323,7 +318,6 @@ namespace QLVLXD.GUI.NghiepVu
         }
 
 
-        // [Xem chi tiết hóa đơn]
         private void btn_XemChiTietHoaDon_Click(object sender, EventArgs e)
         {
             try

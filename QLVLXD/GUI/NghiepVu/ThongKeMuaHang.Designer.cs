@@ -99,7 +99,6 @@
             this.btn_Loc.Size = new System.Drawing.Size(114, 60);
             this.btn_Loc.TabIndex = 103;
             this.btn_Loc.Text = "Lọc";
-            this.btn_Loc.Click += new System.EventHandler(this.btn_Loc_Click);
             // 
             // btn_Reset
             // 
@@ -109,7 +108,6 @@
             this.btn_Reset.Size = new System.Drawing.Size(73, 59);
             this.btn_Reset.TabIndex = 102;
             this.btn_Reset.Text = "Reset";
-            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
             // 
             // groupBox10
             // 
@@ -321,7 +319,6 @@
             this.btn_XemChiTietHoaDon.Size = new System.Drawing.Size(195, 32);
             this.btn_XemChiTietHoaDon.TabIndex = 105;
             this.btn_XemChiTietHoaDon.Text = "Xem chi tiết hóa đơn";
-            this.btn_XemChiTietHoaDon.Click += new System.EventHandler(this.btn_XemChiTietHoaDon_Click);
             // 
             // btn_XoaHoaDon
             // 
@@ -333,7 +330,6 @@
             this.btn_XoaHoaDon.Size = new System.Drawing.Size(195, 32);
             this.btn_XoaHoaDon.TabIndex = 106;
             this.btn_XoaHoaDon.Text = "Xóa hóa đơn";
-            this.btn_XoaHoaDon.Click += new System.EventHandler(this.btn_XoaHoaDon_Click);
             // 
             // labelControl3
             // 
@@ -365,7 +361,6 @@
             this.grid.TabIndex = 110;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.grid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.grid_MouseDoubleClick);
             // 
             // hoaDonMuaHangBindingSource
             // 
@@ -606,8 +601,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ThongKeMuaHang";
             this.Text = "ThongKeMuaHang";
-            this.Load += new System.EventHandler(this.ThongKeMuaHang_Load);
-            this.VisibleChanged += new System.EventHandler(this.ThongKeMuaHang_VisibleChanged);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_TongTien)).EndInit();

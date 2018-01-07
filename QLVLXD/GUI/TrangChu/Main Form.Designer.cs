@@ -593,6 +593,8 @@
             this.btn_QuanLyLuong2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_DonVi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
@@ -1189,10 +1191,11 @@
             this.barButtonItem1,
             this.btn_About,
             this.btn_CauHinh,
-            this.btn_ThongKeMuaHang});
+            this.btn_ThongKeMuaHang,
+            this.btn_DonVi});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 445;
+            this.ribbonControl.MaxItemId = 447;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -5069,7 +5072,8 @@
             // 
             this.insertRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup2});
             this.insertRibbonPage1.Name = "insertRibbonPage1";
             this.insertRibbonPage1.Text = "Nghiệp Vụ";
             // 
@@ -5500,6 +5504,20 @@
             // 
             this.timer2.Interval = 2000;
             // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_DonVi);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Admin";
+            // 
+            // btn_DonVi
+            // 
+            this.btn_DonVi.Caption = "Quản lý đơn vị";
+            this.btn_DonVi.Id = 446;
+            this.btn_DonVi.ImageOptions.LargeImage = global::QLVLXD.Properties.Resources.unnamed;
+            this.btn_DonVi.Name = "btn_DonVi";
+            this.btn_DonVi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DonVi_ItemClick);
+            // 
             // Main_Form
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -5897,6 +5915,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btn_ThongKeMuaHang;
+        private DevExpress.XtraBars.BarButtonItem btn_DonVi;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
 

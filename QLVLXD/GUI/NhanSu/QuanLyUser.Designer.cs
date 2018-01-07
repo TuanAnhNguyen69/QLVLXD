@@ -85,7 +85,6 @@
             this.btn_XemChiTiet.Size = new System.Drawing.Size(177, 59);
             this.btn_XemChiTiet.TabIndex = 27;
             this.btn_XemChiTiet.Text = "Xem chi tiết nhân viên";
-            this.btn_XemChiTiet.Click += new System.EventHandler(this.btn_XemChiTiet_Click);
             // 
             // btn_Xoa
             // 

@@ -20,7 +20,6 @@ namespace QLVLXD
         {
             InitializeComponent();
 
-            /* Tao List ChucVu */
             HashSet<string> listchucvu = new HashSet<string>();
             listchucvu.Add("Bán Hàng");
             listchucvu.Add("Chủ Cửa Hàng");
@@ -30,7 +29,6 @@ namespace QLVLXD
             listchucvu.Add("Thủ Kho");
             nhanvien.MakeComboBoxNoAuto(cbb_ChucVu, listchucvu.ToList());
 
-            /* Tao List GioiTinh */
             List<string> gioitinh = new List<string>();
             gioitinh.Add("Nam");
             gioitinh.Add("Nữ");
@@ -221,7 +219,6 @@ namespace QLVLXD
                 e.Handled = true;
             }
 
-            // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
@@ -235,7 +232,6 @@ namespace QLVLXD
                 e.Handled = true;
             }
 
-            // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
@@ -254,39 +250,10 @@ namespace QLVLXD
                 e.Handled = true;
             }
 
-            // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
-        }
-
-        private void btn_XuatFile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string filepath = "";
-                FolderBrowserDialog browse = new FolderBrowserDialog();
-                browse.Description = "Chọn đường dẫn lưu file:";
-                if (browse.ShowDialog() == DialogResult.OK)
-                {
-                    filepath = browse.SelectedPath; if (filepath[filepath.Length - 1] != '\\') filepath = filepath + "\\";
-                    string name = DateTime.Now.ToString();
-                    name = name.Replace('/', '-');
-                    name = name.Replace(':', '-');
-                    nhanvien.ExportExcel(gridView1, filepath, "Danh Sách Nhân Viên (" + name + ")");
-                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Xuất Excel không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btn_In_Click(object sender, EventArgs e)
-        {
-            (new PrintDialog()).ShowDialog();
         }
     }
 }

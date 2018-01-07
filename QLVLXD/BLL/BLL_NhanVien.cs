@@ -16,7 +16,6 @@ namespace QLVLXD.BLL
 {
     class BLL_NhanVien : BLL
     {
-        // Hàm GetList để lấy danh sách tất cả các dòng của bảng. (chỉ các đối tượng Live = "True")
         public List<QLVLXD.DLL.NhanVien> GetList()
         {
             List<QLVLXD.DLL.NhanVien> list = new List<DLL.NhanVien>();
@@ -26,7 +25,6 @@ namespace QLVLXD.BLL
             return list;
         }
 
-        // Hàm GetObjectFromID để lấy thông tin 1 vật liệu từ mã vật liệu, nếu ko có thì trả về null.
         public QLVLXD.DLL.NhanVien GetObjectFromID(string MaNV)
         {
             var Return = DB.NhanViens.FirstOrDefault(data => data.MaNV.Trim() == MaNV);
@@ -49,7 +47,6 @@ namespace QLVLXD.BLL
         {
             try
             {
-                /* Kiểm tra CMND không được trùng */
                 List<decimal> DanhSachCMND = new List<decimal>();
                 foreach (QLVLXD.DLL.NhanVien nhanvien in DB.NhanViens)
                 {
@@ -61,9 +58,6 @@ namespace QLVLXD.BLL
                     }
                 }
 
-                // ---------------------------------------------------------
-                // Nếu hợp lệ thì thêm vào CSDL:
-                // ---------------------------------------------------------
 
                 QLVLXD.DLL.NhanVien var = new QLVLXD.DLL.NhanVien();
                 var.MaNV = MaNV;
@@ -97,8 +91,7 @@ namespace QLVLXD.BLL
                 var row = GetObjectFromID(MaNV);
                 if (row == null)
                     return false;
-                {// Kiểm tra nhân viên này có sử dụng hay không
-                    /* BH */
+                {
                     var list = (new BLL_HoaDonBanHang()).GetList();
                     foreach (DLL.HoaDonBanHang vari in list)
                         if (vari.MaNV.Trim() == MaNV)
@@ -106,7 +99,6 @@ namespace QLVLXD.BLL
                             (new BLL_CTHoaDonBanHang()).MakeMessageBox(new BLLResult("Nhân viên này lập cho các hóa đơn bán hàng hiện tại nên không thể xóa!"));
                             return false;
                         }
-                    /* MH */
                     var list2 = (new BLL_HoaDonMuaHang()).GetList();
                     foreach (DLL.HoaDonMuaHang vari in list2)
                         if (vari.MaNV.Trim() == MaNV)
@@ -114,7 +106,6 @@ namespace QLVLXD.BLL
                             (new BLL_CTHoaDonBanHang()).MakeMessageBox(new BLLResult("Nhân viên này lập cho các hóa đơn mua hàng hiện tại nên không thể xóa!"));
                             return false;
                         }
-                    /* User */
                     var list3 = (new BLL_User()).GetList();
                     foreach (DLL.User vari in list3)
                         if (vari.MaNV.Trim() == MaNV)
@@ -127,7 +118,7 @@ namespace QLVLXD.BLL
 
                 if (result == DialogResult.No)
                     return false;
-
+                DB.NhanViens.DeleteOnSubmit(row);
                 DB.SubmitChanges();
 
                 MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

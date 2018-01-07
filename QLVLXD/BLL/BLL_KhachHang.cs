@@ -16,7 +16,6 @@ namespace QLVLXD.BLL
 {
     class BLL_KhachHang : BLL
     {
-        // Hàm GetList để lấy danh sách tất cả các dòng của bảng. (chỉ các đối tượng Live = "True")
         public List<QLVLXD.DLL.KhachHang> GetList()
         {
             List<QLVLXD.DLL.KhachHang> list = new List<DLL.KhachHang>();
@@ -26,7 +25,6 @@ namespace QLVLXD.BLL
             return list;
         }
 
-        // Hàm GetObjectFromID để lấy thông tin 1 vật liệu từ mã vật liệu, nếu ko có thì trả về null.
         public QLVLXD.DLL.KhachHang GetObjectFromID(string MaKH)
         {
             var Return = DB.KhachHangs.FirstOrDefault(data => data.MaKH.Trim() == MaKH);
@@ -49,7 +47,7 @@ namespace QLVLXD.BLL
             }
             catch (Exception)
             {
-                return new BLLResult(13000357);
+                return new BLLResult(0);
             }
         }
 
@@ -67,7 +65,6 @@ namespace QLVLXD.BLL
         {
             try
             {
-                /* Kiểm tra CMND không được trùng */
                 List<decimal> DanhSachCMND = new List<decimal>();
                 foreach (QLVLXD.DLL.KhachHang khachhang in DB.KhachHangs)
                 {
@@ -79,10 +76,7 @@ namespace QLVLXD.BLL
                     }
                 }
 
-                // ---------------------------------------------------------
-                // Nếu hợp lệ thì thêm vào CSDL:
-                // ---------------------------------------------------------
-
+              
                 QLVLXD.DLL.KhachHang var = new QLVLXD.DLL.KhachHang();
 
                 var.MaKH = MaKH;
@@ -116,7 +110,7 @@ namespace QLVLXD.BLL
                 var row = GetObjectFromID(MaKH);
                 if (row == null)
                     return false;
-                {// Kiểm tra khách hàng này có sử dụng hay không
+                {
                     /* BH */
                     var list = (new BLL_HoaDonBanHang()).GetList();
                     foreach (DLL.HoaDonBanHang vari in list)
@@ -131,7 +125,7 @@ namespace QLVLXD.BLL
                 if (result == DialogResult.No)
                     return false;
 
-
+                DB.KhachHangs.DeleteOnSubmit(row);
                 DB.SubmitChanges();
 
                 MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

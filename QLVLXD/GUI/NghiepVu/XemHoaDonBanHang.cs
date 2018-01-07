@@ -24,7 +24,6 @@ namespace QLVLXD.GUI.NghiepVu
         {
             InitializeComponent();
 
-            // Load thông tin hóa đơn lên
             var listhoadon = _CT.GetListFromHDBH(MaHDBH.Trim());
             var hoadon = _HoaDon.GetObjectFromID(MaHDBH.Trim());
             var thongke = _ThongKe.GetRecord(hoadon);
@@ -43,14 +42,13 @@ namespace QLVLXD.GUI.NghiepVu
             lb_NgayGiao.Text = thongke.NgayGiao.ToShortDateString();
             lb_TenNV.Text = thongke.TenNV;
             lb_TenKH.Text = thongke.TenKH;
-            { // Loại KH
+            { 
                 var kh = (new BLL_KhachHang()).GetObjectFromID(thongke.MaKH);
                 var loaikh = (new BLL_LoaiKhachHang()).GetObjectFromID(kh.MaLoaiKH.Trim()).TenLoaiKH.Trim();
                 if (loaikh == null)
                     lb_LoaiKH.Text = "Khách hàng mới";
                 else
                     lb_LoaiKH.Text = loaikh;
-                /* Màu */
                 if (lb_LoaiKH.Text == "Vàng")
                     lb_LoaiKH.ForeColor = Color.Gold;
                 else if (lb_LoaiKH.Text == "Bạc")
@@ -74,7 +72,7 @@ namespace QLVLXD.GUI.NghiepVu
         {
             try
             {
-                for (; grid_CT_view.Rows.Count > 0;) // Xóa hết dòng
+                for (; grid_CT_view.Rows.Count > 0;) 
                     grid_CT_view.Rows.RemoveAt(0);
             }
             catch
@@ -99,7 +97,6 @@ namespace QLVLXD.GUI.NghiepVu
 
         }
 
-        // [Xóa hóa đơn]
         private void btn_XoaHoaDon_Click(object sender, EventArgs e)
         {
             if ((new BLL_User()).IsUser())
@@ -107,7 +104,7 @@ namespace QLVLXD.GUI.NghiepVu
                 MessageBox.Show("Chức năng dành cho Admin, User thường không sử dụng được!", "Giới hạn quyền sử dụng", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (main == null) // Form gọi từ form bán hàng
+            if (main == null) 
             {
                 BLLResult res = _HoaDon.Delete(_MaHDBH.Trim(), false);
                 _HoaDon.MakeMessageBox(res);
@@ -123,35 +120,6 @@ namespace QLVLXD.GUI.NghiepVu
                 this.main.ThongKeBanHang_Load(null, null);
         }
 
-        // [Xuất ra File]
-        private void btn_XuatFile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string filepath = "";
-                FolderBrowserDialog browse = new FolderBrowserDialog();
-                browse.Description = "Chọn đường dẫn lưu file:";
-                if (browse.ShowDialog() == DialogResult.OK)
-                {
-                    filepath = browse.SelectedPath; if (filepath[filepath.Length - 1] != '\\') filepath = filepath + "\\"; 
-                    string name = DateTime.Now.ToString();
-                    name = name.Replace('/', '-');
-                    name = name.Replace(':', '-');
-                    if (tb_TenThongKe.Text == "")
-                        tb_TenThongKe.Text = "Hóa Đơn Bán Hàng";
-                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Xuất Excel không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btn_In_Click(object sender, EventArgs e)
-        {
-            (new PrintDialog()).ShowDialog();
-        }
 
         private void cTHoaDonBanHangBindingSource_CurrentChanged(object sender, EventArgs e)
         {

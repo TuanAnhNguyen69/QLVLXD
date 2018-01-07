@@ -29,7 +29,7 @@ namespace QLVLXD.BLL
             }
             catch (Exception)
             {
-                return new BLLResult(12000156);
+                return new BLLResult(0);
             }
         }
 
@@ -46,7 +46,7 @@ namespace QLVLXD.BLL
             }
             catch (Exception)
             {
-                return new BLLResult(12000852);
+                return new BLLResult(0);
             }
         }
 
@@ -66,7 +66,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(12000741);
+                return new BLLResult(0);
             }
         }
 
@@ -80,7 +80,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(12000771);
+                return new BLLResult(0);
             }
         }
 
@@ -97,6 +97,7 @@ namespace QLVLXD.BLL
                         if (result == DialogResult.No)
                             return new BLLResult((int)BLLResultType.NOT_DELETE);
                     }
+                    DB.CTHoaDonBanHangs.DeleteOnSubmit(row);
                     DB.SubmitChanges();
                     return new BLLResult((int)BLLResultType.S_DELETE);
                 }
@@ -104,7 +105,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(100008521);
+                return new BLLResult(0);
             }
         }
 
@@ -122,7 +123,7 @@ namespace QLVLXD.BLL
             }
             catch
             {
-                return new BLLResult(12000456);
+                return new BLLResult(0);
             }
         }
 
@@ -158,26 +159,6 @@ namespace QLVLXD.BLL
             }
         }
 
-        //DLL.CTHoaDonBanHang RealCTHDBH(DLL.CTHoaDonBanHang Orginal)
-        //{
-        //    DLL.CTHoaDonBanHang neww = new CTHoaDonBanHang();
-        //    neww = Orginal;
-        //    var vl = (new BLL_VatLieu()).GetObjectFromTenVL(neww.MaVL.Trim());
-        //    if (vl != null)
-        //    {
-        //        if (neww.DonViTinh.Trim() != vl.DVT_Goc.Trim()) // CTHD này là đơn vị tính phụ
-        //        {
-        //            var dvt = (new BLL_DonViTinhVatLieu()).GetObject(vl.MaVL.Trim(), neww.DonViTinh.Trim());
-        //            if (dvt != null)
-        //            {
-        //                neww.SoLuongMua = (decimal)neww.SoLuongMua / (decimal)dvt.TiLe;
-        //                neww.SoLuongKM = (decimal)neww.SoLuongKM / (decimal)dvt.TiLe;
-        //                neww.TongSL = (decimal)neww.TongSL / (decimal)dvt.TiLe;
-        //            }
-        //        }
-        //    }
-        //    return neww;
-        //}
 
         public List<QLVLXD.DLL.CTHoaDonBanHang> GetList()
         {

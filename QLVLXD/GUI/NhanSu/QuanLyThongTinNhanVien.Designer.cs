@@ -517,7 +517,6 @@
             this.btn_XuatFile.Size = new System.Drawing.Size(103, 43);
             this.btn_XuatFile.TabIndex = 91;
             this.btn_XuatFile.Text = "Xuất ra File\r";
-            this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
             // 
             // btn_In
             // 
@@ -527,7 +526,6 @@
             this.btn_In.Size = new System.Drawing.Size(61, 43);
             this.btn_In.TabIndex = 90;
             this.btn_In.Text = "In\r\n";
-            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
             // 
             // QuanLyThongTinNhanVien
             // 

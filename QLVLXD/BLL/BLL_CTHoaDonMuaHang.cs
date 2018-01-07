@@ -41,20 +41,18 @@ namespace QLVLXD.BLL
         {
             try
             {
-                // Thằng nào trong DanhSachVatLieu mà không có trong CSDL thì thêm vào, còn có thì cập nhật lại dữ liệu
                 foreach (CTHoaDonMuaHang mem in DanhSachVatLieu)
                 {
                     var variable = GetObjectFromID(mem.MaCTHDMH.Trim());
-                    if (variable == null) // Không có thì insert
+                    if (variable == null) 
                     {
                         DB.CTHoaDonMuaHangs.InsertOnSubmit(mem);
                         DB.SubmitChanges();
                     }
-                    else // Còn có rồi thì update lại
+                    else 
                         variable = mem;
                 }
 
-                // Thằng nào trong CSDL mà không có trong DanhSachVatLieu thì xóa trong CSDL
                 foreach (CTHoaDonMuaHang mem in DB.CTHoaDonMuaHangs)
                 {
                     bool IsHaveInDanhSach = false;
@@ -104,6 +102,7 @@ namespace QLVLXD.BLL
 
                 if (row == null)
                     return "Error";
+                DB.CTHoaDonMuaHangs.DeleteOnSubmit(row);
                 DB.SubmitChanges();
 
                 return "Success";
@@ -120,18 +119,12 @@ namespace QLVLXD.BLL
             foreach (QLVLXD.DLL.CTHoaDonMuaHang var in DB.CTHoaDonMuaHangs)
                 danhsach.Add(var.MaCTHDMH.Trim());
             return NewID(danhsach, "CTHDMH");
-            // Hàm NewID là hàm trả về mã một đối tượng mà chưa có trong danh sách mã. 
-            // Ví dụ:
-            // + Danh sách mã là VL001, VL003 thì hàm nãy sẽ trả về VL002
-            // + Danh sách mã là VL001, VL002, VL003 thì hàm nãy sẽ trả về VL004        
+           
         }
         public string NewMaCTHDMH(List<string> DS_Ma)
         {
             return NewID(DS_Ma, "CTHDMH");
-            // Hàm NewID là hàm trả về mã một đối tượng mà chưa có trong danh sách mã. 
-            // Ví dụ:
-            // + Danh sách mã là VL001, VL003 thì hàm nãy sẽ trả về VL002
-            // + Danh sách mã là VL001, VL002, VL003 thì hàm nãy sẽ trả về VL004        
+     
         }
 
         public List<QLVLXD.DLL.CTHoaDonMuaHang> GetList()

@@ -30,7 +30,7 @@ namespace QLVLXD.GUI.KH_NCC
         {
             try
             {
-                for (; grid_loaiKH.Rows.Count > 0;) // Xóa hết dòng
+                for (; grid_loaiKH.Rows.Count > 0;) 
                     grid_loaiKH.Rows.RemoveAt(0);
             }
             catch
@@ -46,10 +46,6 @@ namespace QLVLXD.GUI.KH_NCC
         void Reset()
         {
             ResetGrid();
-           // r_TriGia.Checked = true;
-            //num_PhanGiamGiamLanMuaCuoi.Value = 0;
-            //num_SoLanMuaToiThieu.Value = 0;
-            //num_TriGiaHoaDonToiThieuMoiLanMua.Value = 0;
             num_PhanTramGiam.Value = 0;
             num_TriGiaHoaDonToiThieu.Value = 0;
         }
@@ -58,25 +54,8 @@ namespace QLVLXD.GUI.KH_NCC
         {
         }
 
-        private void r_SoLanMua_CheckedChanged(object sender, EventArgs e)
-        {
-            num_PhanTramGiam.Enabled = false;
-            num_TriGiaHoaDonToiThieu.Enabled = false;
-            //num_PhanGiamGiamLanMuaCuoi.Enabled = true;
-           // num_SoLanMuaToiThieu.Enabled = true;
-           // num_TriGiaHoaDonToiThieuMoiLanMua.Enabled = true;
-        }
+    
 
-        private void r_TriGia_CheckedChanged(object sender, EventArgs e)
-        {
-          //  num_PhanGiamGiamLanMuaCuoi.Enabled = false;
-           // num_SoLanMuaToiThieu.Enabled = false;
-           // num_TriGiaHoaDonToiThieuMoiLanMua.Enabled = false;
-            num_PhanTramGiam.Enabled = true;
-            num_TriGiaHoaDonToiThieu.Enabled = true;
-        }
-
-        // [Thêm]
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (tb_TenLoaiKH.Text == "")
@@ -85,32 +64,10 @@ namespace QLVLXD.GUI.KH_NCC
                 return;
             }
             BLLResult res = new BLLResult();
-            /*if (r_SoLanMua.Checked) // Km dựa trên số lượng8
-            {
-                if (num_SoLanMuaToiThieu.Value == 0)
-                {
-                    MessageBox.Show("Số lần mua tối thiểu phải lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (num_TriGiaHoaDonToiThieuMoiLanMua.Value < 1000)
-                {
-                    MessageBox.Show("Trị giá hóa đơn mỗi lần mua phải từ 1000 VNĐ trở lên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (num_PhanGiamGiamLanMuaCuoi.Value == 0)
-                {
-                    MessageBox.Show("Phần trăm giảm lần mua cuối phải lớn hơn 0%!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                res = _LoaiKhachHang.Insert(tb_TenLoaiKH.Text.Trim(), num_SoLanMuaToiThieu.Value, num_TriGiaHoaDonToiThieuMoiLanMua.Value, num_PhanGiamGiamLanMuaCuoi.Value);
-                _LoaiKhachHang.MakeMessageBox(res);
-                if (res._Code == (int)BLLResultType.S_ADD)
-                     try {mainform.frm_khachhang.IsReset = true; } catch {}
-            }*/
          
                 if (num_TriGiaHoaDonToiThieu.Value < 1000)
                 {
-                    MessageBox.Show("Trị giá hóa đơn tối thiếu phải từ 1000 VNĐ trở lên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mốc tối thiếu phải từ 1000000 VNĐ trở lên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (num_PhanTramGiam.Value == 0)

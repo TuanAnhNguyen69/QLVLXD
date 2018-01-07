@@ -22,13 +22,11 @@ namespace QLVLXD
         {
             InitializeComponent();
 
-            /* Tao List GioiTinh */
             List<string> listgioitinh = new List<string>();
             listgioitinh.Add("Nam");
             listgioitinh.Add("Nữ");
             khachhang.MakeComboBoxNoAuto(cbb_GioiTinh, listgioitinh.ToList());
 
-            /* Tao List LoaiKH */
             var listloaikh = bll_loaikh.GetList();
             List<string> nameloaikh = new List<string>();
             foreach (DLL.LoaiKhachHang mem in listloaikh)
@@ -45,8 +43,24 @@ namespace QLVLXD
 
         private void Refresh_Grid()
         {
-            this.gridControl_KhachHang.DataSource = null;
-            this.gridControl_KhachHang.DataSource = khachhang.GetList();
+
+            try
+            {
+                for (; grid_khachhang.Rows.Count > 0;)
+                    grid_khachhang.Rows.RemoveAt(0);
+            }
+            catch
+            { }
+            try
+            {
+                var listKH = khachhang.GetList();
+                foreach (DLL.KhachHang vari in listKH)
+                {
+                    grid_khachhang.Rows.Add(vari.MaKH, vari.TenKH, vari.NgaySinh, vari.GioiTinh, vari.DiaChi, vari.SDT, vari.CMND, vari.Email, bll_loaikh.GetObjectFromID( vari.MaLoaiKH).TenLoaiKH, vari.CongNo);
+                }
+            }
+            catch (Exception)
+            { }
         }
 
         private void ResetThongTin()
@@ -144,11 +158,7 @@ namespace QLVLXD
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             var kh = khachhang.GetObjectFromID(lb_MaKH.Text.Trim());
-            if (kh.TenKH.Trim() == "[Không Tên]")
-            {
-                MessageBox.Show("Đây là khách hàng mặc định, không thể xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+       
 
             if (khachhang.Delete(lb_MaKH.Text.Trim()))
             {
@@ -162,11 +172,7 @@ namespace QLVLXD
         private void btn_CapNhat_Click(object sender, EventArgs e)
         {
             var khor = khachhang.GetObjectFromID(lb_MaKH.Text.Trim());
-            if (khor.TenKH.Trim() == "[Không Tên]")
-            {
-                MessageBox.Show("Đây là khách hàng mặc định, không thể cập nhật!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+           
 
             if (!KiemTraDuLieuNhap())
                 return;
@@ -206,28 +212,6 @@ namespace QLVLXD
             }
         }
 
-        private void gridControl_KhachHang_MouseCaptureChanged(object sender, EventArgs e)
-        {
-            if (gridView1.SelectedRowsCount != 1)
-                return;
-
-            btn_Xoa.Visible = true;
-            btn_CapNhat.Visible = true;
-            btn_Them.Visible = false;
-
-            lb_MaKH.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MaKH").ToString();
-            txt_TenKH.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenKH").ToString();
-            dtP_NgaySinh.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NgaySinh").ToString();
-            cbb_GioiTinh.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "GioiTinh").ToString();
-            txt_DiaChi.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DiaChi").ToString();
-            txt_SDT.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SDT").ToString();
-            txt_CMND.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CMND").ToString();
-            txt_Email.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Email").ToString();
-            int congno = Int32.Parse(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CongNo").ToString());
-            lb_CongNo.Text = (congno == 0 ? "0" : congno.ToString("# ### ###").Trim()) + " VNĐ";
-            var loai = bll_loaikh.GetObjectFromID(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KHTT").ToString().Trim());
-            cbb_LoaiKH.Text = loai.TenLoaiKH.Trim();
-        }
 
         private void txt_SDT_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -263,36 +247,6 @@ namespace QLVLXD
 
         }
 
-        private void btn_XuatFile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string filepath = "";
-                FolderBrowserDialog browse = new FolderBrowserDialog();
-                browse.Description = "Chọn đường dẫn lưu file:";
-                if (browse.ShowDialog() == DialogResult.OK)
-                {
-                    filepath = browse.SelectedPath;
-                    if (filepath[filepath.Length - 1] != '\\')
-                        filepath = filepath + "\\";
-                    string name = DateTime.Now.ToString();
-                    name = name.Replace('/', '-');
-                    name = name.Replace(':', '-');
-                    khachhang.ExportExcel(gridView1, filepath, "Danh Sách Khách Hàng (" + name + ")");
-                    MessageBox.Show("Xuất Excel thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Xuất Excel không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btn_In_Click(object sender, EventArgs e)
-        {
-            (new PrintDialog()).ShowDialog();
-        }
-
         private void KhachHang_VisibleChanged(object sender, EventArgs e)
         {
             if (IsReset)
@@ -301,6 +255,25 @@ namespace QLVLXD
                     mainform.ResetTab(mainform.IndexTabFormTenTab(E_FORM.KHACHHANG));
                     IsReset = false;
                 }
+        }
+
+        private void grid_khachhang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_Xoa.Visible = true;
+            btn_CapNhat.Visible = true;
+            btn_Them.Visible = false;
+
+            lb_MaKH.Text = grid_khachhang.Rows[e.RowIndex].Cells["MaKH"].Value.ToString().Trim();
+            txt_TenKH.Text = grid_khachhang.Rows[e.RowIndex].Cells["TenKH"].Value.ToString().Trim();
+            dtP_NgaySinh.Text = grid_khachhang.Rows[e.RowIndex].Cells["NgaySinh"].Value.ToString().Trim();
+            cbb_GioiTinh.Text = grid_khachhang.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString().Trim();
+            txt_DiaChi.Text = grid_khachhang.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString().Trim();
+            txt_SDT.Text = grid_khachhang.Rows[e.RowIndex].Cells["SDT"].Value.ToString().Trim();
+            txt_CMND.Text = grid_khachhang.Rows[e.RowIndex].Cells["CMND"].Value.ToString().Trim();
+            txt_Email.Text = grid_khachhang.Rows[e.RowIndex].Cells["Email"].Value.ToString().Trim();
+            int congno = Int32.Parse(grid_khachhang.Rows[e.RowIndex].Cells["CongNo"].Value.ToString().Trim());
+            lb_CongNo.Text = (congno == 0 ? "0" : congno.ToString("# ### ###").Trim()) + " VNĐ";
+            cbb_LoaiKH.Text = grid_khachhang.Rows[e.RowIndex].Cells["LoaiKH"].Value.ToString().Trim();
         }
     }
 }
